@@ -1,4 +1,4 @@
-# frontend-builder
+# frontend
 
 ## Project setup
 ```
