@@ -17,9 +17,15 @@ const state = {
 const getters = {
   getColumns: state => state.myArray
 };
-const actions = {};
+const actions = {
+  updateColumns: ({ commit }, value) => {
+    commit("setColumns", value);
+    console.log(value);
+  }
+};
 const mutations = {
-  setColumns: (state, columns) => (state.columns = columns)
+  setColumns: (state, columns) => (state.columns = columns),
+  insertColumn: (state, column) => state.columns.unshift(column)
 };
 
 export default {
