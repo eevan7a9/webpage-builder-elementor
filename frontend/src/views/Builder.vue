@@ -1,11 +1,142 @@
 <template>
-  <h1>
-    builder
-  </h1>
+  <div class="builder-wrapper">
+    <!-- builder sidebar starts -->
+    <BuilderSidebar />
+    <!-- builder sidebar ends -->
+    <div
+      class="main-container"
+      :class="isSidebarOpen ? 'sidebar-open' : 'sidebar-close'"
+    >
+      <!-- builder topbar starts -->
+      <BuilderTopbar />
+      <!-- builder topbar ends -->
+      <div class="container">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas
+          voluptate porro nobis repudiandae distinctio, voluptatem, accusamus
+          voluptas dolor officia, deserunt doloremque similique molestiae
+          repellat! Architecto, hic deleniti a ipsam nam doloribus culpa
+          deserunt perspiciatis corporis sed ipsum possimus quia iste excepturi
+          molestias delectus facilis veniam quisquam, dicta temporibus facere
+          laboriosam provident odio fuga? Accusantium modi ad alias ipsum beatae
+          velit doloribus, molestias minus laudantium ut, quis vitae harum.
+          Fugiat magni amet repellat eos natus ipsum quo impedit reprehenderit
+          maiores, autem eaque quia a possimus voluptas. Cumque nesciunt magni
+          voluptas, laudantium totam beatae rerum quod explicabo ab id esse.
+          Quas quia at eveniet, possimus, est, nisi quo dolores vel aliquid fuga
+          dolorum! Neque harum explicabo consequatur! Aperiam assumenda vero
+          sequi labore eos soluta consequatur maxime quis laborum
+          necessitatibus. Ipsa recusandae iste, suscipit, dolore animi fuga
+          iusto perspiciatis, aut ex fugiat repellendus magni nesciunt laborum
+          eveniet nemo reiciendis optio sit totam dicta doloribus similique!
+          Sequi, hic. Facere optio accusantium deserunt ducimus similique minima
+          veritatis, nemo debitis, quis explicabo eos perspiciatis in deleniti
+          officiis laudantium! Aliquam suscipit officiis quae provident, quam
+          laboriosam quaerat impedit! Omnis dolores sunt dolor voluptatibus
+          quaerat, quam at libero sequi similique facere ipsum mollitia? At
+          aperiam nihil quo saepe. Lorem ipsum dolor sit amet, consectetur
+          adipisicing elit. Quas voluptate porro nobis repudiandae distinctio,
+          voluptatem, accusamus voluptas dolor officia, deserunt doloremque
+          similique molestiae repellat! Architecto, hic deleniti a ipsam nam
+          doloribus culpa deserunt perspiciatis corporis sed ipsum possimus quia
+          iste excepturi molestias delectus facilis veniam quisquam, dicta
+          temporibus facere laboriosam provident odio fuga? Accusantium modi ad
+          alias ipsum beatae velit doloribus, molestias minus laudantium ut,
+          quis vitae harum. Fugiat magni amet repellat eos natus ipsum quo
+          impedit reprehenderit maiores, autem eaque quia a possimus voluptas.
+          Cumque nesciunt magni voluptas, laudantium totam beatae rerum quod
+          explicabo ab id esse. Quas quia at eveniet, possimus, est, nisi quo
+          dolores vel aliquid fuga dolorum! Neque harum explicabo consequatur!
+          Aperiam assumenda vero sequi labore eos soluta consequatur maxime quis
+          laborum necessitatibus. Ipsa recusandae iste, suscipit, dolore animi
+          fuga iusto perspiciatis, aut ex fugiat repellendus magni nesciunt
+          laborum eveniet nemo reiciendis optio sit totam dicta doloribus
+          similique! Sequi, hic. Facere optio accusantium deserunt ducimus
+          similique minima veritatis, nemo debitis, quis explicabo eos
+          perspiciatis in deleniti officiis laudantium! Aliquam suscipit
+          officiis quae provident, quam laboriosam quaerat impedit! Omnis
+          dolores sunt dolor voluptatibus quaerat, quam at libero sequi
+          similique facere ipsum mollitia? At aperiam nihil quo saepe. Lorem
+          ipsum dolor sit amet, consectetur adipisicing elit. Quas voluptate
+          porro nobis repudiandae distinctio, voluptatem, accusamus voluptas
+          dolor officia, deserunt doloremque similique molestiae repellat!
+          Architecto, hic deleniti a ipsam nam doloribus culpa deserunt
+          perspiciatis corporis sed ipsum possimus quia iste excepturi molestias
+          delectus facilis veniam quisquam, dicta temporibus facere laboriosam
+          provident odio fuga? Accusantium modi ad alias ipsum beatae velit
+          doloribus, molestias minus laudantium ut, quis vitae harum. Fugiat
+          magni amet repellat eos natus ipsum quo impedit reprehenderit maiores,
+          autem eaque quia a possimus voluptas. Cumque nesciunt magni voluptas,
+          laudantium totam beatae rerum quod explicabo ab id esse. Quas quia at
+          eveniet, possimus, est, nisi quo dolores vel aliquid fuga dolorum!
+          Neque harum explicabo consequatur! Aperiam assumenda vero sequi labore
+          eos soluta consequatur maxime quis laborum necessitatibus. Ipsa
+          recusandae iste, suscipit, dolore animi fuga iusto perspiciatis, aut
+          ex fugiat repellendus magni nesciunt laborum eveniet nemo reiciendis
+          optio sit totam dicta doloribus similique! Sequi, hic. Facere optio
+          accusantium deserunt ducimus similique minima veritatis, nemo debitis,
+          quis explicabo eos perspiciatis in deleniti officiis laudantium!
+          Aliquam suscipit officiis quae provident, quam laboriosam quaerat
+          impedit! Omnis dolores sunt dolor voluptatibus quaerat, quam at libero
+          sequi similique facere ipsum mollitia? At aperiam nihil quo saepe.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas
+          voluptate porro nobis repudiandae distinctio, voluptatem, accusamus
+          voluptas dolor officia, deserunt doloremque similique molestiae
+          repellat! Architecto, hic deleniti a ipsam nam doloribus culpa
+          deserunt perspiciatis corporis sed ipsum possimus quia iste excepturi
+          molestias delectus facilis veniam quisquam, dicta temporibus facere
+          laboriosam provident odio fuga? Accusantium modi ad alias ipsum beatae
+          velit doloribus, molestias minus laudantium ut, quis vitae harum.
+          Fugiat magni amet repellat eos natus ipsum quo impedit reprehenderit
+          maiores, autem eaque quia a possimus voluptas. Cumque nesciunt magni
+          voluptas, laudantium totam beatae rerum quod explicabo ab id esse.
+          Quas quia at eveniet, possimus, est, nisi quo dolores vel aliquid fuga
+          dolorum! Neque harum explicabo consequatur! Aperiam assumenda vero
+          sequi labore eos soluta consequatur maxime quis laborum
+          necessitatibus. Ipsa recusandae iste, suscipit, dolore animi fuga
+          iusto perspiciatis, aut ex fugiat repellendus magni nesciunt laborum
+          eveniet nemo reiciendis optio sit totam dicta doloribus similique!
+          Sequi, hic. Facere optio accusantium deserunt ducimus similique minima
+          veritatis, nemo debitis, quis explicabo eos perspiciatis in deleniti
+          officiis laudantium! Aliquam suscipit officiis quae provident, quam
+          laboriosam quaerat impedit! Omnis dolores sunt dolor voluptatibus
+          quaerat, quam at libero sequi similique facere ipsum mollitia? At
+          aperiam nihil quo saepe.
+        </p>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-export default {};
+import BuilderTopbar from "@/components/builder/BuilderTopbar.vue";
+import BuilderSidebar from "@/components/builder/BuilderSidebar.vue";
+import { mapGetters } from "vuex";
+export default {
+  components: {
+    BuilderSidebar,
+    BuilderTopbar
+  },
+  computed: {
+    ...mapGetters(["isSidebarOpen"])
+  },
+  methods: {}
+};
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.builder-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  .main-container {
+    background: aliceblue;
+    width: 100%;
+    margin: 0;
+    transition: margin-left 0.5s;
+    &.sidebar-open {
+      margin-left: 400px;
+    }
+  }
+}
+</style>
