@@ -36,6 +36,7 @@
     </div>
     <div>somthing here</div>
     <div>{{ myColumns }}</div>
+    <button class="btn btn-danger">danger</button>
   </div>
 </template>
 
