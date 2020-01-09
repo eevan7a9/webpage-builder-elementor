@@ -47,7 +47,6 @@ const actions = {
   },
   updateSections: ({ commit }, value) => {
     commit("setSections", value);
-    console.log(value);
   }
 };
 const mutations = {

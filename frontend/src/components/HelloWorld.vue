@@ -14,20 +14,16 @@
     </div>
     <div>
       <draggable
-        v-model="myColumns2"
-        group="group1"
+        class="list-group"
         tag="ul"
+        v-model="myColumns2"
         v-bind="dragOptions"
-        @add="addItem"
       >
         <transition-group type="transition" name="flip-list">
-          <!-- <div v-for="(element, index) in myColumns2" :key="index">
-            {{ element.name }}
-          </div> -->
           <li
             class="list-group-item"
-            v-for="(element, index) in myColumns2"
-            :key="element.name + index"
+            v-for="element in myColumns2"
+            :key="element.id"
           >
             {{ element.name }}
           </li>
@@ -36,7 +32,7 @@
     </div>
     <div>somthing here</div>
     <div>{{ myColumns }}</div>
-    <button class="btn btn-danger">danger</button>
+    <button class="btn btn-danger" @click="addCol">danger</button>
   </div>
 </template>
 
@@ -66,7 +62,7 @@ export default {
       },
       set(value) {
         // this.$store.commit("setColumns", value);
-        this.$store.dispatch("updateColumns", value);
+        this.$store.dispatch("setSections", value);
       }
     },
 
@@ -85,6 +81,9 @@ export default {
     },
     cloneItem(e) {
       console.log(e);
+    },
+    addCol() {
+      this.myColumns2.push({ id: 4, name: "col4" });
     }
   }
 };
@@ -106,6 +105,36 @@ export default {
 .flip-list-move {
   transition: transform 0.5s;
 }
+
+// .flip-list-enter-active,
+// .flip-list-leave-active {
+//   transition: opacity 0.5s;
+// }
+// .flip-list-enter, .flip-list-leave-to /* .fade-leave-active below version 2.1.8 */ {
+//   opacity: 0;
+// }
+
+// .flip-list-enter-active {
+//   transition: all 0.3s ease;
+// }
+// .flip-list-leave-active {
+//   transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+// }
+// .flip-list-enter, .flip-list-leave-to
+// /* .slide-fade-leave-active below version 2.1.8 */ {
+//   transform: translateX(10px);
+//   opacity: 0;
+// }
+
+.flip-list-enter-active,
+.flip-list-leave-active {
+  transition: all 1s;
+}
+.flip-list-enter, .flip-list-leave-to /* .list-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
 .no-move {
   transition: transform 0s;
 }
