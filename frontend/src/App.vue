@@ -28,6 +28,13 @@ export default {
   .bg-custom-redish {
     background: #b7084e;
   }
+  .border-color-redish {
+    border: 3px solid #b7084e;
+    transition: 0.5s;
+    &:hover {
+      border-color: rgb(31, 209, 8);
+    }
+  }
 }
 
 #nav {

@@ -1,5 +1,6 @@
 <template>
   <div class="builder-main-wrapper container">
+    <SectionList />
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas voluptate
       porro nobis repudiandae distinctio, voluptatem, accusamus voluptas dolor
@@ -90,7 +91,12 @@
 </template>
 
 <script>
-export default {};
+import SectionList from "@/components/section/SectionList.vue";
+export default {
+  components: {
+    SectionList
+  }
+};
 </script>
 
 <style lang="scss" scoped>
