@@ -1,10 +1,10 @@
 <template>
   <div class="section-wrapper">
-    <!-- <div v-for="(section, index) of mySections" :key="index">
-      <SectionItem :section="section" />
-    </div> -->
-
-    <draggable v-model="mySections" v-bind="dragOptions">
+    <draggable
+      v-model="mySections"
+      v-bind="dragOptions"
+      handle=".section-handle"
+    >
       <transition-group type="transition" name="flip-list">
         <div v-for="section in mySections" :key="section.id">
           <SectionItem :section="section" />

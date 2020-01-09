@@ -1,12 +1,25 @@
 <template>
   <div class="section-item">
-    <div class="section-options d-flex justify-content-end mr-1">
-      <button class="btn text-light p-1 mr-1 border">
+    <div class="section-options d-flex justify-content-center mr-1">
+      <button
+        class="btn text-light p-1 border section-handle"
+        v-b-tooltip.hover
+        title="Drag & Drop"
+      >
+        <img src="@/assets/icons/handler-icon.svg" />
+      </button>
+      <button
+        class="btn text-light p-1 border"
+        v-b-tooltip.hover
+        title="Add Column"
+      >
         <img src="@/assets/icons/add-icon.svg" />
       </button>
       <button
-        class="btn text-light  p-1 mr-1 border"
+        class="btn text-light  p-1 border"
         @click="deleteSection(section.id)"
+        v-b-tooltip.hover
+        title="Remove Section"
       >
         <img src="@/assets/icons/trash-icon.svg" />
       </button>
@@ -42,6 +55,9 @@ export default {
         height: 0;
         width: 0;
         transition: 0.5s;
+      }
+      &.section-handle {
+        cursor: grab;
       }
     }
   }
