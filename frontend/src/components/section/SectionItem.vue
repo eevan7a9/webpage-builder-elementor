@@ -25,14 +25,18 @@
       </button>
     </div>
     <div class="rounded item-content">
-      <h1>Sections {{ section.id }}</h1>
+      <RowList :rows="section.rows" />
     </div>
   </div>
 </template>
 
 <script>
+import RowList from "@/components/row/RowList.vue";
 import { mapActions } from "vuex";
 export default {
+  components: {
+    RowList
+  },
   props: {
     section: Object
   },

@@ -29,6 +29,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.border-color-redish {
+  border: 3px solid #b7084e;
+  transition: 0.5s;
+  &:hover {
+    border-color: rgb(31, 209, 8);
+  }
+}
 .add-section {
   display: flex;
   flex-direction: column;

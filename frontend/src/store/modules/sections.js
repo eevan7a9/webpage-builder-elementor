@@ -3,27 +3,50 @@ const state = {
   sections: [
     {
       id: 1,
-      columns: [
+      rows: [
         {
           id: 1,
-          elements: [
+          columns: [
             {
               id: 1,
-              elementName: "something"
+              elements: [
+                {
+                  id: 1,
+                  elementName: "something"
+                }
+              ]
+            },
+            {
+              id: 2,
+              elements: [
+                {
+                  id: 1,
+                  elementName: "something"
+                }
+              ]
             }
           ]
-        }
-      ]
-    },
-    {
-      id: 2,
-      columns: [
+        },
         {
-          id: 1,
-          elements: [
+          id: 2,
+          columns: [
             {
               id: 1,
-              elementName: "something"
+              elements: [
+                {
+                  id: 1,
+                  elementName: "something"
+                }
+              ]
+            },
+            {
+              id: 2,
+              elements: [
+                {
+                  id: 1,
+                  elementName: "something"
+                }
+              ]
             }
           ]
         }
@@ -38,7 +61,12 @@ const actions = {
   addSection: ({ commit, state }) => {
     const newSection = {
       id: state.sectionIdCounter + 1,
-      columns: []
+      rows: [
+        {
+          id: 1,
+          columns: []
+        }
+      ]
     };
     commit("insertSection", newSection);
   },
