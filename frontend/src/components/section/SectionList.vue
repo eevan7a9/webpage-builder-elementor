@@ -1,6 +1,8 @@
 <template>
   <div class="section-wrapper">
-    <SectionItem />
+    <div v-for="(section, index) of getSections" :key="index">
+      <SectionItem :section="section" />
+    </div>
     <hr />
     <SectionAdd />
   </div>
@@ -9,10 +11,14 @@
 <script>
 import SectionItem from "@/components/section/SectionItem.vue";
 import SectionAdd from "@/components/section/SectionAdd.vue";
+import { mapGetters } from "vuex";
 export default {
   components: {
     SectionItem,
     SectionAdd
+  },
+  computed: {
+    ...mapGetters(["getSections"])
   }
 };
 </script>

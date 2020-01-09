@@ -4,18 +4,29 @@
       <button class="btn text-light p-1 mr-1 border">
         <img src="@/assets/icons/add-icon.svg" />
       </button>
-      <button class="btn text-light  p-1 mr-1 border">
+      <button
+        class="btn text-light  p-1 mr-1 border"
+        @click="deleteSection(section.id)"
+      >
         <img src="@/assets/icons/trash-icon.svg" />
       </button>
     </div>
     <div class="rounded item-content">
-      <h1>Sections</h1>
+      <h1>Sections {{ section.id }}</h1>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import { mapActions } from "vuex";
+export default {
+  props: {
+    section: Object
+  },
+  methods: {
+    ...mapActions(["deleteSection"])
+  }
+};
 </script>
 
 <style lang="scss" scoped>

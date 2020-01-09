@@ -1,5 +1,5 @@
 <template>
-  <div class="add-section border-color-redish rounded">
+  <div class="add-section border-color-redish rounded" @click="addSection">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="34"
@@ -20,7 +20,12 @@
 </template>
 
 <script>
-export default {};
+import { mapActions } from "vuex";
+export default {
+  methods: {
+    ...mapActions(["addSection"])
+  }
+};
 </script>
 
 <style lang="scss" scoped>
