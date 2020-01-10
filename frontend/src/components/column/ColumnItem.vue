@@ -1,7 +1,7 @@
 <template>
   <div class="column-item">
     <div class="column-options d-flex justify-content-center mr-1">
-      <button class="btn text-light p-1 pb-2 border column-handle">
+      <button class="btn text-light p-1 border column-handle">
         <img src="@/assets/icons/handler-icon.svg" />
       </button>
       <!-- <button

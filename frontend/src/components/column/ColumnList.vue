@@ -4,12 +4,13 @@
       <ColumnItem :column="column" :rowId="rowId" :sectionId="sectionId" />
     </div> -->
     <draggable v-model="myColumns" v-bind="dragOptions" handle=".column-handle">
-      <transition-group
-        type="transition"
-        name="flip-list"
-        class="d-flex justify-content-around"
-      >
-        <div v-for="column in myColumns" :key="column.id" class="w-100 p-1">
+      <transition-group type="transition" name="flip-list" class="row m-auto">
+        <div
+          class="w-100 p-0"
+          v-for="column in myColumns"
+          :key="column.id"
+          :class="`col-md-${column.gridCol}`"
+        >
           <ColumnItem :column="column" :rowId="rowId" :sectionId="sectionId" />
         </div>
       </transition-group>
@@ -47,7 +48,6 @@ export default {
     dragOptions() {
       return {
         animation: 0,
-        group: "group-columns",
         disabled: false,
         ghostClass: "ghost"
       };

@@ -1,6 +1,9 @@
 <template>
   <div class="row-item">
-    <div class="row-options d-flex justify-content-center mr-1">
+    <div
+      class="row-options d-flex justify-content-center mr-1"
+      v-if="row.columns.length"
+    >
       <button class="btn text-light p-1 pb-2 border row-handle">
         <img src="@/assets/icons/handler-icon.svg" />
       </button>
@@ -20,22 +23,28 @@
       </button>
     </div>
     <!-- <img src="@/assets/icons/add-square-icon.svg" /> -->
-    <div class="item-content  p-1">
+    <div class="item-content p-1 pb-2">
       <ColumnList
         :columns="row.columns"
         :rowId="row.id"
         :sectionId="sectionId"
+        v-if="row.columns.length"
       />
+      <div v-else>
+        <ColumnLayout />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import ColumnList from "@/components/column/ColumnList.vue";
+import ColumnLayout from "@/components/column/ColumnLayout.vue";
 import { mapActions } from "vuex";
 export default {
   components: {
-    ColumnList
+    ColumnList,
+    ColumnLayout
   },
   props: {
     row: Object,

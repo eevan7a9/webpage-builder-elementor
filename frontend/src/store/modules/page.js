@@ -10,6 +10,7 @@ const state = {
           columns: [
             {
               id: 1,
+              gridCol: 8,
               elements: [
                 {
                   id: 1,
@@ -19,6 +20,7 @@ const state = {
             },
             {
               id: 2,
+              gridCol: 2,
               elements: [
                 {
                   id: 1,
@@ -28,6 +30,7 @@ const state = {
             },
             {
               id: 3,
+              gridCol: 2,
               elements: [
                 {
                   id: 1,
@@ -42,6 +45,7 @@ const state = {
           columns: [
             {
               id: 1,
+              gridCol: 6,
               elements: [
                 {
                   id: 1,
@@ -51,6 +55,7 @@ const state = {
             },
             {
               id: 2,
+              gridCol: 6,
               elements: [
                 {
                   id: 1,
