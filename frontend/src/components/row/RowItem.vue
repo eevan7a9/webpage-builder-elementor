@@ -1,5 +1,5 @@
 <template>
-  <div class="column-item">
+  <div class="row-item">
     <div class="row-options d-flex justify-content-center mr-1">
       <button class="btn text-light p-1 pb-2 border section-handle">
         <img src="@/assets/icons/handler-icon.svg" />
@@ -20,15 +20,23 @@
       </button>
     </div>
     <!-- <img src="@/assets/icons/add-square-icon.svg" /> -->
-    <div class="item-content  p-4">
-      <h1 class="text-primary">content</h1>
+    <div class="item-content  p-1">
+      <ColumnList
+        :columns="row.columns"
+        :rowId="row.id"
+        :sectionId="sectionId"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import ColumnList from "@/components/column/ColumnList.vue";
 import { mapActions } from "vuex";
 export default {
+  components: {
+    ColumnList
+  },
   props: {
     row: Object,
     sectionId: Number
@@ -40,7 +48,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.column-item {
+.row-item {
   .row-options {
     visibility: hidden;
     button {

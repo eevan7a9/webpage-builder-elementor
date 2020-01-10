@@ -25,6 +25,15 @@ const state = {
                   elementName: "something"
                 }
               ]
+            },
+            {
+              id: 3,
+              elements: [
+                {
+                  id: 1,
+                  elementName: "something"
+                }
+              ]
             }
           ]
         },
