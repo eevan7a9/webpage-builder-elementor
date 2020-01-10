@@ -38,6 +38,7 @@ export default {
 <style lang="scss" scoped>
 .navbar {
   position: fixed;
+  z-index: 1;
   height: 56px;
   width: 100%;
   .navbar-brand {

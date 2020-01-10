@@ -26,7 +26,7 @@ export default {
   background: #e7e9ed;
   transition: 0.5s;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   left: 0;
   height: 100%;
   width: 0;
