@@ -11,7 +11,8 @@
       <button
         class="btn text-light p-1 border"
         v-b-tooltip.hover
-        title="Add Column"
+        title="Add Row"
+        @click="addRow(section.id)"
       >
         <img src="@/assets/icons/add-icon.svg" />
       </button>
@@ -41,7 +42,7 @@ export default {
     section: Object
   },
   methods: {
-    ...mapActions(["deleteSection"])
+    ...mapActions(["deleteSection", "addRow"])
   }
 };
 </script>

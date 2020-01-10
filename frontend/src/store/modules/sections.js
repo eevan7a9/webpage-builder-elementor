@@ -1,3 +1,5 @@
+import { getLatestId } from "@/assets/scripts/evan-custom.js";
+
 const state = {
   sectionIdCounter: 2,
   sections: [
@@ -59,8 +61,10 @@ const getters = {
 };
 const actions = {
   addSection: ({ commit, state }) => {
+    // we get the id of the highest/latest id in sections
+    const latestSectionId = getLatestId(state.sections);
     const newSection = {
-      id: state.sectionIdCounter + 1,
+      id: latestSectionId + 1,
       rows: [
         {
           id: 1,
@@ -75,16 +79,32 @@ const actions = {
   },
   updateSections: ({ commit }, value) => {
     commit("setSections", value);
+  },
+  //  Sections Rows
+  addRow: ({ commit, state }, sectionId) => {
+    //  we get the section we want to add the row
+    const section = state.sections.find(sec => sec.id === sectionId);
+    if (section) {
+      const latestRowId = getLatestId(section.rows);
+      const newRow = {
+        id: latestRowId + 1,
+        columns: []
+      };
+      commit("insertRow", { data: newRow, sectionId: sectionId });
+    }
   }
 };
 const mutations = {
   setSections: (state, sections) => (state.sections = sections),
-  insertSection: (state, section) => {
-    state.sections.push(section);
-    state.sectionIdCounter++;
-  },
+  insertSection: (state, section) => state.sections.push(section),
   removeSection: (state, id) =>
-    (state.sections = state.sections.filter(section => section.id != id))
+    (state.sections = state.sections.filter(section => section.id != id)),
+  insertRow: (state, row) => {
+    const sectionFound = state.sections.find(sec => sec.id === row.sectionId);
+    if (sectionFound) {
+      sectionFound.rows.push(row.data);
+    }
+  }
 };
 
 export default {
