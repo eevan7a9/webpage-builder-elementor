@@ -33,7 +33,7 @@ export default {
   computed: {
     mySections: {
       get() {
-        return this.$store.state.sections.sections;
+        return this.$store.state.page.sections;
       },
       set(value) {
         // this.$store.commit("setColumns", value);
@@ -52,24 +52,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.flip-list-move {
-  transition: transform 0.5s;
-}
-.flip-list-enter-active,
-.flip-list-leave-active {
-  transition: all 1s;
-}
-.flip-list-enter, .flip-list-leave-to /* .list-leave-active below version 2.1.8 */ {
-  opacity: 0;
-  transform: translateY(30px);
-}
-
-.no-move {
-  transition: transform 0s;
-}
-.ghost {
-  opacity: 0.5;
-  background: #c8ebfb;
-}
-</style>
+<style lang="scss" scoped></style>

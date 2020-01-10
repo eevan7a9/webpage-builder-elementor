@@ -26,7 +26,7 @@
       </button>
     </div>
     <div class="rounded item-content">
-      <RowList :rows="section.rows" />
+      <RowList :rows="section.rows" :sectionId="section.id" />
     </div>
   </div>
 </template>
