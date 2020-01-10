@@ -9,7 +9,7 @@
         <img src="@/assets/icons/handler-icon.svg" />
       </button>
       <button
-        class="btn text-light p-1 border"
+        class="btn text-light p-1 border add"
         v-b-tooltip.hover
         title="Add Row"
         @click="addRow(section.id)"
@@ -17,7 +17,7 @@
         <img src="@/assets/icons/add-icon.svg" />
       </button>
       <button
-        class="btn text-light  p-1 border"
+        class="btn text-light  p-1 border remove"
         @click="deleteSection(section.id)"
         v-b-tooltip.hover
         title="Remove Section"
@@ -61,9 +61,6 @@ export default {
         width: 0;
         transition: 0.5s;
       }
-      &.section-handle {
-        cursor: grab;
-      }
     }
   }
   .item-content {
@@ -81,6 +78,16 @@ export default {
           height: 18px;
           width: 18px;
           transition: 0.5s;
+        }
+        &.add:hover {
+          background: #28a745;
+        }
+        &.remove:hover {
+          background: #dc3545;
+        }
+        &.section-handle:hover {
+          cursor: grab;
+          background: #007bff;
         }
       }
     }
