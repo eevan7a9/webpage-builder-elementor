@@ -64,9 +64,11 @@ const state = {
     }
   ]
 };
+
 const getters = {
   getSections: state => state.sections
 };
+
 const actions = {
   addSection: ({ commit, state }) => {
     // we get the id of the highest/latest id in sections
@@ -88,7 +90,7 @@ const actions = {
   updateSections: ({ commit }, value) => {
     commit("setSections", value);
   },
-  //  Sections Rows
+  //  Sections Rows *************************************
   addRow: ({ commit, state }, sectionId) => {
     //  we get the section we want to add the row
     const section = state.sections.find(sec => sec.id === sectionId);
@@ -105,8 +107,13 @@ const actions = {
   },
   deleteRow: ({ commit }, { rowId, sectionId }) => {
     commit("removeRow", { rowId: rowId, sectionId: sectionId });
+  },
+  //  Sections Columns *************************************
+  updateColumns: ({ commit }, { column, rowId, sectionId }) => {
+    commit("setColumns", { item: column, rowId: rowId, sectionId: sectionId });
   }
 };
+
 const mutations = {
   setSections: (state, sections) => (state.sections = sections),
   insertSection: (state, section) => state.sections.push(section),
@@ -128,6 +135,15 @@ const mutations = {
     let foundSection = state.sections.find(sec => sec.id == data.sectionId);
     if (foundSection) {
       foundSection.rows = foundSection.rows.filter(row => row.id != data.rowId);
+    }
+  },
+  setColumns: (state, column) => {
+    const foundSection = state.sections.find(sec => sec.id == column.sectionId);
+    if (foundSection) {
+      const foundRow = foundSection.rows.find(row => row.id == column.rowId);
+      if (foundRow) {
+        foundRow.columns = column.item;
+      }
     }
   }
 };

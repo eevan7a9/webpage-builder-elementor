@@ -1,7 +1,7 @@
 <template>
   <div class="row-item">
     <div class="row-options d-flex justify-content-center mr-1">
-      <button class="btn text-light p-1 pb-2 border section-handle">
+      <button class="btn text-light p-1 pb-2 border row-handle">
         <img src="@/assets/icons/handler-icon.svg" />
       </button>
       <!-- <button
@@ -85,7 +85,7 @@ export default {
         &.remove:hover {
           background: #dc3545;
         }
-        &.section-handle:hover {
+        &.row-handle:hover {
           cursor: grab;
           background: #007bff;
         }

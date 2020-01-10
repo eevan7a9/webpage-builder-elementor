@@ -18,7 +18,7 @@ const getters = {
   getColumns: state => state.myArray
 };
 const actions = {
-  updateColumns: ({ commit }, value) => {
+  updateColumnss: ({ commit }, value) => {
     commit("setColumns", value);
     console.log(value);
   }
