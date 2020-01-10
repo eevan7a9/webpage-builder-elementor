@@ -14,7 +14,7 @@
       </button> -->
       <button
         class="btn text-light  p-1 pb-2 border remove"
-        @click="deleteSection(section.id)"
+        @click="deleteRow({ rowId: row.id, sectionId: sectionId })"
       >
         <img src="@/assets/icons/trash-icon.svg" />
       </button>
@@ -27,7 +27,16 @@
 </template>
 
 <script>
-export default {};
+import { mapActions } from "vuex";
+export default {
+  props: {
+    row: Object,
+    sectionId: Number
+  },
+  methods: {
+    ...mapActions(["deleteRow"])
+  }
+};
 </script>
 
 <style lang="scss" scoped>

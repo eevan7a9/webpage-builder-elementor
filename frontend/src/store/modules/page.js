@@ -1,4 +1,4 @@
-import { getLatestId } from "@/assets/scripts/evan-custom.js";
+import { getLatestId, toTimestamp } from "@/assets/scripts/evan-custom.js";
 
 const state = {
   sections: [
@@ -66,7 +66,7 @@ const actions = {
       id: latestSectionId + 1,
       rows: [
         {
-          id: 1,
+          id: toTimestamp(new Date()),
           columns: []
         }
       ]
@@ -84,9 +84,8 @@ const actions = {
     //  we get the section we want to add the row
     const section = state.sections.find(sec => sec.id === sectionId);
     if (section) {
-      const latestRowId = getLatestId(section.rows);
       const newRow = {
-        id: latestRowId + 1,
+        id: toTimestamp(new Date()),
         columns: []
       };
       commit("insertRow", { item: newRow, sectionId: sectionId });
@@ -94,6 +93,9 @@ const actions = {
   },
   updateRow: ({ commit }, { rows, sectionId }) => {
     commit("setRows", { item: rows, sectionId: sectionId });
+  },
+  deleteRow: ({ commit }, { rowId, sectionId }) => {
+    commit("removeRow", { rowId: rowId, sectionId: sectionId });
   }
 };
 const mutations = {
@@ -111,6 +113,12 @@ const mutations = {
     const sectionFound = state.sections.find(sec => sec.id == rows.sectionId);
     if (sectionFound) {
       sectionFound.rows = rows.item;
+    }
+  },
+  removeRow: (state, data) => {
+    let foundSection = state.sections.find(sec => sec.id == data.sectionId);
+    if (foundSection) {
+      foundSection.rows = foundSection.rows.filter(row => row.id != data.rowId);
     }
   }
 };

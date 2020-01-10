@@ -25,7 +25,7 @@
         <img src="@/assets/icons/trash-icon.svg" />
       </button>
     </div>
-    <div class="rounded item-content">
+    <div class="rounded item-content p-2">
       <RowList :rows="section.rows" :sectionId="section.id" />
     </div>
   </div>

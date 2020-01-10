@@ -5,8 +5,8 @@
     </div> -->
     <draggable v-model="myRows" v-bind="dragOptions" handle=".section-handle">
       <transition-group type="transition" name="flip-list">
-        <div v-for="row in myRows" :key="row.id" class="w-100 p-3">
-          <RowItem />
+        <div v-for="row in myRows" :key="row.id" class="w-100 p-1">
+          <RowItem :row="row" :sectionId="sectionId" />
         </div>
       </transition-group>
     </draggable>
