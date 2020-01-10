@@ -1,7 +1,6 @@
 import { getLatestId } from "@/assets/scripts/evan-custom.js";
 
 const state = {
-  sectionIdCounter: 2,
   sections: [
     {
       id: 1,
@@ -90,8 +89,11 @@ const actions = {
         id: latestRowId + 1,
         columns: []
       };
-      commit("insertRow", { data: newRow, sectionId: sectionId });
+      commit("insertRow", { item: newRow, sectionId: sectionId });
     }
+  },
+  updateRow: ({ commit }, { rows, sectionId }) => {
+    commit("setRows", { item: rows, sectionId: sectionId });
   }
 };
 const mutations = {
@@ -102,7 +104,13 @@ const mutations = {
   insertRow: (state, row) => {
     const sectionFound = state.sections.find(sec => sec.id === row.sectionId);
     if (sectionFound) {
-      sectionFound.rows.push(row.data);
+      sectionFound.rows.push(row.item);
+    }
+  },
+  setRows: (state, rows) => {
+    const sectionFound = state.sections.find(sec => sec.id == rows.sectionId);
+    if (sectionFound) {
+      sectionFound.rows = rows.item;
     }
   }
 };
