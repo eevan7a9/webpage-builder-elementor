@@ -14,23 +14,34 @@
       </button> -->
       <button
         class="btn text-light  p-1 pb-2 border remove"
-        @click="deleteRow({ rowId: row.id, sectionId: sectionId })"
+        @click="removeColumn"
       >
         <img src="@/assets/icons/trash-icon.svg" />
       </button>
     </div>
     <div class="item-content">
-      <h1>{{ column.id }}, {{ rowId }}, {{ sectionId }}</h1>
+      <h1>{{ column.elements.length }}</h1>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
   props: {
     column: Object,
     rowId: Number,
     sectionId: Number
+  },
+  methods: {
+    ...mapActions(["deleteColumnContent"]),
+    removeColumn() {
+      this.deleteColumnContent({
+        columnId: this.column.id,
+        rowId: this.rowId,
+        sectionId: this.sectionId
+      });
+    }
   }
 };
 </script>

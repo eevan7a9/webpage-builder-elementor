@@ -35,6 +35,10 @@ const state = {
                 {
                   id: 1,
                   elementName: "something"
+                },
+                {
+                  id: 2,
+                  elementName: "something"
                 }
               ]
             }
@@ -46,12 +50,7 @@ const state = {
             {
               id: 1,
               gridCol: 6,
-              elements: [
-                {
-                  id: 1,
-                  elementName: "something"
-                }
-              ]
+              elements: []
             },
             {
               id: 2,
@@ -59,6 +58,10 @@ const state = {
               elements: [
                 {
                   id: 1,
+                  elementName: "something"
+                },
+                {
+                  id: 2,
                   elementName: "something"
                 }
               ]
@@ -116,6 +119,13 @@ const actions = {
   //  Sections Columns *************************************
   updateColumns: ({ commit }, { column, rowId, sectionId }) => {
     commit("setColumns", { item: column, rowId: rowId, sectionId: sectionId });
+  },
+  deleteColumnContent: ({ commit }, { columnId, rowId, sectionId }) => {
+    commit("removeColumnContent", {
+      columnId: columnId,
+      rowId: rowId,
+      sectionId: sectionId
+    });
   }
 };
 
@@ -148,6 +158,20 @@ const mutations = {
       const foundRow = foundSection.rows.find(row => row.id == column.rowId);
       if (foundRow) {
         foundRow.columns = column.item;
+      }
+    }
+  },
+  removeColumnContent: (state, data) => {
+    const foundSection = state.sections.find(sec => sec.id == data.sectionId);
+    if (foundSection) {
+      const foundRow = foundSection.rows.find(row => row.id == data.rowId);
+      if (foundRow) {
+        const foundColumn = foundRow.columns.find(
+          col => col.id == data.columnId
+        );
+        if (foundColumn) {
+          foundColumn.elements = [];
+        }
       }
     }
   }
