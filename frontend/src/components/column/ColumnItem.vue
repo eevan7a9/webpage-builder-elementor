@@ -91,7 +91,7 @@ export default {
       }
     }
     .item-content {
-      border: 1px solid #17a2b8;
+      border: 3px dotted #17a2b8;
     }
   }
 }
