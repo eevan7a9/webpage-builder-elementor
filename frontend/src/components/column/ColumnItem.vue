@@ -91,8 +91,7 @@ export default {
       }
     }
     .item-content {
-      border-style: solid;
-      border-color: #17a2b8;
+      border: 1px solid #17a2b8;
     }
   }
 }

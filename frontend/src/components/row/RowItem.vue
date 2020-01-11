@@ -7,12 +7,7 @@
       <button class="btn text-light p-1 pb-2 border row-handle">
         <img src="@/assets/icons/handler-icon.svg" />
       </button>
-      <button
-        class="btn text-light p-1 pb-2 border"
-        v-b-tooltip.hover
-        title="Add Column"
-        @click="newColumn"
-      >
+      <button class="btn text-light p-1 pb-2 border" @click="newColumn">
         <img src="@/assets/icons/add-icon.svg" />
       </button>
       <button
@@ -55,16 +50,25 @@ export default {
   methods: {
     ...mapActions(["deleteRow", "addColumn"]),
     newColumn() {
-      const newColumn = {
-        id: toTimestamp(new Date()) + this.row.columns.length,
-        grid: null,
-        elements: []
-      };
-      this.addColumn({
-        column: newColumn,
-        rowId: this.row.id,
-        sectionId: this.sectionId
-      });
+      if (this.row.layout || this.row.columns.length >= 12) {
+        this.$swal.fire({
+          icon: "error",
+          title: "Max Column Exceeded",
+          text: "This Layout reached maximum number of columns"
+          // footer: "<a href>Why do I have this issue?</a>"
+        });
+      } else {
+        const newColumn = {
+          id: toTimestamp(new Date()) + this.row.columns.length,
+          grid: null,
+          elements: []
+        };
+        this.addColumn({
+          column: newColumn,
+          rowId: this.row.id,
+          sectionId: this.sectionId
+        });
+      }
     }
   }
 };
@@ -115,8 +119,7 @@ export default {
       }
     }
     .item-content {
-      border-style: solid;
-      border-color: #17a2b8;
+      border: 3px dashed #17a2b8;
     }
   }
 }
