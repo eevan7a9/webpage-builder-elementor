@@ -108,7 +108,7 @@ const actions = {
     const section = state.sections.find(sec => sec.id === sectionId);
     if (section) {
       const newRow = {
-        id: toTimestamp(new Date()),
+        id: toTimestamp(new Date()) + section.rows.length,
         columns: []
       };
       commit("insertRow", { item: newRow, sectionId: sectionId });
