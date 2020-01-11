@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="layouts-wrapper p-3">
     <div class="text-center">
       <h4 style="font-family: 'Anton', sans-serif">Choose Layout</h4>
     </div>
@@ -74,6 +74,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.layouts-wrapper {
+  background: #e7e9ed;
+  border: solid 2px #2488e6;
+  border-radius: 5px;
+}
 .choice-wrapper {
   .item-wrapper {
     .choice-item {
@@ -119,14 +124,14 @@ export default {
       .choice-item {
         div {
           background: #e7e9ed;
-          border: 2px solid #b7084e;
+          border: 1px solid #b7084e;
           color: #b7084e;
           font-weight: bold;
           transition: 0.5s;
         }
         &.item-1 {
           .question-mark {
-            border: 3px solid #2488e6;
+            border: 1px solid #2488e6;
             color: #2488e6;
           }
         }

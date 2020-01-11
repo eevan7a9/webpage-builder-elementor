@@ -20,7 +20,24 @@
       </button>
     </div>
     <div class="item-content">
-      <h1>{{ column.elements.length }}</h1>
+      <h1 v-if="column.elements.length">{{ column.elements.length }}</h1>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="40"
+        height="40"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="m-4"
+        v-else
+      >
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+        <line x1="12" y1="8" x2="12" y2="16" />
+        <line x1="8" y1="12" x2="16" y2="12" />
+      </svg>
     </div>
   </div>
 </template>
@@ -64,6 +81,10 @@ export default {
   }
   .item-content {
     border: 2px dotted #b5b5b5;
+    cursor: pointer;
+    svg {
+      color: #b5b5b5;
+    }
   }
   &:hover {
     .column-options {
@@ -92,6 +113,9 @@ export default {
     }
     .item-content {
       border: 3px dotted #17a2b8;
+      svg {
+        color: #17a2b8;
+      }
     }
   }
 }

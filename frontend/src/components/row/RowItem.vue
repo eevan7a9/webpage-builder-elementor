@@ -7,7 +7,7 @@
       <button class="btn text-light p-1 pb-2 border row-handle">
         <img src="@/assets/icons/handler-icon.svg" />
       </button>
-      <button class="btn text-light p-1 pb-2 border" @click="newColumn">
+      <button class="btn text-light p-1 pb-2 border add" @click="newColumn">
         <img src="@/assets/icons/add-icon.svg" />
       </button>
       <button
