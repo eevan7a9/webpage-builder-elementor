@@ -167,13 +167,17 @@ const mutations = {
     const foundSection = state.sections.find(sec => sec.id == data.sectionId);
     if (foundSection) {
       const foundRow = foundSection.rows.find(row => row.id == data.rowId);
-      if (foundRow) {
+      if (foundRow.layout) {
         const foundColumn = foundRow.columns.find(
           col => col.id == data.columnId
         );
         if (foundColumn) {
           foundColumn.elements = [];
         }
+      } else {
+        foundRow.columns = foundRow.columns.filter(
+          col => col.id != data.columnId
+        );
       }
     }
   }
