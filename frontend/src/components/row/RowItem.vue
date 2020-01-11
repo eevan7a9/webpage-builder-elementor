@@ -7,14 +7,14 @@
       <button class="btn text-light p-1 pb-2 border row-handle">
         <img src="@/assets/icons/handler-icon.svg" />
       </button>
-      <!-- <button
+      <button
         class="btn text-light p-1 pb-2 border"
         v-b-tooltip.hover
-        title="Add Row"
-        @click="addRow(section.id)"
+        title="Add Column"
+        @click="newColumn"
       >
         <img src="@/assets/icons/add-icon.svg" />
-      </button> -->
+      </button>
       <button
         class="btn text-light  p-1 pb-2 border remove"
         @click="deleteRow({ rowId: row.id, sectionId: sectionId })"
@@ -41,6 +41,7 @@
 <script>
 import ColumnList from "@/components/column/ColumnList.vue";
 import ColumnLayout from "@/components/column/ColumnLayout.vue";
+import { toTimestamp } from "@/assets/scripts/evan-custom.js";
 import { mapActions } from "vuex";
 export default {
   components: {
@@ -52,7 +53,19 @@ export default {
     sectionId: Number
   },
   methods: {
-    ...mapActions(["deleteRow"])
+    ...mapActions(["deleteRow", "addColumn"]),
+    newColumn() {
+      const newColumn = {
+        id: toTimestamp(new Date()) + this.row.columns.length,
+        grid: null,
+        elements: []
+      };
+      this.addColumn({
+        column: newColumn,
+        rowId: this.row.id,
+        sectionId: this.sectionId
+      });
+    }
   }
 };
 </script>
@@ -80,8 +93,8 @@ export default {
     .row-options {
       visibility: visible;
       button {
-        height: 33px;
-        width: 38px;
+        height: 31px;
+        width: 33px;
         transition: 0.5s;
         background: #17a2b8;
         img {

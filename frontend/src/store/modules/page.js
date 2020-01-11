@@ -135,6 +135,13 @@ const actions = {
       rowId: rowId,
       sectionId: sectionId
     });
+  },
+  addColumn: ({ commit }, { column, rowId, sectionId }) => {
+    commit("insertColumn", {
+      column: column,
+      rowId: rowId,
+      sectionId: sectionId
+    });
   }
 };
 
@@ -199,6 +206,13 @@ const mutations = {
           col => col.id != data.columnId
         );
       }
+    }
+  },
+  insertColumn: (state, data) => {
+    const foundSection = state.sections.find(sec => sec.id == data.sectionId);
+    if (foundSection) {
+      let foundRow = foundSection.rows.find(row => row.id == data.rowId);
+      foundRow.columns.push(data.column);
     }
   }
 };

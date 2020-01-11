@@ -4,14 +4,16 @@
       <ColumnItem :column="column" :rowId="rowId" :sectionId="sectionId" />
     </div> -->
     <draggable v-model="myColumns" v-bind="dragOptions" handle=".column-handle">
-      <transition-group type="transition" name="flip-list" class="row m-auto">
+      <transition-group
+        type="transition"
+        name="flip-list"
+        :class="rowLayout ? 'row m-auto' : 'd-md-flex'"
+      >
         <div
           class="w-100 p-0"
           v-for="column in myColumns"
           :key="column.id"
-          :class="
-            rowLayout ? `${column.grid}` : `col-md-${12 / myColumns.length}`
-          "
+          :class="rowLayout ? `${column.grid}` : ``"
         >
           <ColumnItem :column="column" :rowId="rowId" :sectionId="sectionId" />
         </div>
