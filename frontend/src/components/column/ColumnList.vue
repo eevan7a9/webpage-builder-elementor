@@ -9,7 +9,7 @@
           class="w-100 p-0"
           v-for="column in myColumns"
           :key="column.id"
-          :class="`col-md-${column.gridCol}`"
+          :class="column.grid ? `${column.grid}` : ''"
         >
           <ColumnItem :column="column" :rowId="rowId" :sectionId="sectionId" />
         </div>

@@ -23,7 +23,7 @@
       </button>
     </div>
     <!-- <img src="@/assets/icons/add-square-icon.svg" /> -->
-    <div class="item-content p-1 pb-2">
+    <div class="p-1 pb-2" :class="{ 'item-content': row.columns.length }">
       <ColumnList
         :columns="row.columns"
         :rowId="row.id"

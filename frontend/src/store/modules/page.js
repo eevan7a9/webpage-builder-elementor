@@ -7,10 +7,11 @@ const state = {
       rows: [
         {
           id: 1,
+          layout: true,
           columns: [
             {
               id: 1,
-              gridCol: 8,
+              grid: "col-md-8",
               elements: [
                 {
                   id: 1,
@@ -20,7 +21,7 @@ const state = {
             },
             {
               id: 2,
-              gridCol: 2,
+              grid: "col-md-2",
               elements: [
                 {
                   id: 1,
@@ -30,7 +31,7 @@ const state = {
             },
             {
               id: 3,
-              gridCol: 2,
+              grid: "col-md-2",
               elements: [
                 {
                   id: 1,
@@ -46,15 +47,16 @@ const state = {
         },
         {
           id: 2,
+          layout: false,
           columns: [
             {
               id: 1,
-              gridCol: 6,
+              grid: "col-md-6",
               elements: []
             },
             {
               id: 2,
-              gridCol: 6,
+              grid: "col-md-6",
               elements: [
                 {
                   id: 1,
