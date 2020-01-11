@@ -1,6 +1,6 @@
 <template>
-  <div class="choice-wrapper">
-    <div class="item-wrapper">
+  <div class="choice-wrapper row">
+    <div class="item-wrapper col-md-3" @click="selectSet(sets[0])">
       <p class="m-0 p-0">Auto Adjust</p>
       <span>1 ~ 12</span>
       <div class="choice-item item-1">
@@ -10,80 +10,47 @@
         </div>
       </div>
     </div>
-    <div class="item-wrapper">
+    <div
+      class="item-wrapper col-md-3"
+      v-for="(layout, index) in getLayouts"
+      :key="index"
+    >
       <p class="m-0 p-0">Layout</p>
-      <span>1/2 ~ 1/2 </span>
-      <div class="choice-item item-2">
-        <div class="item">+</div>
-        <div class="item">+</div>
-      </div>
-    </div>
-    <div class="item-wrapper">
-      <p class="m-0 p-0">Layout</p>
-      <span>1/4 ~ 3/4 </span>
-      <div class="choice-item item-3">
-        <div class="item">+</div>
-        <div class="item">+</div>
-      </div>
-    </div>
-    <div class="item-wrapper">
-      <p class="m-0 p-0">Layout</p>
-      <span> 1/5 ~ 4/5 </span>
-      <div class="choice-item item-4">
-        <div class="item">+</div>
-        <div class="item">+</div>
-      </div>
-    </div>
-    <div class="item-wrapper">
-      <p class="m-0 p-0">Layout</p>
-      <span>1/5 ~ 3/5 ~ 1/5</span>
-      <div class="choice-item item-5">
-        <div class="item">+</div>
-        <div class="item">+</div>
-        <div class="item">+</div>
-      </div>
-    </div>
-    <div class="item-wrapper">
-      <p class="m-0 p-0">Layout</p>
-      <span>1/6 ~ 2/6 ~ 3/6</span>
-      <div class="choice-item item-6">
-        <div class="item">+</div>
-        <div class="item">+</div>
-        <div class="item">+</div>
-      </div>
-    </div>
-    <div class="item-wrapper">
-      <p class="m-0 p-0">Layout</p>
-      <span>1/7 ~ 3/7 ~ 37</span>
-      <div class="choice-item item-7">
-        <div class="item">+</div>
-        <div class="item">+</div>
-        <div class="item">+</div>
-      </div>
-    </div>
-    <div class="item-wrapper">
-      <p class="m-0 p-0">Layout</p>
-      <span>1/5 ~ 1/5 ~ 2/5</span>
-      <div class="choice-item item-8">
-        <div class="item">+</div>
-        <div class="item">+</div>
-        <div class="item">+</div>
-        <div class="item">+</div>
+      <span>{{ layout.id }} </span>
+      <div :class="`choice-item item-${index + 2}`">
+        <div
+          class="item"
+          v-for="(column, index) in layout.columns"
+          :key="index"
+        >
+          +
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import { mapActions, mapGetters } from "vuex";
+export default {
+  props: {
+    rowId: Number,
+    sectionId: Number
+  },
+  computed: {
+    ...mapGetters(["getLayouts"])
+  },
+  methods: {
+    ...mapActions(["addColumns"]),
+    selectSet(set) {
+      console.log(set.id);
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
 .choice-wrapper {
-  display: grid;
-  grid-column-gap: 4px;
-  grid-row-gap: 8px;
-  grid-template-columns: repeat(4, 1fr);
   .item-wrapper {
     .choice-item {
       display: grid;
