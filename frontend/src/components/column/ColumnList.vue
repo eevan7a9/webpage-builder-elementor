@@ -9,7 +9,9 @@
           class="w-100 p-0"
           v-for="column in myColumns"
           :key="column.id"
-          :class="column.grid ? `${column.grid}` : ''"
+          :class="
+            rowLayout ? `${column.grid}` : `col-md-${12 / myColumns.length}`
+          "
         >
           <ColumnItem :column="column" :rowId="rowId" :sectionId="sectionId" />
         </div>
@@ -28,6 +30,7 @@ export default {
   },
   props: {
     columns: Array,
+    rowLayout: Boolean,
     rowId: Number,
     sectionId: Number
   },

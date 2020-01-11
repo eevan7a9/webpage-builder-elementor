@@ -26,6 +26,7 @@
     <div class="p-1 pb-2" :class="{ 'item-content': row.columns.length }">
       <ColumnList
         :columns="row.columns"
+        :rowLayout="row.layout"
         :rowId="row.id"
         :sectionId="sectionId"
         v-if="row.columns.length"

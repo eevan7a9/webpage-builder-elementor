@@ -51,12 +51,12 @@ const state = {
           columns: [
             {
               id: 1,
-              grid: "col-md-6",
+              grid: null,
               elements: []
             },
             {
               id: 2,
-              grid: "col-md-6",
+              grid: null,
               elements: [
                 {
                   id: 1,

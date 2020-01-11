@@ -1,8 +1,8 @@
 <template>
   <div class="choice-wrapper">
     <div class="item-wrapper">
-      <p class="m-0 p-0">No Layout</p>
-      <span>1 ~ more</span>
+      <p class="m-0 p-0">Auto Adjust</p>
+      <span>1 ~ 12</span>
       <div class="choice-item item-1">
         <div class="item">+</div>
         <div class="item question-mark font-weight-bold">
