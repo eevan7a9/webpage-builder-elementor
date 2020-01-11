@@ -8,9 +8,8 @@
         <p class="m-0 p-0">Auto Adjust</p>
         <span>1 to 12</span>
         <div class="choice-item item-1">
-          <div class="item">+</div>
           <div class="item question-mark font-weight-bold">
-            ?
+            <h3>?</h3>
           </div>
         </div>
       </div>
@@ -91,7 +90,8 @@ export default {
         color: #333;
       }
       &.item-1 {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
+        font-size: 20px;
       }
       &.item-2 {
         grid-template-columns: repeat(2, 1fr);
