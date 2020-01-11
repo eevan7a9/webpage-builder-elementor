@@ -32,7 +32,7 @@
         v-if="row.columns.length"
       />
       <div v-else>
-        <ColumnLayout />
+        <ColumnLayout :rowId="row.id" :sectionId="sectionId" />
       </div>
     </div>
   </div>

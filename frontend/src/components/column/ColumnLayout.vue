@@ -1,29 +1,35 @@
 <template>
-  <div class="choice-wrapper row">
-    <div class="item-wrapper col-md-3" @click="selectSet(sets[0])">
-      <p class="m-0 p-0">Auto Adjust</p>
-      <span>1 ~ 12</span>
-      <div class="choice-item item-1">
-        <div class="item">+</div>
-        <div class="item question-mark font-weight-bold">
-          ?
+  <div>
+    <div class="text-center">
+      <h4 style="font-family: 'Anton', sans-serif">Choose Layout</h4>
+    </div>
+    <div class="choice-wrapper row">
+      <div class="item-wrapper col-md-3" @click="selectSet(autoAdjust)">
+        <p class="m-0 p-0">Auto Adjust</p>
+        <span>1 to 12</span>
+        <div class="choice-item item-1">
+          <div class="item">+</div>
+          <div class="item question-mark font-weight-bold">
+            ?
+          </div>
         </div>
       </div>
-    </div>
-    <div
-      class="item-wrapper col-md-3"
-      v-for="(layout, index) in getLayouts"
-      :key="index"
-    >
-      <p class="m-0 p-0">Layout</p>
-      <span>{{ layout.id }} </span>
-      <div :class="`choice-item item-${index + 2}`">
-        <div
-          class="item"
-          v-for="(column, index) in layout.columns"
-          :key="index"
-        >
-          +
+      <div
+        class="item-wrapper col-md-3"
+        v-for="(layout, index) in getLayouts"
+        :key="index"
+        @click="selectSet(layout)"
+      >
+        <p class="m-0 p-0">Layout</p>
+        <span>{{ layout.label }}</span>
+        <div :class="`choice-item item-${index + 2}`">
+          <div
+            class="item"
+            v-for="(column, index) in layout.columns"
+            :key="index"
+          >
+            +
+          </div>
         </div>
       </div>
     </div>
@@ -40,10 +46,29 @@ export default {
   computed: {
     ...mapGetters(["getLayouts"])
   },
+  data() {
+    return {
+      autoAdjust: {
+        label: "1 to 12",
+        layout: false,
+        columns: [
+          {
+            id: 1,
+            grid: null,
+            elements: []
+          }
+        ]
+      }
+    };
+  },
   methods: {
-    ...mapActions(["addColumns"]),
+    ...mapActions(["addRowColumns"]),
     selectSet(set) {
-      console.log(set.id);
+      set.id = this.rowId;
+      this.addRowColumns({
+        row: set,
+        sectionId: this.sectionId
+      });
     }
   }
 };

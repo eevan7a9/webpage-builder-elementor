@@ -100,7 +100,9 @@ const actions = {
   updateSections: ({ commit }, value) => {
     commit("setSections", value);
   },
+
   //  Sections Rows *************************************
+
   addRow: ({ commit, state }, sectionId) => {
     //  we get the section we want to add the row
     const section = state.sections.find(sec => sec.id === sectionId);
@@ -118,7 +120,12 @@ const actions = {
   deleteRow: ({ commit }, { rowId, sectionId }) => {
     commit("removeRow", { rowId: rowId, sectionId: sectionId });
   },
+  addRowColumns: ({ commit }, { row, sectionId }) => {
+    commit("setRowColumns", { row: row, sectionId: sectionId });
+  },
+
   //  Sections Columns *************************************
+
   updateColumns: ({ commit }, { column, rowId, sectionId }) => {
     commit("setColumns", { item: column, rowId: rowId, sectionId: sectionId });
   },
@@ -132,20 +139,23 @@ const actions = {
 };
 
 const mutations = {
+  // SECTION STARTS
   setSections: (state, sections) => (state.sections = sections),
   insertSection: (state, section) => state.sections.push(section),
   removeSection: (state, id) =>
     (state.sections = state.sections.filter(section => section.id != id)),
+  // ROWS STARTS
   insertRow: (state, row) => {
-    const sectionFound = state.sections.find(sec => sec.id === row.sectionId);
-    if (sectionFound) {
-      sectionFound.rows.push(row.item);
+    const foundSection = state.sections.find(sec => sec.id === row.sectionId);
+    if (foundSection) {
+      foundSection.rows.push(row.item);
     }
   },
   setRows: (state, rows) => {
-    const sectionFound = state.sections.find(sec => sec.id == rows.sectionId);
-    if (sectionFound) {
-      sectionFound.rows = rows.item;
+    const foundSection = state.sections.find(sec => sec.id == rows.sectionId);
+    if (foundSection) {
+      foundSection.rows = rows.item;
+      console.log(rows);
     }
   },
   removeRow: (state, data) => {
@@ -154,6 +164,16 @@ const mutations = {
       foundSection.rows = foundSection.rows.filter(row => row.id != data.rowId);
     }
   },
+  setRowColumns: (statem, data) => {
+    const foundSection = state.sections.find(sec => sec.id == data.sectionId);
+    if (foundSection) {
+      let foundRow = foundSection.rows.find(row => row.id == data.row.id);
+      foundRow.labe = data.row.label;
+      foundRow.layout = data.row.layout;
+      foundRow.columns = data.row.columns;
+    }
+  },
+  //  COLUMNS STARTS
   setColumns: (state, column) => {
     const foundSection = state.sections.find(sec => sec.id == column.sectionId);
     if (foundSection) {
