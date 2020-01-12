@@ -14,7 +14,7 @@ const state = {
               grid: "col-md-8",
               elements: [
                 {
-                  id: 1,
+                  id: 131,
                   elementName: "something"
                 }
               ]
@@ -24,7 +24,7 @@ const state = {
               grid: "col-md-2",
               elements: [
                 {
-                  id: 1,
+                  id: 132,
                   elementName: "something"
                 }
               ]
@@ -34,11 +34,11 @@ const state = {
               grid: "col-md-2",
               elements: [
                 {
-                  id: 1,
+                  id: 12,
                   elementName: "something"
                 },
                 {
-                  id: 2,
+                  id: 13,
                   elementName: "something"
                 }
               ]
@@ -59,11 +59,11 @@ const state = {
               grid: null,
               elements: [
                 {
-                  id: 1,
+                  id: 51,
                   elementName: "something"
                 },
                 {
-                  id: 2,
+                  id: 52,
                   elementName: "something"
                 }
               ]

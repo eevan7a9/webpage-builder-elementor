@@ -3,7 +3,12 @@
     <draggable v-model="myElements" v-bind="dragOptions" class="h-100">
       <transition-group type="transition" name="flip-list">
         <div v-for="element in myElements" :key="element.id" class="w-100 p-1">
-          {{ element }} ,{{ columnId }} {{ rowId }} {{ sectionId }}
+          <ElementItem
+            :element="element"
+            :columnId="columnId"
+            :rowId="rowId"
+            :sectionId="sectionId"
+          />
         </div>
         <div
           class="empty w-100 p-1 h-100 d-flex justify-content-center align-items-center"
@@ -33,10 +38,12 @@
 </template>
 
 <script>
+import ElementItem from "@/components/element/ElementItem.vue";
 import draggable from "vuedraggable";
 export default {
   components: {
-    draggable
+    draggable,
+    ElementItem
   },
   props: {
     elements: Array,
