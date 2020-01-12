@@ -2,18 +2,19 @@
   <div class="sidebar-wrapper" :class="{ open: isSidebarOpen }">
     <BuilderSidebarTopnav />
     <div>
-      {{ isSidebarOpen }}
-      asdsdasdasd asdasd
+      <BuilderSidebarElements />
     </div>
   </div>
 </template>
 
 <script>
 import BuilderSidebarTopnav from "@/components/builder/BuilderSidebarTopnav.vue";
+import BuilderSidebarElements from "@/components/builder/BuilderSidebarElements.vue";
 import { mapGetters } from "vuex";
 export default {
   components: {
-    BuilderSidebarTopnav
+    BuilderSidebarTopnav,
+    BuilderSidebarElements
   },
   computed: {
     ...mapGetters(["isSidebarOpen"])
