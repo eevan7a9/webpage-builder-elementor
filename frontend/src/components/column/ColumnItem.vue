@@ -1,10 +1,13 @@
 <template>
   <div class="column-item">
-    <div class="column-options d-flex justify-content-center mr-1">
-      <button class="btn text-light p-1 border column-handle">
-        <img src="@/assets/icons/handler-icon.svg" />
-      </button>
-      <!-- <button
+    <div class="item-content">
+      <div class="column-options d-flex justify-content-left mr-1">
+        <button
+          class="btn text-light p-1 border column-handle d-flex justify-content-center align-items-center"
+        >
+          <img src="@/assets/icons/handler-icon.svg" />
+        </button>
+        <!-- <button
         class="btn text-light p-1 pb-2 border"
         v-b-tooltip.hover
         title="Add Row"
@@ -12,14 +15,13 @@
       >
         <img src="@/assets/icons/add-icon.svg" />
       </button> -->
-      <button
-        class="btn text-light  p-1 pb-2 border remove"
-        @click="removeColumn"
-      >
-        <img src="@/assets/icons/trash-icon.svg" />
-      </button>
-    </div>
-    <div class="item-content">
+        <button
+          class="btn text-light  p-1 border remove d-flex justify-content-center align-items-center"
+          @click="removeColumn"
+        >
+          <img src="@/assets/icons/trash-icon.svg" />
+        </button>
+      </div>
       <h1 v-if="column.elements.length">{{ column.elements.length }}</h1>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -66,12 +68,13 @@ export default {
 <style lang="scss" scoped>
 .column-item {
   .column-options {
+    position: absolute;
     visibility: hidden;
     button {
       height: 0;
       width: 0;
       transition: 0.5s;
-      background: #b5b5b5;
+
       img {
         height: 0;
         width: 0;
@@ -90,13 +93,14 @@ export default {
     .column-options {
       visibility: visible;
       button {
-        height: 33px;
-        width: 38px;
+        height: 28px;
+        width: 31px;
         transition: 0.5s;
-        background: #17a2b8;
+        background: #474b4e;
+        border: none;
         img {
-          height: 16px;
-          width: 16px;
+          height: 13px;
+          width: 13px;
           transition: 0.5s;
         }
         &.add:hover {
@@ -107,7 +111,7 @@ export default {
         }
         &.column-handle:hover {
           cursor: grab;
-          background: #007bff;
+          background: #17a2b8;
         }
       }
     }
