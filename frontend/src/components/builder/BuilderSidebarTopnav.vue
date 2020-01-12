@@ -23,14 +23,33 @@
         ></span>
       </div>
     </b-navbar>
+    <div class="action-nav d-flex align-items-center">
+      <div
+        class="m-auto p-3 border-custom w-100 text-uppercase"
+        @click="toggleSidebarTab('elements')"
+        :class="getBuilderSidebar == 'elements' ? 'active' : ''"
+      >
+        ELEMENTS
+      </div>
+      <div
+        class="m-auto p-3 border-custom w-100 text-uppercase"
+        @click="toggleSidebarTab('styles')"
+        :class="getBuilderSidebar == 'styles' ? 'active' : ''"
+      >
+        Styles
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 export default {
+  computed: {
+    ...mapGetters(["getBuilderSidebar"])
+  },
   methods: {
-    ...mapActions(["toggleBuilderSidebar"])
+    ...mapActions(["toggleBuilderSidebar", "toggleSidebarTab"])
   }
 };
 </script>
@@ -55,6 +74,17 @@ export default {
       align-items: center;
       margin-right: 10px;
       cursor: pointer;
+    }
+  }
+}
+.action-nav {
+  .border-custom {
+    font-size: 14px;
+    background: #fff;
+    cursor: pointer;
+    &.active {
+      border-bottom: 4px solid #b7084e;
+      background: #f3f4f7;
     }
   }
 }
