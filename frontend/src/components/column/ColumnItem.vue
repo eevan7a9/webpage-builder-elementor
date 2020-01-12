@@ -4,6 +4,8 @@
       <div class="column-options d-flex justify-content-left mr-1">
         <button
           class="btn text-light p-1 border column-handle d-flex justify-content-center align-items-center"
+          v-b-tooltip.hover
+          title="Move Column"
         >
           <img src="@/assets/icons/handler-icon.svg" />
         </button>
@@ -18,6 +20,8 @@
         <button
           class="btn text-light  p-1 border remove d-flex justify-content-center align-items-center"
           @click="removeColumn"
+          v-b-tooltip.hover
+          title="Delete"
         >
           <img src="@/assets/icons/trash-icon.svg" />
         </button>
