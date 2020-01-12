@@ -1,6 +1,6 @@
 <template>
-  <div class="column-item">
-    <div class="item-content">
+  <div class="column-item h-100">
+    <div class="item-content h-100">
       <div class="column-options d-flex justify-content-left mr-1">
         <button
           class="btn text-light p-1 border column-handle d-flex justify-content-center align-items-center"
@@ -9,14 +9,6 @@
         >
           <img src="@/assets/icons/handler-icon.svg" />
         </button>
-        <!-- <button
-        class="btn text-light p-1 pb-2 border"
-        v-b-tooltip.hover
-        title="Add Row"
-        @click="addRow(section.id)"
-      >
-        <img src="@/assets/icons/add-icon.svg" />
-      </button> -->
         <button
           class="btn text-light  p-1 border remove d-flex justify-content-center align-items-center"
           @click="removeColumn"
@@ -26,7 +18,13 @@
           <img src="@/assets/icons/trash-icon.svg" />
         </button>
       </div>
-      <h1 v-if="column.elements.length">{{ column.elements.length }}</h1>
+      <ElementList
+        :elements="column.elements"
+        :columnId="column.id"
+        :rowId="rowId"
+        :sectionId="sectionId"
+        v-if="column.elements.length"
+      />
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="40"
@@ -49,8 +47,12 @@
 </template>
 
 <script>
+import ElementList from "@/components/element/ElementList.vue";
 import { mapActions } from "vuex";
 export default {
+  components: {
+    ElementList
+  },
   props: {
     column: Object,
     rowId: Number,

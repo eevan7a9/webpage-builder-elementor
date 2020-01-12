@@ -142,6 +142,17 @@ const actions = {
       rowId: rowId,
       sectionId: sectionId
     });
+  },
+
+  //  Sections Elements *************************************
+
+  updateElements: ({ commit }, { elements, columnId, rowId, sectionId }) => {
+    commit("setElements", {
+      item: elements,
+      columnId: columnId,
+      rowId: rowId,
+      sectionId: sectionId
+    });
   }
 };
 
@@ -213,6 +224,23 @@ const mutations = {
     if (foundSection) {
       let foundRow = foundSection.rows.find(row => row.id == data.rowId);
       foundRow.columns.push(data.column);
+    }
+  },
+  //  ElEMENTSS START
+  setElements: (state, element) => {
+    const foundSection = state.sections.find(
+      sec => sec.id == element.sectionId
+    );
+    if (foundSection) {
+      const foundRow = foundSection.rows.find(row => row.id == element.rowId);
+      if (foundRow) {
+        const foundColumn = foundRow.columns.find(
+          col => col.id == element.columnId
+        );
+        if (foundColumn) {
+          foundColumn.elements = element.item;
+        }
+      }
     }
   }
 };
