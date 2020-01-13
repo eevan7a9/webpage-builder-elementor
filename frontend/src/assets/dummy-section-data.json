@@ -15,8 +15,12 @@
                                     "id": 6232,
                                     "name": "Text Editor",
                                     "el": "Text",
+                                    "new": true,
                                     "icon": "text-icon.svg",
-                                    "options": {}
+                                    "content": {
+                                        "text": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+                                        "class": ""
+                                    }
                                 }
                             ]
                         },
@@ -28,8 +32,12 @@
                                     "id": 1321,
                                     "name": "Heading",
                                     "el": "Heading",
+                                    "new": true,
                                     "icon": "heading-icon.svg",
-                                    "options": {}
+                                    "content": {
+                                        "text": "Heading Text",
+                                        "class": ""
+                                    }
                                 }
                             ]
                         },
@@ -41,15 +49,23 @@
                                     "id": 1142,
                                     "name": "Heading",
                                     "el": "Heading",
+                                    "new": true,
                                     "icon": "heading-icon.svg",
-                                    "options": {}
+                                    "content": {
+                                        "text": "Heading Text",
+                                        "class": ""
+                                    }
                                 },
                                 {
                                     "id": 4232,
                                     "name": "Text Editor",
                                     "el": "Text",
+                                    "new": true,
                                     "icon": "text-icon.svg",
-                                    "options": {}
+                                    "content": {
+                                        "text": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+                                        "class": ""
+                                    }
                                 }
                             ]
                         }
@@ -72,15 +88,35 @@
                                     "id": 14521,
                                     "name": "Heading",
                                     "el": "Heading",
+                                    "new": true,
                                     "icon": "heading-icon.svg",
-                                    "options": {}
+                                    "content": {
+                                        "text": "Heading Text",
+                                        "class": ""
+                                    }
                                 },
                                 {
                                     "id": 3313,
                                     "name": "List",
                                     "el": "List",
+                                    "new": true,
                                     "icon": "lists-icon.svg",
-                                    "options": {}
+                                    "content": {
+                                        "title": "Phasellus eu risus fringilla, sodales odio at, iaculis ex.",
+                                        "list": [
+                                            {
+                                                "id": 1,
+                                                "text": "Lorem ipsum dolor sit amet",
+                                                "class": ""
+                                            },
+                                            {
+                                                "id": 2,
+                                                "text": "In ut nulla posuere, euismod sapien at",
+                                                "class": ""
+                                            }
+                                        ],
+                                        "class": ""
+                                    }
                                 }
                             ]
                         }

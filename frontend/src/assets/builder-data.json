@@ -4,43 +4,79 @@
             "id": 1,
             "name": "Heading",
             "el": "Heading",
+            "new": true,
             "icon": "heading-icon.svg",
-            "options": {}
+            "content": {
+                "text": "Heading Text",
+                "class": ""
+            }
         },
         {
             "id": 2,
             "name": "Text Editor",
             "el": "Text",
+            "new": true,
             "icon": "text-icon.svg",
-            "options": {}
+            "content": {
+                "text": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+                "class": ""
+            }
         },
         {
             "id": 3,
             "name": "List",
             "el": "List",
+            "new": true,
             "icon": "lists-icon.svg",
-            "options": {}
+            "content": {
+                "title": "Phasellus eu risus fringilla, sodales odio at, iaculis ex.",
+                "list": [
+                    {
+                        "id": 1,
+                        "text": "Lorem ipsum dolor sit amet",
+                        "class": ""
+                    },
+                    {
+                        "id": 2,
+                        "text": "In ut nulla posuere, euismod sapien at",
+                        "class": ""
+                    }
+                ],
+                "class": ""
+            }
         },
         {
             "id": 4,
             "name": "Button",
             "el": "Button",
+            "new": true,
             "icon": "button-icon.svg",
-            "options": {}
+            "content": {
+                "text": "Button",
+                "link": "https://github.com/eevan7a9/",
+                "class": ""
+            }
         },
         {
             "id": 5,
             "name": "Image",
             "el": "Image",
+            "new": true,
             "icon": "image-icon.svg",
-            "options": {}
+            "content": {
+                "text": "Image Title",
+                "src": "https://i.picsum.photos/id/866/400/300.jpg"
+            }
         },
         {
             "id": 6,
             "name": "Spacer",
             "el": "Spacer",
+            "new": true,
             "icon": "spacer-icon.svg",
-            "options": {}
+            "content": {
+                "class": "my-5"
+            }
         }
     ],
     "layouts": [
