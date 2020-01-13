@@ -58,7 +58,8 @@ export default {
       },
       set(value) {
         const element = {
-          elements: value,
+          // we create new instance of the array from value
+          elements: JSON.parse(JSON.stringify(value)),
           columnId: this.columnId,
           rowId: this.rowId,
           sectionId: this.sectionId

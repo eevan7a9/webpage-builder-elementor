@@ -77,6 +77,12 @@ const actions = {
   //  Sections Elements *************************************
 
   updateElements: ({ commit }, { elements, columnId, rowId, sectionId }) => {
+    // we find the newly added element
+    const foundElement = elements.find(el => el.new == true);
+    if (foundElement) {
+      foundElement.id = toTimestamp(new Date()); // assign new unique ID
+      foundElement.new = false; // element is now not new
+    }
     commit("setElements", {
       item: elements,
       columnId: columnId,

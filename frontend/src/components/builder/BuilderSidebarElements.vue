@@ -31,9 +31,6 @@ export default {
   },
   computed: {
     ...mapGetters(["getWidgets"])
-  },
-  created() {
-    console.log(this.getWidgets);
   }
 };
 </script>
