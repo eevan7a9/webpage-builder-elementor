@@ -1,6 +1,11 @@
 <template>
   <div class="elements-wrapper">
-    <div class="row m-auto">
+    <draggable
+      :sort="false"
+      class="row m-auto"
+      v-model="getWidgets"
+      :group="{ name: 'group-elements', pull: 'clone', put: false }"
+    >
       <div
         class="col-6 my-2"
         v-for="(widget, index) in getWidgets"
@@ -13,13 +18,17 @@
           }}</small>
         </div>
       </div>
-    </div>
+    </draggable>
   </div>
 </template>
 
 <script>
+import draggable from "vuedraggable";
 import { mapGetters } from "vuex";
 export default {
+  components: {
+    draggable
+  },
   computed: {
     ...mapGetters(["getWidgets"])
   },
