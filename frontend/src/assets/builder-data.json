@@ -1,0 +1,185 @@
+{
+    "widgets": [
+        {
+            "id": 1,
+            "name": "Heading",
+            "el": "Heading",
+            "icon": "heading-icon.svg",
+            "options": {}
+        },
+        {
+            "id": 2,
+            "name": "Text Editor",
+            "el": "Text",
+            "icon": "text-icon.svg",
+            "options": {}
+        },
+        {
+            "id": 3,
+            "name": "List",
+            "el": "List",
+            "icon": "lists-icon.svg",
+            "options": {}
+        },
+        {
+            "id": 4,
+            "name": "Button",
+            "el": "Button",
+            "icon": "button-icon.svg",
+            "options": {}
+        },
+        {
+            "id": 5,
+            "name": "Image",
+            "el": "Image",
+            "icon": "image-icon.svg",
+            "options": {}
+        },
+        {
+            "id": 6,
+            "name": "Spacer",
+            "el": "Spacer",
+            "icon": "spacer-icon.svg",
+            "options": {}
+        }
+    ],
+    "layouts": [
+        {
+            "label": "6/12 ~ 6/12",
+            "layout": true,
+            "columns": [
+                {
+                    "id": 1,
+                    "grid": "col-md-6",
+                    "elements": []
+                },
+                {
+                    "id": 2,
+                    "grid": "col-md-6",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "label": "4/12 ~ 8/12",
+            "layout": true,
+            "columns": [
+                {
+                    "id": 1,
+                    "grid": "col-md-4",
+                    "elements": []
+                },
+                {
+                    "id": 2,
+                    "grid": "col-md-8",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "label": "3/12 ~ 9/12",
+            "layout": true,
+            "columns": [
+                {
+                    "id": 1,
+                    "grid": "col-md-3",
+                    "elements": []
+                },
+                {
+                    "id": 2,
+                    "grid": "col-md-9",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "label": "3/12(2) ~ 6/12",
+            "layout": true,
+            "columns": [
+                {
+                    "id": 1,
+                    "grid": "col-md-3",
+                    "elements": []
+                },
+                {
+                    "id": 2,
+                    "grid": "col-md-6",
+                    "elements": []
+                },
+                {
+                    "id": 3,
+                    "grid": "col-md-3",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "label": "2/12 ~ 4/12 ~ 6/12",
+            "layout": true,
+            "columns": [
+                {
+                    "id": 1,
+                    "grid": "col-md-2",
+                    "elements": []
+                },
+                {
+                    "id": 2,
+                    "grid": "col-md-4",
+                    "elements": []
+                },
+                {
+                    "id": 3,
+                    "grid": "col-md-6",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "label": "2/12 ~ 5/12(2)",
+            "layout": true,
+            "columns": [
+                {
+                    "id": 1,
+                    "grid": "col-md-2",
+                    "elements": []
+                },
+                {
+                    "id": 2,
+                    "grid": "col-md-5",
+                    "elements": []
+                },
+                {
+                    "id": 3,
+                    "grid": "col-md-5",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "label": "2/12(3) ~ 6/12",
+            "layout": true,
+            "columns": [
+                {
+                    "id": 1,
+                    "grid": "col-md-2",
+                    "elements": []
+                },
+                {
+                    "id": 2,
+                    "grid": "col-md-2",
+                    "elements": []
+                },
+                {
+                    "id": 3,
+                    "grid": "col-md-2",
+                    "elements": []
+                },
+                {
+                    "id": 4,
+                    "grid": "col-md-6",
+                    "elements": []
+                }
+            ]
+        }
+    ]
+}

@@ -1,78 +1,8 @@
 import { getLatestId, toTimestamp } from "@/assets/scripts/evan-custom.js";
+import dummySectionData from "@/assets/dummy-section-data.json";
 
 const state = {
-  sections: [
-    {
-      id: 1,
-      rows: [
-        {
-          id: 1,
-          layout: true,
-          columns: [
-            {
-              id: 1,
-              grid: "col-md-8",
-              elements: [
-                {
-                  id: 131,
-                  elementName: "something"
-                }
-              ]
-            },
-            {
-              id: 2,
-              grid: "col-md-2",
-              elements: [
-                {
-                  id: 132,
-                  elementName: "something"
-                }
-              ]
-            },
-            {
-              id: 3,
-              grid: "col-md-2",
-              elements: [
-                {
-                  id: 12,
-                  elementName: "something"
-                },
-                {
-                  id: 13,
-                  elementName: "something"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          id: 2,
-          layout: false,
-          columns: [
-            {
-              id: 1,
-              grid: null,
-              elements: []
-            },
-            {
-              id: 2,
-              grid: null,
-              elements: [
-                {
-                  id: 51,
-                  elementName: "something"
-                },
-                {
-                  id: 52,
-                  elementName: "something"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ]
+  sections: dummySectionData.sections
 };
 
 const getters = {

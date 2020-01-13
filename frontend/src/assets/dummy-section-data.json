@@ -1,0 +1,92 @@
+{
+    "sections": [
+        {
+            "id": 1,
+            "rows": [
+                {
+                    "id": 1,
+                    "layout": true,
+                    "columns": [
+                        {
+                            "id": 1,
+                            "grid": "col-md-8",
+                            "elements": [
+                                {
+                                    "id": 6232,
+                                    "name": "Text Editor",
+                                    "el": "Text",
+                                    "icon": "text-icon.svg",
+                                    "options": {}
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "grid": "col-md-2",
+                            "elements": [
+                                {
+                                    "id": 1321,
+                                    "name": "Heading",
+                                    "el": "Heading",
+                                    "icon": "heading-icon.svg",
+                                    "options": {}
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "grid": "col-md-2",
+                            "elements": [
+                                {
+                                    "id": 1142,
+                                    "name": "Heading",
+                                    "el": "Heading",
+                                    "icon": "heading-icon.svg",
+                                    "options": {}
+                                },
+                                {
+                                    "id": 4232,
+                                    "name": "Text Editor",
+                                    "el": "Text",
+                                    "icon": "text-icon.svg",
+                                    "options": {}
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "layout": false,
+                    "columns": [
+                        {
+                            "id": 1,
+                            "grid": null,
+                            "elements": []
+                        },
+                        {
+                            "id": 2,
+                            "grid": null,
+                            "elements": [
+                                {
+                                    "id": 14521,
+                                    "name": "Heading",
+                                    "el": "Heading",
+                                    "icon": "heading-icon.svg",
+                                    "options": {}
+                                },
+                                {
+                                    "id": 3313,
+                                    "name": "List",
+                                    "el": "List",
+                                    "icon": "lists-icon.svg",
+                                    "options": {}
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
