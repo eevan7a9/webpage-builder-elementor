@@ -64,7 +64,7 @@ export default {
     }
   }
   .item-content {
-    border: 3px solid #b5b5b5;
+    border: 2px solid #b5b5b5;
   }
   &:hover {
     .section-options {
@@ -74,6 +74,8 @@ export default {
         width: 35px;
         transition: 0.5s;
         background: #17a2b8;
+        border-color: #17a2b8;
+        border-radius: 0;
         img {
           height: 18px;
           width: 18px;

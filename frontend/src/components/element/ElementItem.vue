@@ -1,5 +1,5 @@
 <template>
-  <div class="element-item">
+  <div class="element-item-wrapper">
     <div class="item">
       {{ element }} , {{ columnId }}, {{ rowId }}, {{ sectionId }}
     </div>
@@ -17,4 +17,4 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped></style>

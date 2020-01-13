@@ -1,23 +1,23 @@
 <template>
-  <div class="column-item h-100">
+  <div class="column-item h-100 d-flex flex-column justify-content-center">
+    <div class="column-options d-flex justify-content-left">
+      <button
+        class="btn text-light p-1 border column-handle d-flex justify-content-center align-items-center"
+        v-b-tooltip.hover
+        title="Move Column"
+      >
+        <img src="@/assets/icons/handler-icon.svg" />
+      </button>
+      <button
+        class="btn text-light  p-1 border remove d-flex justify-content-center align-items-center"
+        @click="removeColumn"
+        v-b-tooltip.hover
+        title="Delete"
+      >
+        <img src="@/assets/icons/trash-icon.svg" />
+      </button>
+    </div>
     <div class="item-content h-100">
-      <div class="column-options d-flex justify-content-left mr-1">
-        <button
-          class="btn text-light p-1 border column-handle d-flex justify-content-center align-items-center"
-          v-b-tooltip.hover
-          title="Move Column"
-        >
-          <img src="@/assets/icons/handler-icon.svg" />
-        </button>
-        <button
-          class="btn text-light  p-1 border remove d-flex justify-content-center align-items-center"
-          @click="removeColumn"
-          v-b-tooltip.hover
-          title="Delete"
-        >
-          <img src="@/assets/icons/trash-icon.svg" />
-        </button>
-      </div>
       <ElementList
         :elements="column.elements"
         :columnId="column.id"
@@ -56,7 +56,7 @@ export default {
 <style lang="scss" scoped>
 .column-item {
   .column-options {
-    position: absolute;
+    position: relative;
     visibility: hidden;
     button {
       height: 0;

@@ -4,14 +4,14 @@
       class="row-options d-flex justify-content-center mr-1"
       v-if="row.columns.length"
     >
-      <button class="btn text-light p-1 pb-2 border row-handle">
+      <button class="text-light p-1 pb-2 border row-handle">
         <img src="@/assets/icons/handler-icon.svg" />
       </button>
-      <button class="btn text-light p-1 pb-2 border add" @click="newColumn">
+      <button class="text-light p-1 pb-2 border add" @click="newColumn">
         <img src="@/assets/icons/add-icon.svg" />
       </button>
       <button
-        class="btn text-light  p-1 pb-2 border remove"
+        class="text-light  p-1 pb-2 border remove"
         @click="deleteRow({ rowId: row.id, sectionId: sectionId })"
       >
         <img src="@/assets/icons/trash-icon.svg" />
@@ -101,6 +101,8 @@ export default {
         width: 33px;
         transition: 0.5s;
         background: #17a2b8;
+        border-color: #17a2b8;
+        border-radius: 0;
         img {
           height: 16px;
           width: 16px;
@@ -119,7 +121,7 @@ export default {
       }
     }
     .item-content {
-      border: 3px dashed #17a2b8;
+      border: 2px dashed #17a2b8;
     }
   }
 }
