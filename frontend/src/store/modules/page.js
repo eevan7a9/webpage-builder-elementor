@@ -15,12 +15,7 @@ const actions = {
     const latestSectionId = getLatestId(state.sections);
     const newSection = {
       id: latestSectionId + 1,
-      rows: [
-        {
-          id: toTimestamp(new Date()),
-          columns: []
-        }
-      ]
+      columns: []
     };
     commit("insertSection", newSection);
   },
@@ -50,33 +45,32 @@ const actions = {
   deleteRow: ({ commit }, { rowId, sectionId }) => {
     commit("removeRow", { rowId: rowId, sectionId: sectionId });
   },
-  addRowColumns: ({ commit }, { row, sectionId }) => {
-    commit("setRowColumns", { row: row, sectionId: sectionId });
+  addSectionColumns: ({ commit }, { layout, sectionId }) => {
+    commit("setSectionColumns", { id: sectionId, sectionLayout: layout });
+    // commit("setRowColumns", { row: row, sectionId: sectionId });
   },
 
   //  Sections Columns *************************************
 
-  updateColumns: ({ commit }, { column, rowId, sectionId }) => {
-    commit("setColumns", { item: column, rowId: rowId, sectionId: sectionId });
+  updateColumns: ({ commit }, { column, sectionId }) => {
+    commit("setColumns", { item: column, sectionId: sectionId });
   },
-  deleteColumnContent: ({ commit }, { columnId, rowId, sectionId }) => {
+  deleteColumnContent: ({ commit }, { columnId, sectionId }) => {
     commit("removeColumnContent", {
       columnId: columnId,
-      rowId: rowId,
       sectionId: sectionId
     });
   },
-  addColumn: ({ commit }, { column, rowId, sectionId }) => {
+  addColumn: ({ commit }, { column, sectionId }) => {
     commit("insertColumn", {
       column: column,
-      rowId: rowId,
       sectionId: sectionId
     });
   },
 
   //  Sections Elements *************************************
 
-  updateElements: ({ commit }, { elements, columnId, rowId, sectionId }) => {
+  updateElements: ({ commit }, { elements, columnId, sectionId }) => {
     // we find the newly added element
     const foundElement = elements.find(el => el.new == true);
     if (foundElement) {
@@ -86,9 +80,9 @@ const actions = {
     commit("setElements", {
       item: elements,
       columnId: columnId,
-      rowId: rowId,
       sectionId: sectionId
     });
+    console.log(foundElement);
   }
 };
 
@@ -118,38 +112,33 @@ const mutations = {
       foundSection.rows = foundSection.rows.filter(row => row.id != data.rowId);
     }
   },
-  setRowColumns: (statem, data) => {
-    const foundSection = state.sections.find(sec => sec.id == data.sectionId);
+  setSectionColumns: (state, section) => {
+    const foundSection = state.sections.find(sec => sec.id == section.id);
     if (foundSection) {
-      let foundRow = foundSection.rows.find(row => row.id == data.row.id);
-      foundRow.labe = data.row.label;
-      foundRow.layout = data.row.layout;
-      foundRow.columns = data.row.columns;
+      foundSection.label = section.sectionLayout.label;
+      foundSection.layout = section.sectionLayout.layout;
+      foundSection.columns = section.sectionLayout.columns;
     }
   },
   //  COLUMNS STARTS
   setColumns: (state, column) => {
     const foundSection = state.sections.find(sec => sec.id == column.sectionId);
     if (foundSection) {
-      const foundRow = foundSection.rows.find(row => row.id == column.rowId);
-      if (foundRow) {
-        foundRow.columns = column.item;
-      }
+      foundSection.columns = column.item;
     }
   },
   removeColumnContent: (state, data) => {
     const foundSection = state.sections.find(sec => sec.id == data.sectionId);
     if (foundSection) {
-      const foundRow = foundSection.rows.find(row => row.id == data.rowId);
-      if (foundRow.layout) {
-        const foundColumn = foundRow.columns.find(
+      if (foundSection.layout) {
+        const foundColumn = foundSection.columns.find(
           col => col.id == data.columnId
         );
         if (foundColumn) {
           foundColumn.elements = [];
         }
       } else {
-        foundRow.columns = foundRow.columns.filter(
+        foundSection.columns = foundSection.columns.filter(
           col => col.id != data.columnId
         );
       }
@@ -158,8 +147,7 @@ const mutations = {
   insertColumn: (state, data) => {
     const foundSection = state.sections.find(sec => sec.id == data.sectionId);
     if (foundSection) {
-      let foundRow = foundSection.rows.find(row => row.id == data.rowId);
-      foundRow.columns.push(data.column);
+      foundSection.columns.push(data.column);
     }
   },
   //  ElEMENTSS START
@@ -168,14 +156,11 @@ const mutations = {
       sec => sec.id == element.sectionId
     );
     if (foundSection) {
-      const foundRow = foundSection.rows.find(row => row.id == element.rowId);
-      if (foundRow) {
-        const foundColumn = foundRow.columns.find(
-          col => col.id == element.columnId
-        );
-        if (foundColumn) {
-          foundColumn.elements = element.item;
-        }
+      const foundColumn = foundSection.columns.find(
+        col => col.id == element.columnId
+      );
+      if (foundColumn) {
+        foundColumn.elements = element.item;
       }
     }
   }

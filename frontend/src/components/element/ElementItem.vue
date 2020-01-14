@@ -1,8 +1,6 @@
 <template>
   <div class="element-item-wrapper">
-    <div class="item">
-      {{ element }} , {{ columnId }}, {{ rowId }}, {{ sectionId }}
-    </div>
+    <div class="item">{{ element }} , {{ columnId }}, {{ sectionId }}</div>
   </div>
 </template>
 
@@ -11,7 +9,7 @@ export default {
   props: {
     element: Object,
     columnId: Number,
-    rowId: Number,
+
     sectionId: Number
   }
 };

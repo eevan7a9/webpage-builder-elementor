@@ -21,7 +21,6 @@
       <ElementList
         :elements="column.elements"
         :columnId="column.id"
-        :rowId="rowId"
         :sectionId="sectionId"
       />
     </div>
@@ -37,7 +36,6 @@ export default {
   },
   props: {
     column: Object,
-    rowId: Number,
     sectionId: Number
   },
   methods: {
@@ -45,7 +43,6 @@ export default {
     removeColumn() {
       this.deleteColumnContent({
         columnId: this.column.id,
-        rowId: this.rowId,
         sectionId: this.sectionId
       });
     }

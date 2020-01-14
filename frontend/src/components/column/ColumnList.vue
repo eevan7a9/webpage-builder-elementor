@@ -1,21 +1,18 @@
 <template>
   <div class="columns-wrapper ">
-    <!-- <div v-for="column in myColumns" :key="column.id" class="w-100 p-1">
-      <ColumnItem :column="column" :rowId="rowId" :sectionId="sectionId" />
-    </div> -->
     <draggable v-model="myColumns" v-bind="dragOptions" handle=".column-handle">
       <transition-group
         type="transition"
         name="flip-list"
-        :class="rowLayout ? 'row m-auto' : 'd-md-flex'"
+        :class="sectionLayout ? 'row m-auto' : 'd-md-flex'"
       >
         <div
           class="w-100 p-0"
           v-for="column in myColumns"
           :key="column.id"
-          :class="rowLayout ? `${column.grid}` : ``"
+          :class="sectionLayout ? `${column.grid}` : ``"
         >
-          <ColumnItem :column="column" :rowId="rowId" :sectionId="sectionId" />
+          <ColumnItem :column="column" :sectionId="sectionId" />
         </div>
       </transition-group>
     </draggable>
@@ -32,8 +29,7 @@ export default {
   },
   props: {
     columns: Array,
-    rowLayout: Boolean,
-    rowId: Number,
+    sectionLayout: Boolean,
     sectionId: Number
   },
   computed: {
@@ -45,7 +41,6 @@ export default {
         // this.$store.commit("setColumns", value);
         this.$store.dispatch("updateColumns", {
           column: value,
-          rowId: this.rowId,
           sectionId: this.sectionId
         });
       }

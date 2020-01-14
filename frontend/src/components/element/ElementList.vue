@@ -6,7 +6,6 @@
           <ElementItem
             :element="element"
             :columnId="columnId"
-            :rowId="rowId"
             :sectionId="sectionId"
           />
         </div>
@@ -48,7 +47,6 @@ export default {
   props: {
     elements: Array,
     columnId: Number,
-    rowId: Number,
     sectionId: Number
   },
   computed: {
@@ -61,7 +59,6 @@ export default {
           // we create new instance of the array from value
           elements: JSON.parse(JSON.stringify(value)),
           columnId: this.columnId,
-          rowId: this.rowId,
           sectionId: this.sectionId
         };
         this.$store.dispatch("updateElements", element);

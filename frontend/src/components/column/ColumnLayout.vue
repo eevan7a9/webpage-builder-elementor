@@ -39,7 +39,6 @@
 import { mapActions, mapGetters } from "vuex";
 export default {
   props: {
-    rowId: Number,
     sectionId: Number
   },
   computed: {
@@ -61,13 +60,10 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["addRowColumns"]),
+    ...mapActions(["addSectionColumns"]),
     selectSet(set) {
-      set.id = this.rowId;
-      this.addRowColumns({
-        row: set,
-        sectionId: this.sectionId
-      });
+      const layout = JSON.parse(JSON.stringify(set));
+      this.addSectionColumns({ layout: layout, sectionId: this.sectionId });
     }
   }
 };
