@@ -12,10 +12,10 @@ const getters = {
 const actions = {
   addSection: ({ commit, state }) => {
     // we get the id of the highest/latest id in sections
-    const latestSectionId = getLatestId(state.sections);
-    console.log(latestSectionId);
+    let latestSectionId = getLatestId(state.sections);
+    latestSectionId = latestSectionId > 0 ? latestSectionId + 1 : 1;
     const newSection = {
-      id: latestSectionId + 1,
+      id: latestSectionId,
       columns: []
     };
     commit("insertSection", newSection);
