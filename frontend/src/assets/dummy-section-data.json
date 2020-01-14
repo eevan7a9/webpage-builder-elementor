@@ -11,7 +11,7 @@
                         {
                             "id": 6232,
                             "name": "Text Editor",
-                            "el": "Text",
+                            "widget": "TextWidget",
                             "new": false,
                             "icon": "text-icon.svg",
                             "content": {
@@ -28,7 +28,7 @@
                         {
                             "id": 1321,
                             "name": "Heading",
-                            "el": "Heading",
+                            "widget": "HeadingWidget",
                             "new": false,
                             "icon": "heading-icon.svg",
                             "content": {
@@ -45,7 +45,7 @@
                         {
                             "id": 1142,
                             "name": "Heading",
-                            "el": "Heading",
+                            "widget": "HeadingWidget",
                             "new": false,
                             "icon": "heading-icon.svg",
                             "content": {
@@ -56,7 +56,7 @@
                         {
                             "id": 4232,
                             "name": "Text Editor",
-                            "el": "Text",
+                            "widget": "TextWidget",
                             "new": false,
                             "icon": "text-icon.svg",
                             "content": {
@@ -84,7 +84,7 @@
                         {
                             "id": 14521,
                             "name": "Heading",
-                            "el": "Heading",
+                            "widget": "HeadingWidget",
                             "new": false,
                             "icon": "heading-icon.svg",
                             "content": {
@@ -95,7 +95,7 @@
                         {
                             "id": 3313,
                             "name": "List",
-                            "el": "List",
+                            "widget": "ListWidget",
                             "new": false,
                             "icon": "lists-icon.svg",
                             "content": {

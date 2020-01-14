@@ -3,7 +3,7 @@
         {
             "id": 1,
             "name": "Heading",
-            "el": "Heading",
+            "widget": "HeadingWidget",
             "new": true,
             "icon": "heading-icon.svg",
             "content": {
@@ -14,7 +14,7 @@
         {
             "id": 2,
             "name": "Text Editor",
-            "el": "Text",
+            "widget": "TextWidget",
             "new": true,
             "icon": "text-icon.svg",
             "content": {
@@ -25,7 +25,7 @@
         {
             "id": 3,
             "name": "List",
-            "el": "List",
+            "widget": "ListWidget",
             "new": true,
             "icon": "lists-icon.svg",
             "content": {
@@ -48,7 +48,7 @@
         {
             "id": 4,
             "name": "Button",
-            "el": "Button",
+            "widget": "ButtonWidget",
             "new": true,
             "icon": "button-icon.svg",
             "content": {
@@ -60,7 +60,7 @@
         {
             "id": 5,
             "name": "Image",
-            "el": "Image",
+            "widget": "ImageWidget",
             "new": true,
             "icon": "image-icon.svg",
             "content": {
@@ -71,7 +71,7 @@
         {
             "id": 6,
             "name": "Spacer",
-            "el": "Spacer",
+            "widget": "SpacerWidget",
             "new": true,
             "icon": "spacer-icon.svg",
             "content": {
