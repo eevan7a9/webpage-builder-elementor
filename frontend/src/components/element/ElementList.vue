@@ -10,7 +10,7 @@
           />
         </div>
         <div
-          class="empty w-100 p-1 h-100 d-flex justify-content-center align-items-center"
+          class="empty w-100 h-100 d-flex justify-content-center align-items-center"
           :key="1"
           v-if="myElements.length < 1"
         >

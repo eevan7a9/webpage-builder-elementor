@@ -1,12 +1,40 @@
 <template>
-  <div class="element-item-wrapper">
-    <component
-      :is="selectedComponent"
-      :content="element.content"
-      :elementId="element.id"
-      :columnId="columnId"
-      :sectionId="sectionId"
-    />
+  <div class="element-item-wrapper" @mouseleave="showOptions = false">
+    <div class="widget-wrapper">
+      <div class="widget-options d-flex justify-content-end w-100">
+        <button
+          class="text-light p-1 border column-handle d-flex justify-content-center align-items-center"
+          v-b-tooltip.hover
+          title="Move Widget"
+          v-if="showOptions"
+        >
+          <img src="@/assets/icons/handler-icon.svg" />
+        </button>
+        <button
+          class="text-light  p-1 border remove d-flex justify-content-center align-items-center"
+          v-b-tooltip.hover
+          title="Delete Widget"
+          v-if="showOptions"
+        >
+          <img src="@/assets/icons/trash-icon.svg" />
+        </button>
+        <button
+          class="text-light  p-1 border more d-flex justify-content-center align-items-center"
+          v-b-tooltip.hover
+          title="Show Options"
+          @click="showOptions = !showOptions"
+        >
+          <img src="@/assets/icons/more-vertical-icon.svg" />
+        </button>
+      </div>
+      <component
+        :is="selectedComponent"
+        :content="element.content"
+        :elementId="element.id"
+        :columnId="columnId"
+        :sectionId="sectionId"
+      />
+    </div>
   </div>
 </template>
 
@@ -28,7 +56,8 @@ export default {
   },
   data() {
     return {
-      selectedComponent: "TextWidget"
+      selectedComponent: "TextWidget",
+      showOptions: false
     };
   },
   props: {
@@ -42,4 +71,63 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.element-item-wrapper {
+  position: relative;
+  .widget-options {
+    position: relative;
+    visibility: hidden;
+    button {
+      height: 0;
+      width: 0;
+      transition: 0.5s;
+      &.more {
+        background: #333;
+      }
+      img {
+        height: 0;
+        width: 0;
+        transition: 0.5s;
+      }
+    }
+  }
+  .widget-wrapper {
+    border: 2px dotted #b5b5b5;
+  }
+  &:hover {
+    .widget-options {
+      position: absolute;
+      visibility: visible;
+      button {
+        position: relative;
+        height: 28px;
+        width: 31px;
+        transition: 0.5s;
+        background: #17a2b8;
+        border: none;
+        img {
+          height: 13px;
+          width: 13px;
+          transition: 0.5s;
+        }
+        &.add:hover {
+          background: #28a745;
+        }
+        &.remove:hover {
+          background: #dc3545;
+        }
+        &.more:hover {
+          background: #17a2b8;
+        }
+        &.column-handle:hover {
+          cursor: grab;
+          background: #17a2b8;
+        }
+      }
+    }
+    .widget-wrapper {
+      border: 3px dotted #17a2b8;
+    }
+  }
+}
+</style>
