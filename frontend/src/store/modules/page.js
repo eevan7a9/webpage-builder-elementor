@@ -26,26 +26,6 @@ const actions = {
   updateSections: ({ commit }, value) => {
     commit("setSections", value);
   },
-
-  //  Sections Rows *************************************
-
-  addRow: ({ commit, state }, sectionId) => {
-    //  we get the section we want to add the row
-    const section = state.sections.find(sec => sec.id === sectionId);
-    if (section) {
-      const newRow = {
-        id: toTimestamp(new Date()) + section.rows.length,
-        columns: []
-      };
-      commit("insertRow", { item: newRow, sectionId: sectionId });
-    }
-  },
-  updateRow: ({ commit }, { rows, sectionId }) => {
-    commit("setRows", { item: rows, sectionId: sectionId });
-  },
-  deleteRow: ({ commit }, { rowId, sectionId }) => {
-    commit("removeRow", { rowId: rowId, sectionId: sectionId });
-  },
   addSectionColumns: ({ commit }, { layout, sectionId }) => {
     commit("setSectionColumns", { id: sectionId, sectionLayout: layout });
     // commit("setRowColumns", { row: row, sectionId: sectionId });
@@ -83,7 +63,6 @@ const actions = {
       columnId: columnId,
       sectionId: sectionId
     });
-    console.log(foundElement);
   }
 };
 
@@ -93,26 +72,6 @@ const mutations = {
   insertSection: (state, section) => state.sections.push(section),
   removeSection: (state, id) =>
     (state.sections = state.sections.filter(section => section.id != id)),
-  // ROWS STARTS
-  insertRow: (state, row) => {
-    const foundSection = state.sections.find(sec => sec.id === row.sectionId);
-    if (foundSection) {
-      foundSection.rows.push(row.item);
-    }
-  },
-  setRows: (state, rows) => {
-    const foundSection = state.sections.find(sec => sec.id == rows.sectionId);
-    if (foundSection) {
-      foundSection.rows = rows.item;
-      console.log(rows);
-    }
-  },
-  removeRow: (state, data) => {
-    let foundSection = state.sections.find(sec => sec.id == data.sectionId);
-    if (foundSection) {
-      foundSection.rows = foundSection.rows.filter(row => row.id != data.rowId);
-    }
-  },
   setSectionColumns: (state, section) => {
     const foundSection = state.sections.find(sec => sec.id == section.id);
     if (foundSection) {
