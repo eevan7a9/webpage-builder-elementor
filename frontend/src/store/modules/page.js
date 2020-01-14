@@ -13,6 +13,7 @@ const actions = {
   addSection: ({ commit, state }) => {
     // we get the id of the highest/latest id in sections
     const latestSectionId = getLatestId(state.sections);
+    console.log(latestSectionId);
     const newSection = {
       id: latestSectionId + 1,
       columns: []
