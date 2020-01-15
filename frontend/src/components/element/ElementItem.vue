@@ -15,6 +15,7 @@
           v-b-tooltip.hover
           title="Delete Widget"
           v-if="showOptions"
+          @click="remove"
         >
           <img src="@/assets/icons/trash-icon.svg" />
         </button>
@@ -45,6 +46,7 @@ import ListWidget from "@/components/widgets/ListWidget.vue";
 import ButtonWidget from "@/components/widgets/ButtonWidget.vue";
 import SpacerWidget from "@/components/widgets/SpacerWidget.vue";
 import ImageWidget from "@/components/widgets/ImageWidget.vue";
+import { mapActions } from "vuex";
 export default {
   components: {
     HeadingWidget,
@@ -64,6 +66,16 @@ export default {
     element: Object,
     columnId: Number,
     sectionId: Number
+  },
+  methods: {
+    ...mapActions(["deleteElements"]),
+    remove() {
+      this.deleteElements({
+        elementId: this.element.id,
+        columnId: this.columnId,
+        sectionId: this.sectionId
+      });
+    }
   },
   created() {
     this.selectedComponent = this.element.widget;

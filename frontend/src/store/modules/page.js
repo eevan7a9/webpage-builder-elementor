@@ -63,6 +63,13 @@ const actions = {
       columnId: columnId,
       sectionId: sectionId
     });
+  },
+  deleteElements: ({ commit }, { elementId, columnId, sectionId }) => {
+    commit("removeElement", {
+      elementId: elementId,
+      columnId: columnId,
+      sectionId: sectionId
+    });
   }
 };
 
@@ -121,6 +128,19 @@ const mutations = {
       );
       if (foundColumn) {
         foundColumn.elements = element.item;
+      }
+    }
+  },
+  removeElement: (state, data) => {
+    const foundSection = state.sections.find(sec => sec.id == data.sectionId);
+    if (foundSection) {
+      const foundColumn = foundSection.columns.find(
+        col => col.id == data.columnId
+      );
+      if (foundColumn) {
+        foundColumn.elements = foundColumn.elements.filter(
+          el => el.id != data.elementId
+        );
       }
     }
   }
