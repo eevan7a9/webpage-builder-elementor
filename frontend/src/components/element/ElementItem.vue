@@ -1,6 +1,13 @@
 <template>
-  <div class="element-item-wrapper" @mouseleave="showOptions = false">
-    <div class="widget-wrapper">
+  <div
+    class="element-item-wrapper"
+    @mouseleave="showOptions = false"
+    @click="selected"
+  >
+    <div
+      class="widget-wrapper"
+      :class="{ selected: getSelectedWidget.id == element.id }"
+    >
       <div class="widget-options d-flex justify-content-end w-100">
         <button
           class="text-light p-1 border column-handle d-flex justify-content-center align-items-center"
@@ -46,7 +53,7 @@ import ListWidget from "@/components/widgets/ListWidget.vue";
 import ButtonWidget from "@/components/widgets/ButtonWidget.vue";
 import SpacerWidget from "@/components/widgets/SpacerWidget.vue";
 import ImageWidget from "@/components/widgets/ImageWidget.vue";
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 export default {
   components: {
     HeadingWidget,
@@ -67,14 +74,22 @@ export default {
     columnId: Number,
     sectionId: Number
   },
+  computed: {
+    ...mapGetters(["getSelectedWidget"])
+  },
   methods: {
-    ...mapActions(["deleteElements"]),
+    ...mapActions(["deleteElements", "selectWidget", "toggleSidebarTab"]),
     remove() {
       this.deleteElements({
         elementId: this.element.id,
         columnId: this.columnId,
         sectionId: this.sectionId
       });
+    },
+    selected() {
+      event.stopPropagation();
+      this.selectWidget(this.element);
+      this.toggleSidebarTab("settings");
     }
   },
   created() {
@@ -104,7 +119,10 @@ export default {
     }
   }
   .widget-wrapper {
-    border: 2px dotted #b5b5b5;
+    border: 1px dotted #b5b5b5;
+    &.selected {
+      border: 3px solid #17a2b8;
+    }
   }
   &:hover {
     .widget-options {
@@ -138,7 +156,10 @@ export default {
       }
     }
     .widget-wrapper {
-      border: 3px dotted #17a2b8;
+      border: 1px dotted #17a2b8;
+      &.selected {
+        border: 3px solid #17a2b8;
+      }
     }
   }
 }

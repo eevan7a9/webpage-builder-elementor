@@ -1,5 +1,5 @@
 <template>
-  <div class="element-wrapper h-100">
+  <div class="element-wrapper h-100" @click="selectElList">
     <draggable v-model="myElements" v-bind="dragOptions" class="h-100">
       <transition-group type="transition" name="flip-list">
         <div v-for="element in myElements" :key="element.id" class="w-100 p-1">
@@ -39,6 +39,7 @@
 <script>
 import ElementItem from "@/components/element/ElementItem.vue";
 import draggable from "vuedraggable";
+import { mapActions } from "vuex";
 export default {
   components: {
     draggable,
@@ -71,6 +72,13 @@ export default {
         disabled: false,
         ghostClass: "ghost"
       };
+    }
+  },
+  methods: {
+    ...mapActions(["selectWidget", "toggleSidebarTab"]),
+    selectElList() {
+      this.selectWidget({});
+      this.toggleSidebarTab("elements");
     }
   }
 };
