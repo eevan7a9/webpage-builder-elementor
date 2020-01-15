@@ -1,24 +1,31 @@
 <template>
   <div class="sidebar-wrapper" :class="{ open: isSidebarOpen }">
     <BuilderSidebarTopnav />
-    <BuilderSidebarSearchbar />
-    <BuilderSidebarElements />
+    <transition name="fade" mode="out-in">
+      <div v-if="getBuilderSidebar === 'elements'">
+        <BuilderSidebarSearchbar />
+        <BuilderSidebarElements />
+      </div>
+      <BuilderSidebarSettings v-else />
+    </transition>
   </div>
 </template>
 
 <script>
 import BuilderSidebarTopnav from "@/components/builder/BuilderSidebarTopnav.vue";
-import BuilderSidebarElements from "@/components/builder/BuilderSidebarElements.vue";
 import BuilderSidebarSearchbar from "@/components/builder/BuilderSidebarSearchbar.vue";
+import BuilderSidebarElements from "@/components/builder/BuilderSidebarElements.vue";
+import BuilderSidebarSettings from "@/components/builder/BuilderSidebarSettings.vue";
 import { mapGetters } from "vuex";
 export default {
   components: {
     BuilderSidebarTopnav,
     BuilderSidebarSearchbar,
-    BuilderSidebarElements
+    BuilderSidebarElements,
+    BuilderSidebarSettings
   },
   computed: {
-    ...mapGetters(["isSidebarOpen"])
+    ...mapGetters(["isSidebarOpen", "getBuilderSidebar"])
   }
 };
 </script>
@@ -33,15 +40,17 @@ export default {
   height: 100%;
   overflow: hidden;
   width: 0;
-  div {
-    opacity: 0;
-    transition: 0.5s;
-  }
   &.open {
     width: 400px;
-    div {
-      opacity: 1;
-    }
   }
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
