@@ -33,10 +33,10 @@
       </div>
       <div
         class="m-auto p-3 border-custom w-100 text-uppercase"
-        @click="toggleSidebarTab('styles')"
-        :class="getBuilderSidebar == 'styles' ? 'active' : ''"
+        @click="toggleSidebarTab('settings')"
+        :class="getBuilderSidebar == 'settings' ? 'active' : ''"
       >
-        Styles
+        Settings
       </div>
     </div>
   </div>

@@ -1,5 +1,6 @@
 <template>
   <div class="elements-wrapper">
+    <p class="p-0 m-0 ml-1 text-left text-muted">Common Widgets</p>
     <draggable
       :sort="false"
       class="row m-auto"
@@ -37,6 +38,9 @@ export default {
 
 <style lang="scss" scoped>
 .elements-wrapper {
+  overflow: auto;
+  max-height: 98%;
+
   .row {
     .widgets {
       cursor: grab;

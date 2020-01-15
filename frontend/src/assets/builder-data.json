@@ -1,84 +1,86 @@
 {
-    "widgets": [
-        {
-            "id": 1,
-            "name": "Heading",
-            "widget": "HeadingWidget",
-            "new": true,
-            "icon": "heading-icon.svg",
-            "content": {
-                "text": "Heading Text",
-                "class": ""
+    "widgets":  {
+        "common": [
+            {
+                "id": 1,
+                "name": "Heading",
+                "widget": "HeadingWidget",
+                "new": true,
+                "icon": "heading-icon.svg",
+                "content": {
+                    "text": "Heading Text",
+                    "class": ""
+                }
+            },
+            {
+                "id": 2,
+                "name": "Text Editor",
+                "widget": "TextWidget",
+                "new": true,
+                "icon": "text-icon.svg",
+                "content": {
+                    "text": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+                    "class": ""
+                }
+            },
+            {
+                "id": 3,
+                "name": "List",
+                "widget": "ListWidget",
+                "new": true,
+                "icon": "lists-icon.svg",
+                "content": {
+                    "title": "Phasellus eu risus fringilla, sodales odio at, iaculis ex.",
+                    "list": [
+                        {
+                            "id": 1,
+                            "text": "Lorem ipsum dolor sit amet",
+                            "class": ""
+                        },
+                        {
+                            "id": 2,
+                            "text": "In ut nulla posuere, euismod sapien at",
+                            "class": ""
+                        }
+                    ],
+                    "class": ""
+                }
+            },
+            {
+                "id": 4,
+                "name": "Button",
+                "widget": "ButtonWidget",
+                "new": true,
+                "icon": "button-icon.svg",
+                "content": {
+                    "text": "Button",
+                    "link": "https://github.com/eevan7a9/",
+                    "class": ""
+                }
+            },
+            {
+                "id": 5,
+                "name": "Image",
+                "widget": "ImageWidget",
+                "new": true,
+                "icon": "image-icon.svg",
+                "content": {
+                    "text": "Image Title",
+                    "src": "https://i.picsum.photos/id/866/400/300.jpg"
+                }
+            },
+            {
+                "id": 6,
+                "name": "Spacer",
+                "widget": "SpacerWidget",
+                "new": true,
+                "icon": "spacer-icon.svg",
+                "content": {
+                    "class": "my-5"
+                }
             }
-        },
-        {
-            "id": 2,
-            "name": "Text Editor",
-            "widget": "TextWidget",
-            "new": true,
-            "icon": "text-icon.svg",
-            "content": {
-                "text": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-                "class": ""
-            }
-        },
-        {
-            "id": 3,
-            "name": "List",
-            "widget": "ListWidget",
-            "new": true,
-            "icon": "lists-icon.svg",
-            "content": {
-                "title": "Phasellus eu risus fringilla, sodales odio at, iaculis ex.",
-                "list": [
-                    {
-                        "id": 1,
-                        "text": "Lorem ipsum dolor sit amet",
-                        "class": ""
-                    },
-                    {
-                        "id": 2,
-                        "text": "In ut nulla posuere, euismod sapien at",
-                        "class": ""
-                    }
-                ],
-                "class": ""
-            }
-        },
-        {
-            "id": 4,
-            "name": "Button",
-            "widget": "ButtonWidget",
-            "new": true,
-            "icon": "button-icon.svg",
-            "content": {
-                "text": "Button",
-                "link": "https://github.com/eevan7a9/",
-                "class": ""
-            }
-        },
-        {
-            "id": 5,
-            "name": "Image",
-            "widget": "ImageWidget",
-            "new": true,
-            "icon": "image-icon.svg",
-            "content": {
-                "text": "Image Title",
-                "src": "https://i.picsum.photos/id/866/400/300.jpg"
-            }
-        },
-        {
-            "id": 6,
-            "name": "Spacer",
-            "widget": "SpacerWidget",
-            "new": true,
-            "icon": "spacer-icon.svg",
-            "content": {
-                "class": "my-5"
-            }
-        }
-    ],
+        ]
+    },
     "layouts": [
         {
             "label": "6/12 ~ 6/12",

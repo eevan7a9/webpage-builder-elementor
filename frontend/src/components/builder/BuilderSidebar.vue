@@ -1,9 +1,7 @@
 <template>
   <div class="sidebar-wrapper" :class="{ open: isSidebarOpen }">
     <BuilderSidebarTopnav />
-    <div>
-      <BuilderSidebarElements />
-    </div>
+    <BuilderSidebarElements />
   </div>
 </template>
 
@@ -30,8 +28,8 @@ export default {
   z-index: 2;
   left: 0;
   height: 100%;
-  width: 0;
-  overflow-x: hidden;
+  overflow: hidden;
+
   div {
     opacity: 0;
     transition: 0.5s;

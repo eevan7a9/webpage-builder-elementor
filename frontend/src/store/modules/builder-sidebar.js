@@ -3,7 +3,7 @@ import builderData from "@/assets/builder-data.json";
 const state = {
   sidebarStatus: true,
   builderSidebarTab: "elements", // sidebar elements | styles
-  widgets: builderData.widgets
+  widgets: builderData.widgets.common
 };
 const getters = {
   isSidebarOpen: state => state.sidebarStatus,
