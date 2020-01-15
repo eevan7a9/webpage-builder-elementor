@@ -17,11 +17,24 @@ const actions = {
   },
   toggleSidebarTab: ({ commit }, value) => {
     commit("setBuilderSidebar", value);
+  },
+  fetchWidgets: ({ commit }, name) => {
+    if (name) {
+      const widgets = builderData.widgets.common.filter(widget =>
+        widget.name.toLowerCase().includes(name.toLowerCase())
+      );
+      commit("setWidgets", widgets);
+    } else {
+      commit("setWidgets", builderData.widgets.common);
+    }
   }
 };
 const mutations = {
   setSidebar: state => (state.sidebarStatus = !state.sidebarStatus),
-  setBuilderSidebar: (state, tab) => (state.builderSidebarTab = tab)
+  setBuilderSidebar: (state, tab) => (state.builderSidebarTab = tab),
+  setWidgets: (state, widgets) => {
+    state.widgets = widgets;
+  }
 };
 
 export default {

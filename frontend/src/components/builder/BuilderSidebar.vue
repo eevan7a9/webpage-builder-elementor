@@ -1,6 +1,7 @@
 <template>
   <div class="sidebar-wrapper" :class="{ open: isSidebarOpen }">
     <BuilderSidebarTopnav />
+    <BuilderSidebarSearchbar />
     <BuilderSidebarElements />
   </div>
 </template>
@@ -8,10 +9,12 @@
 <script>
 import BuilderSidebarTopnav from "@/components/builder/BuilderSidebarTopnav.vue";
 import BuilderSidebarElements from "@/components/builder/BuilderSidebarElements.vue";
+import BuilderSidebarSearchbar from "@/components/builder/BuilderSidebarSearchbar.vue";
 import { mapGetters } from "vuex";
 export default {
   components: {
     BuilderSidebarTopnav,
+    BuilderSidebarSearchbar,
     BuilderSidebarElements
   },
   computed: {
@@ -29,7 +32,7 @@ export default {
   left: 0;
   height: 100%;
   overflow: hidden;
-
+  width: 0;
   div {
     opacity: 0;
     transition: 0.5s;
