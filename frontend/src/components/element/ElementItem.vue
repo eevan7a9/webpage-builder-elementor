@@ -6,7 +6,7 @@
   >
     <div
       class="widget-wrapper"
-      :class="{ selected: getSelectedWidget.id == element.id }"
+      :class="{ selected: getSettings.widget.id == element.id }"
     >
       <div class="widget-options d-flex justify-content-end w-100">
         <button
@@ -75,7 +75,7 @@ export default {
     sectionId: Number
   },
   computed: {
-    ...mapGetters(["getSelectedWidget"])
+    ...mapGetters(["getSettings"])
   },
   methods: {
     ...mapActions(["deleteElements", "selectWidget", "toggleSidebarTab"]),

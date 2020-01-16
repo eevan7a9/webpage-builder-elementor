@@ -4,13 +4,16 @@ const state = {
   sidebarStatus: true,
   builderSidebarTab: "elements", // sidebar elements | styles
   widgets: builderData.widgets.common,
-  selectedWidget: {}
+  settings: {
+    content: false,
+    widget: {}
+  }
 };
 const getters = {
   isSidebarOpen: state => state.sidebarStatus,
   getBuilderSidebar: state => state.builderSidebarTab,
   getWidgets: state => state.widgets,
-  getSelectedWidget: state => state.selectedWidget
+  getSettings: state => state.settings
 };
 const actions = {
   toggleBuilderSidebar: ({ commit }) => {
@@ -38,7 +41,14 @@ const mutations = {
   setSidebar: state => (state.sidebarStatus = !state.sidebarStatus),
   setBuilderSidebar: (state, tab) => (state.builderSidebarTab = tab),
   setWidgets: (state, widgets) => (state.widgets = widgets),
-  setSelectedWidget: (state, widget) => (state.selectedWidget = widget)
+  setSelectedWidget: (state, widget) => {
+    state.settings.widget = widget;
+    if (widget.id) {
+      state.settings.content = true;
+    } else {
+      state.settings.content = false;
+    }
+  }
 };
 
 export default {
