@@ -1,5 +1,5 @@
 <template>
-  <div class="settings-wrapper h-100">
+  <div class="settings-wrapper">
     <div class="h-100 w-100">
       <div class="none-selected" v-if="!getSettings.content">
         <p class="text-muted p-3 font-weight-bold">
@@ -28,14 +28,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.settings-wrapper {
-  overflow: auto;
-  max-height: 98%;
-  .none-selected {
-    img {
-      width: 100px;
-    }
-  }
-}
-</style>
+<style lang="scss" scoped></style>

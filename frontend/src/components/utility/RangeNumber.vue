@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <label for="fontsize" class="w-100 text-left  font-weight-bold">{{
-      label
-    }}</label>
+  <div class="form-group">
+    <label for="fontsize" class="w-100 text-left  font-weight-bold"
+      >{{ label }} <small>(px)</small></label
+    >
     <div class="row m-auto align-items-center">
       <b-form-input
         id="rangeFont"

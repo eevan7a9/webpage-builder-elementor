@@ -1,13 +1,15 @@
 <template>
   <div class="sidebar-wrapper" :class="{ open: isSidebarOpen }">
     <BuilderSidebarTopnav />
-    <transition name="fade" mode="out-in">
-      <div v-if="getBuilderSidebar === 'elements'">
-        <BuilderSidebarSearchbar />
-        <BuilderSidebarElements />
-      </div>
-      <BuilderSidebarSettings v-else />
-    </transition>
+    <div class="sidebar-content h-100">
+      <transition name="fade" mode="out-in">
+        <div v-if="getBuilderSidebar === 'elements'">
+          <BuilderSidebarSearchbar />
+          <BuilderSidebarElements />
+        </div>
+        <BuilderSidebarSettings v-else />
+      </transition>
+    </div>
   </div>
 </template>
 
@@ -42,6 +44,16 @@ export default {
   width: 0;
   &.open {
     width: 400px;
+  }
+  .sidebar-content {
+    position: relative;
+    overflow: auto;
+    height: 100vh;
+    .none-selected {
+      img {
+        width: 100px;
+      }
+    }
   }
 }
 .fade-enter-active,
