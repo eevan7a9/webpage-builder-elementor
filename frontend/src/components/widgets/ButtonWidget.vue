@@ -1,5 +1,5 @@
 <template>
-  <div class="text-widget-wrapper">
+  <div class="button-widget-wrapper">
     <button class="btn btn-primary">{{ content.text }}</button>
   </div>
 </template>

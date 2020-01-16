@@ -7,10 +7,12 @@
         :class="sectionLayout ? 'row m-auto' : 'd-md-flex'"
       >
         <div
-          class="w-100 p-0"
+          class="p-0"
           v-for="column in myColumns"
           :key="column.id"
-          :class="sectionLayout ? `${column.grid}` : ``"
+          :class="
+            getStyleClass(column.grid, sectionLayout, column.elements.length)
+          "
         >
           <ColumnItem :column="column" :sectionId="sectionId" />
         </div>
@@ -52,8 +54,25 @@ export default {
         ghostClass: "ghost"
       };
     }
+  },
+  methods: {
+    getStyleClass(grid, layout, elements) {
+      if (layout) {
+        return grid;
+      } else {
+        if (elements) {
+          return "w-auto";
+        } else {
+          return "w-100";
+        }
+      }
+    }
   }
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.flex {
+  align-items: flex-start;
+}
+</style>
