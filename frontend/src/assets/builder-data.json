@@ -1,5 +1,5 @@
 {
-    "widgets":  {
+    "widgets": {
         "common": [
             {
                 "id": 1,
@@ -9,7 +9,15 @@
                 "icon": "heading-icon.svg",
                 "content": {
                     "text": "Heading Text",
-                    "class": ""
+                    "style": {
+                        "fontSize": "40",
+                        "fontWeight": "900",
+                        "borderRadius": "0",
+                        "color": "#333",
+                        "background": "#fff",
+                        "padding": "10",
+                        "margin": "2"
+                    }
                 }
             },
             {
@@ -20,7 +28,15 @@
                 "icon": "text-icon.svg",
                 "content": {
                     "text": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-                    "class": ""
+                    "style": {
+                        "fontSize": "16",
+                        "fontWeight": "400",
+                        "borderRadius": "0",
+                        "color": "#333",
+                        "background": "#fff",
+                        "padding": "10",
+                        "margin": "2"
+                    }
                 }
             },
             {
@@ -43,7 +59,15 @@
                             "class": ""
                         }
                     ],
-                    "class": ""
+                    "style": {
+                        "fontSize": "16",
+                        "fontWeight": "600",
+                        "borderRadius": "0",
+                        "color": "#333",
+                        "background": "#fff",
+                        "padding": "10",
+                        "margin": "2"
+                    }
                 }
             },
             {
@@ -55,7 +79,15 @@
                 "content": {
                     "text": "Button",
                     "link": "https://github.com/eevan7a9/",
-                    "class": ""
+                    "style": {
+                        "fontSize": "16",
+                        "fontWeight": "600",
+                        "borderRadius": "5",
+                        "color": "#333",
+                        "background": "#007bff",
+                        "padding": "10",
+                        "margin": "2"
+                    }
                 }
             },
             {
