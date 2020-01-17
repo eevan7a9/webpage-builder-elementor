@@ -17,34 +17,55 @@
       <hr />
       <!-- FontSize Padding Margin -->
       <RangeNumber
-        :value="fontSize"
+        :value="parseInt(widgets.content.style.fontSize)"
         label="Font Size"
-        @valueChange="e => (fontSize = parseInt(e))"
+        @valueChange="e => (widgets.content.style.fontSize = parseInt(e))"
+        min="0"
+        max="200"
+        step="0"
       />
       <RangeNumber
-        :value="padding"
+        :value="parseInt(widgets.content.style.fontWeight)"
+        label="Font Weight"
+        @valueChange="e => (widgets.content.style.fontWeight = parseInt(e))"
+        min="100"
+        max="900"
+        step="100"
+      />
+      <RangeNumber
+        :value="parseInt(widgets.content.style.padding)"
         label="Padding"
-        @valueChange="e => (padding = parseInt(e))"
+        @valueChange="e => (widgets.content.style.padding = parseInt(e))"
+        min="0"
+        max="200"
+        step="0"
       />
       <RangeNumber
-        :value="margin"
+        :value="parseInt(widgets.content.style.margin)"
         label="Margin"
-        @valueChange="e => (margin = parseInt(e))"
+        @valueChange="e => (widgets.content.style.margin = parseInt(e))"
+        min="0"
+        max="200"
+        step="0"
       />
       <RangeNumber
-        :value="margin"
-        label="Margin"
-        @valueChange="e => (margin = parseInt(e))"
+        :value="parseInt(widgets.content.style.borderRadius)"
+        label="Border Radius"
+        @valueChange="e => (widgets.content.style.borderRadius = parseInt(e))"
+        min="0"
+        max="200"
+        step="0"
       />
+      <hr />
       <ColorPicker
-        :colorFor="fontColor"
+        :colorFor="widgets.content.style.color"
         label="Font"
-        @colorChange="e => (fontColor = e)"
+        @colorChange="fontColor"
       />
       <ColorPicker
-        :colorFor="backgroundColor"
+        :colorFor="widgets.content.style.background"
         label="Background"
-        @colorChange="e => (backgroundColor = e)"
+        @colorChange="backgroundColor"
       />
     </div>
   </div>
@@ -61,15 +82,17 @@ export default {
   props: {
     widgets: Object
   },
-  data() {
-    return {
-      fontColor: "333",
-      backgroundColor: "fff",
-      dd: "32",
-      fontSize: 20,
-      padding: 5,
-      margin: 5
-    };
+  methods: {
+    fontColor(e) {
+      this.widgets.content.style.color = e
+        ? e
+        : this.widgets.content.style.color;
+    },
+    backgroundColor(e) {
+      this.widgets.content.style.background = e
+        ? e
+        : this.widgets.content.style.background;
+    }
   }
 };
 </script>

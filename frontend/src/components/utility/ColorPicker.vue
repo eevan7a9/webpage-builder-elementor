@@ -1,8 +1,8 @@
 <template>
   <div class="color-wrapper d-flex flex-column align-items-center">
-    <label for="color" class="w-100 text-left font-weight-bold"
-      >{{ label }} : {{ color.hex }}</label
-    >
+    <label for="color" class="w-100 text-left font-weight-bold">{{
+      label
+    }}</label>
     <Chrome v-model="color" />
   </div>
 </template>

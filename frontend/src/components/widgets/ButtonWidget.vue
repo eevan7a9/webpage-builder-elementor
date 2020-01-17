@@ -1,6 +1,9 @@
 <template>
   <div class="button-widget-wrapper">
-    <button class="btn btn-primary">{{ content.text }}</button>
+    <button :style="getStyle">
+      {{ content.text }}
+    </button>
+    {{ content.style }}
   </div>
 </template>
 
@@ -11,6 +14,20 @@ export default {
     elementId: Number,
     columnId: Number,
     sectionId: Number
+  },
+  computed: {
+    getStyle: function() {
+      return {
+        width: this.content.style.width,
+        fontSize: this.content.style.fontSize + "px",
+        fontWeight: this.content.style.fontWeight,
+        borderRadius: this.content.style.borderRadius + "px",
+        color: this.content.style.color,
+        background: this.content.style.background,
+        padding: this.content.style.padding + "px",
+        margin: this.content.style.margin + "px"
+      };
+    }
   }
 };
 </script>

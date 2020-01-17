@@ -7,8 +7,9 @@
       <b-form-input
         id="rangeFont"
         type="range"
-        min="1"
-        max="100"
+        :min="min"
+        :max="max"
+        :step="step"
         class="col-9"
         v-model="rangeNumber"
         @change="$emit('valueChange', rangeNumber)"
@@ -16,8 +17,9 @@
       <b-form-input
         id="numberFont"
         type="number"
-        min="1"
-        max="100"
+        :min="min"
+        :max="max"
+        :step="step"
         class="col-3"
         v-model="rangeNumber"
         @change="$emit('valueChange', rangeNumber)"
@@ -30,7 +32,10 @@
 export default {
   props: {
     value: Number,
-    label: String
+    label: String,
+    min: String,
+    max: String,
+    step: String
   },
   data() {
     return {

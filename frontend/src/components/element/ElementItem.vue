@@ -27,7 +27,7 @@
           <img src="@/assets/icons/trash-icon.svg" />
         </button>
         <button
-          class="text-light  p-1 border more d-flex justify-content-center align-items-center"
+          class="text-light  p-1 border more d-flex justify-content-center align-items-center mr-1"
           v-b-tooltip.hover
           title="Show Options"
           @click="showOptions = !showOptions"
@@ -107,14 +107,14 @@ export default {
     button {
       height: 0;
       width: 0;
-      transition: 0.5s;
+      border: none !important;
+
       &.more {
         background: #333;
       }
       img {
         height: 0;
         width: 0;
-        transition: 0.5s;
       }
     }
   }
@@ -132,13 +132,12 @@ export default {
         position: relative;
         height: 28px;
         width: 31px;
-        transition: 0.5s;
+
         background: #17a2b8;
         border: none;
         img {
           height: 13px;
           width: 13px;
-          transition: 0.5s;
         }
         &.add:hover {
           background: #28a745;

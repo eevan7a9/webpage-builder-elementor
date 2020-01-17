@@ -75,7 +75,28 @@
                 {
                     "id": 1,
                     "grid": null,
-                    "elements": []
+                    "elements": [
+                        {
+                            "id": 4,
+                            "name": "Button",
+                            "widget": "ButtonWidget",
+                            "new": true,
+                            "icon": "button-icon.svg",
+                            "content": {
+                                "text": "Button",
+                                "link": "https://github.com/eevan7a9/",
+                                "style": {
+                                    "fontSize": "16",
+                                    "fontWeight": "600",
+                                    "borderRadius": "5",
+                                    "color": "#333",
+                                    "background": "#007bff",
+                                    "padding": "10",
+                                    "margin": "2"
+                                }
+                            }
+                        }
+                    ]
                 },
                 {
                     "id": 2,
