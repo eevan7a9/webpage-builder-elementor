@@ -98,7 +98,16 @@
                 "icon": "image-icon.svg",
                 "content": {
                     "text": "Image Title",
-                    "src": "https://i.picsum.photos/id/866/400/300.jpg"
+                    "src": "https://i.picsum.photos/id/866/400/300.jpg",
+                    "style": {
+                        "fontSize": "16",
+                        "fontWeight": "600",
+                        "borderRadius": "5",
+                        "color": "#333",
+                        "background": "#fff",
+                        "padding": "2",
+                        "margin": "2"
+                    }
                 }
             },
             {
@@ -108,7 +117,10 @@
                 "new": true,
                 "icon": "spacer-icon.svg",
                 "content": {
-                    "class": "my-5"
+                    "style": {
+                        "height": "100",
+                        "background": "#F3F3EE"
+                    }
                 }
             }
         ]

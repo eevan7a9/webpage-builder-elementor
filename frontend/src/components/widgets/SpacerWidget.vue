@@ -1,5 +1,5 @@
 <template>
-  <div class="text-widget-wrapper my-5"></div>
+  <div :style="getStyle"></div>
 </template>
 
 <script>
@@ -9,6 +9,14 @@ export default {
     elementId: Number,
     columnId: Number,
     sectionId: Number
+  },
+  computed: {
+    getStyle: function() {
+      return {
+        background: this.content.style.background,
+        height: this.content.style.height + "px"
+      };
+    }
   }
 };
 </script>
