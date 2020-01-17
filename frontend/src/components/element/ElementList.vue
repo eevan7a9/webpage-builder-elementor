@@ -2,7 +2,7 @@
   <div class="element-wrapper h-100" @click="selectElList">
     <draggable v-model="myElements" v-bind="dragOptions" class="h-100">
       <transition-group type="transition" name="flip-list">
-        <div v-for="element in myElements" :key="element.id" class="w-100 p-1">
+        <div v-for="element in myElements" :key="element.id" class="w-100">
           <ElementItem
             :element="element"
             :columnId="columnId"

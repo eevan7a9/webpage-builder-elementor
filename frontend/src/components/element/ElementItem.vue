@@ -8,7 +8,7 @@
       class="widget-wrapper"
       :class="{ selected: getSettings.widget.id == element.id }"
     >
-      <div class="widget-options d-flex justify-content-end w-100">
+      <div class="widget-options p-0 m-0 justify-content-end w-100">
         <button
           class="text-light p-1 border column-handle d-flex justify-content-center align-items-center"
           v-b-tooltip.hover
@@ -103,7 +103,7 @@ export default {
   position: relative;
   .widget-options {
     position: relative;
-    visibility: hidden;
+    display: none;
     button {
       height: 0;
       width: 0;
@@ -127,7 +127,7 @@ export default {
   &:hover {
     .widget-options {
       position: absolute;
-      visibility: visible;
+      display: flex;
       button {
         position: relative;
         height: 28px;
