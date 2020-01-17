@@ -14,7 +14,7 @@ export default {
     getStyle: function() {
       return {
         background: this.content.style.background,
-        height: this.content.style.height + "px"
+        height: this.content.style.height
       };
     }
   }

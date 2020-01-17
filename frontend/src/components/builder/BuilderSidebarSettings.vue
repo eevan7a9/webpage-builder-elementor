@@ -10,7 +10,7 @@
       </div>
       <div class="widget-settings" v-if="getSettings.content">
         <SettingsWidget
-          :widgets="getSettings.widget"
+          :widgets="getSettings.widget.content"
           :key="getSettings.widget.id"
         />
       </div>

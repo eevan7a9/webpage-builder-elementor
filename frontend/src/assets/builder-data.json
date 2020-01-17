@@ -97,14 +97,10 @@
                 "new": true,
                 "icon": "image-icon.svg",
                 "content": {
-                    "text": "Image Title",
                     "src": "https://i.picsum.photos/id/866/400/300.jpg",
                     "style": {
-                        "fontSize": "16",
-                        "fontWeight": "600",
-                        "borderRadius": "5",
-                        "color": "#333",
-                        "background": "#fff",
+                        "width": "400px",
+                        "borderRadius": "0",
                         "padding": "2",
                         "margin": "2"
                     }
@@ -118,7 +114,7 @@
                 "icon": "spacer-icon.svg",
                 "content": {
                     "style": {
-                        "height": "100",
+                        "height": "100px",
                         "background": "#F3F3EE"
                     }
                 }

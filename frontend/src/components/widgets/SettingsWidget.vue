@@ -2,7 +2,7 @@
   <div class="settings-widget-wrapper">
     <!-- {{ fontSize }}, {{ padding }}, {{ margin }}, {{ fontColor }} -->
     <div class="card p-2 pt-2">
-      <div class="form-group" v-if="widgets.content.text">
+      <div class="form-group" v-if="widgets.hasOwnProperty('text')">
         <label for="text" class="ml-1 w-100 text-left font-weight-bold"
           >Text</label
         >
@@ -11,77 +11,86 @@
           name="text"
           id="text"
           rows="2"
-          v-model="widgets.content.text"
+          v-model="widgets.text"
         ></textarea>
         <hr />
       </div>
       <!-- FontSize Padding Margin -->
       <RangeNumber
-        :value="parseInt(widgets.content.style.fontSize)"
+        :value="parseInt(widgets.style.fontSize)"
         label="Font Size"
-        @valueChange="e => (widgets.content.style.fontSize = e)"
+        @valueChange="e => (widgets.style.fontSize = e)"
         min="0"
         max="200"
         step="0"
-        v-if="widgets.content.style.fontSize"
+        v-if="widgets.style.fontSize"
       />
       <RangeNumber
-        :value="parseInt(widgets.content.style.fontWeight)"
+        :value="parseInt(widgets.style.fontWeight)"
         label="Font Weight"
-        @valueChange="e => (widgets.content.style.fontWeight = e)"
+        @valueChange="e => (widgets.style.fontWeight = e)"
         min="100"
         max="900"
         step="100"
-        v-if="widgets.content.style.fontWeight"
+        v-if="widgets.style.fontWeight"
       />
       <RangeNumber
-        :value="parseInt(widgets.content.style.padding)"
+        :value="parseInt(widgets.style.padding)"
         label="Padding"
-        @valueChange="e => (widgets.content.style.padding = e)"
+        @valueChange="e => (widgets.style.padding = e)"
         min="0"
         max="200"
         step="0"
-        v-if="widgets.content.style.padding"
+        v-if="widgets.style.padding"
       />
       <RangeNumber
-        :value="parseInt(widgets.content.style.margin)"
+        :value="parseInt(widgets.style.margin)"
         label="Margin"
-        @valueChange="e => (widgets.content.style.margin = e)"
+        @valueChange="e => (widgets.style.margin = e)"
         min="0"
         max="200"
         step="0"
-        v-if="widgets.content.style.margin"
+        v-if="widgets.style.margin"
       />
       <RangeNumber
-        :value="parseInt(widgets.content.style.borderRadius)"
+        :value="parseInt(widgets.style.borderRadius)"
         label="Border Radius"
-        @valueChange="e => (widgets.content.style.borderRadius = e)"
+        @valueChange="e => (widgets.style.borderRadius = e)"
         min="0"
         max="200"
         step="0"
-        v-if="widgets.content.style.borderRadius"
+        v-if="widgets.style.borderRadius"
       />
       <RangeNumber
-        :value="parseInt(widgets.content.style.height)"
+        :value="parseInt(widgets.style.height.match(/(\d+)/))"
         label="height"
-        @valueChange="e => (widgets.content.style.height = e)"
+        @valueChange="e => (widgets.style.height = e + 'px')"
         min="50"
         max="500"
         step="0"
-        v-if="widgets.content.style.height"
+        v-if="widgets.style.height"
+      />
+      <RangeNumber
+        :value="parseInt(widgets.style.width.match(/(\d+)/))"
+        :label="widgets.style.width && widgets.style.height ? 'Width' : 'Size'"
+        @valueChange="e => (widgets.style.width = e + 'px')"
+        min="50"
+        max="500"
+        step="0"
+        v-if="widgets.style.width"
       />
       <hr />
       <ColorPicker
-        :colorFor="widgets.content.style.color"
+        :colorFor="widgets.style.color"
         label="Font"
         @colorChange="fontColor"
-        v-if="widgets.content.style.color"
+        v-if="widgets.style.color"
       />
       <ColorPicker
-        :colorFor="widgets.content.style.background"
+        :colorFor="widgets.style.background"
         label="Background"
         @colorChange="backgroundColor"
-        v-if="widgets.content.style.background"
+        v-if="widgets.style.background"
       />
     </div>
   </div>
@@ -100,14 +109,10 @@ export default {
   },
   methods: {
     fontColor(e) {
-      this.widgets.content.style.color = e
-        ? e
-        : this.widgets.content.style.color;
+      this.widgets.style.color = e ? e : this.widgets.style.color;
     },
     backgroundColor(e) {
-      this.widgets.content.style.background = e
-        ? e
-        : this.widgets.content.style.background;
+      this.widgets.style.background = e ? e : this.widgets.style.background;
     }
   }
 };
