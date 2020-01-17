@@ -3,7 +3,6 @@
     <button :style="getStyle">
       {{ content.text }}
     </button>
-    {{ content.style }}
   </div>
 </template>
 

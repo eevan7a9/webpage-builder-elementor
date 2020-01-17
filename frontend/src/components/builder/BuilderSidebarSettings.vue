@@ -9,7 +9,10 @@
         <img src="@/assets/icons/info-icons.svg" alt="" srcset="" />
       </div>
       <div class="widget-settings" v-if="getSettings.content">
-        <SettingsWidget :widgets="getSettings.widget" />
+        <SettingsWidget
+          :widgets="getSettings.widget"
+          :key="getSettings.widget.id"
+        />
       </div>
     </div>
   </div>
