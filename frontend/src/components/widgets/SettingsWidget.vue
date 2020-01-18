@@ -15,6 +15,12 @@
         ></textarea>
         <hr />
       </div>
+
+      <UploadImage
+        @fileUploaded="e => (widgets.src = e)"
+        v-if="widgets.hasOwnProperty('src')"
+        :imageSrc="widgets.src"
+      />
       <!-- FontSize Padding Margin -->
       <RangeNumber
         :value="parseInt(widgets.style.fontSize)"
@@ -99,10 +105,12 @@
 <script>
 import RangeNumber from "@/components/utility/RangeNumber.vue";
 import ColorPicker from "@/components/utility/ColorPicker.vue";
+import UploadImage from "@/components/utility/UploadImage.vue";
 export default {
   components: {
     ColorPicker,
-    RangeNumber
+    RangeNumber,
+    UploadImage
   },
   props: {
     widgets: Object
