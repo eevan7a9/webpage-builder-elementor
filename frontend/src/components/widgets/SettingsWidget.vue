@@ -2,19 +2,12 @@
   <div class="settings-widget-wrapper">
     <!-- {{ fontSize }}, {{ padding }}, {{ margin }}, {{ fontColor }} -->
     <div class="card p-2 pt-2">
-      <div class="form-group" v-if="widgets.hasOwnProperty('text')">
-        <label for="text" class="ml-1 w-100 text-left font-weight-bold"
-          >Text</label
-        >
-        <textarea
-          class="form-control"
-          name="text"
-          id="text"
-          rows="2"
-          v-model="widgets.text"
-        ></textarea>
-        <hr />
-      </div>
+      <TextInput
+        :text="widgets.text"
+        label="Text"
+        @textChange="e => (widgets.text = e)"
+        v-if="widgets.hasOwnProperty('text')"
+      />
 
       <UploadImage
         @fileUploaded="e => (widgets.src = e)"
@@ -106,11 +99,13 @@
 import RangeNumber from "@/components/utility/RangeNumber.vue";
 import ColorPicker from "@/components/utility/ColorPicker.vue";
 import UploadImage from "@/components/utility/UploadImage.vue";
+import TextInput from "@/components/utility/TextInput.vue";
 export default {
   components: {
     ColorPicker,
     RangeNumber,
-    UploadImage
+    UploadImage,
+    TextInput
   },
   props: {
     widgets: Object
