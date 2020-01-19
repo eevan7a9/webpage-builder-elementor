@@ -2,7 +2,7 @@
   <div class="settings-widget-wrapper">
     <!-- {{ fontSize }}, {{ padding }}, {{ margin }}, {{ fontColor }} -->
     <div class="card p-2 pt-2">
-      <TextInput
+      <TextEdit
         :text="widgets.text"
         label="Text"
         @textChange="e => (widgets.text = e)"
@@ -99,14 +99,14 @@
 import RangeNumber from "@/components/utility/RangeNumber.vue";
 import ColorPicker from "@/components/utility/ColorPicker.vue";
 import UploadImage from "@/components/utility/UploadImage.vue";
-import TextInput from "@/components/utility/TextInput.vue";
+import TextEdit from "@/components/utility/TextEdit.vue";
 import ListText from "@/components/utility/ListText.vue";
 export default {
   components: {
     ColorPicker,
     RangeNumber,
     UploadImage,
-    TextInput,
+    TextEdit,
     ListText
   },
   props: {
