@@ -8,7 +8,7 @@
         @textChange="e => (widgets.text = e)"
         v-if="widgets.hasOwnProperty('text')"
       />
-
+      <ListText :lists="widgets.list" v-if="widgets.hasOwnProperty('list')" />
       <UploadImage
         @fileUploaded="e => (widgets.src = e)"
         v-if="widgets.hasOwnProperty('src')"
@@ -100,12 +100,14 @@ import RangeNumber from "@/components/utility/RangeNumber.vue";
 import ColorPicker from "@/components/utility/ColorPicker.vue";
 import UploadImage from "@/components/utility/UploadImage.vue";
 import TextInput from "@/components/utility/TextInput.vue";
+import ListText from "@/components/utility/ListText.vue";
 export default {
   components: {
     ColorPicker,
     RangeNumber,
     UploadImage,
-    TextInput
+    TextInput,
+    ListText
   },
   props: {
     widgets: Object

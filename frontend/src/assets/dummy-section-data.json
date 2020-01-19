@@ -154,10 +154,10 @@
                             }
                         },
                         {
-                            "id": 3313,
+                            "id": 3,
                             "name": "List",
                             "widget": "ListWidget",
-                            "new": false,
+                            "new": true,
                             "icon": "lists-icon.svg",
                             "content": {
                                 "title": "Phasellus eu risus fringilla, sodales odio at, iaculis ex.",
@@ -176,11 +176,13 @@
                                 "style": {
                                     "fontSize": "16",
                                     "fontWeight": "600",
+                                    "textAlign": "left",
                                     "borderRadius": "0",
                                     "color": "#333",
                                     "background": "#fff",
                                     "padding": "10",
-                                    "margin": "2"
+                                    "margin": "2",
+                                    "listStyle": "none"
                                 }
                             }
                         }

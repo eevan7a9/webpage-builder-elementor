@@ -10,7 +10,6 @@
       rows="2"
       v-model="myText"
     ></textarea>
-    <hr />
   </div>
 </template>
 
