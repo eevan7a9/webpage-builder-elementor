@@ -25,7 +25,11 @@
         <img src="@/assets/icons/trash-icon.svg" />
       </button>
     </div>
-    <div class="item-content h-100" :style="getStyle">
+    <div
+      class="item-content h-100"
+      :style="getStyle"
+      :class="{ selected: getSettings.column.id == column.id }"
+    >
       <ElementList :column="column" :sectionId="sectionId" />
     </div>
   </div>
@@ -33,7 +37,7 @@
 
 <script>
 import ElementList from "@/components/element/ElementList.vue";
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 export default {
   components: {
     ElementList
@@ -43,6 +47,7 @@ export default {
     sectionId: Number
   },
   computed: {
+    ...mapGetters(["getSettings"]),
     getStyle: function() {
       return {
         padding: this.column.style.padding + "px"
@@ -84,6 +89,9 @@ export default {
   }
   .item-content {
     border: 2px dotted #b5b5b5;
+    &.selected {
+      border: 3px solid #17a2b8;
+    }
   }
   &:hover {
     .column-options {
@@ -113,6 +121,9 @@ export default {
     }
     .item-content {
       border: 3px dotted #17a2b8;
+      &.selected {
+        border: 3px solid #17a2b8;
+      }
     }
   }
 }
