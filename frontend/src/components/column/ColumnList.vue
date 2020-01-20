@@ -66,8 +66,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.flex {
-  align-items: flex-start;
-}
-</style>
+<style lang="scss" scoped></style>

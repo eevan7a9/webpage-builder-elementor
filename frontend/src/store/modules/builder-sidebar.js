@@ -6,6 +6,7 @@ const state = {
   widgets: builderData.widgets.common,
   settings: {
     content: false,
+    tabOpen: 0,
     widget: {},
     column: {}
   }
@@ -49,7 +50,7 @@ const mutations = {
     if (data.widget || data.column) {
       state.settings.widget = data.widget;
       state.settings.column = data.column;
-      state.settings.active = 0;
+      state.settings.tabOpen = 0;
       state.settings.content = true;
     } else {
       state.settings.widget = {};
@@ -62,7 +63,7 @@ const mutations = {
     state.settings.widget = {};
     if (column.id) {
       state.settings.content = true;
-      state.settings.active = 1;
+      state.settings.tabOpen = 1;
     } else {
       state.settings.content = false;
     }
