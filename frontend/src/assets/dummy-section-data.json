@@ -9,6 +9,7 @@
                     "grid": "col-md-8",
                     "style": {
                         "fill": true,
+                        "vertical": false,
                         "background": "#fff",
                         "padding": "0"
                     },
@@ -39,6 +40,7 @@
                     "grid": "col-md-2",
                     "style": {
                         "fill": true,
+                        "vertical": false,
                         "background": "#fff",
                         "padding": "0"
                     },
@@ -69,6 +71,7 @@
                     "grid": "col-md-2",
                     "style": {
                         "fill": true,
+                        "vertical": false,
                         "background": "#fff",
                         "padding": "0"
                     },
@@ -124,6 +127,7 @@
                     "grid": null,
                     "style": {
                         "fill": true,
+                        "vertical": false,
                         "background": "#f3d",
                         "padding": "0"
                     },
@@ -155,6 +159,7 @@
                     "grid": null,
                     "style": {
                         "fill": true,
+                        "vertical": false,
                         "background": "#fff",
                         "padding": "0"
                     },

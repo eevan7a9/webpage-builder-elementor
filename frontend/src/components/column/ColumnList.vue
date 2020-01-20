@@ -7,7 +7,6 @@
         :class="sectionLayout ? 'row m-auto' : 'd-md-flex'"
       >
         <div
-          class="p-0"
           v-for="column in myColumns"
           :key="column.id"
           :class="sectionLayout ? column.grid : ''"
@@ -59,7 +58,8 @@ export default {
       let width = style.fill ? "100%" : "auto";
       return {
         width: width,
-        background: style.background
+        background: style.background,
+        padding: style.padding + "px"
       };
     }
   }
