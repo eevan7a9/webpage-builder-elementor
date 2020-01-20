@@ -21,16 +21,11 @@
             </b-tab>
             <b-tab title="Column">
               <b-card-text>
-                <div class="bg-danger">
-                  <h1>
-                    {{ getSettings.column.style }}
-                    {{ getSettings.column.grid }}
-                  </h1>
-                  <button @click="getSettings.column.style.fill = false">
-                    x
-                  </button>
-                </div></b-card-text
-              >
+                <ColumnSettings
+                  :column="getSettings.column"
+                  :key="getSettings.column.id"
+                />
+              </b-card-text>
             </b-tab>
           </b-tabs>
         </b-card>
@@ -41,10 +36,12 @@
 
 <script>
 import SettingsWidget from "@/components/widgets/SettingsWidget.vue";
+import ColumnSettings from "@/components/column/ColumnSettings.vue";
 import { mapGetters } from "vuex";
 export default {
   components: {
-    SettingsWidget
+    SettingsWidget,
+    ColumnSettings
   },
   data() {
     return {
