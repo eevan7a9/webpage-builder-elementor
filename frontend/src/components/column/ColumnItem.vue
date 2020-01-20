@@ -25,7 +25,7 @@
         <img src="@/assets/icons/trash-icon.svg" />
       </button>
     </div>
-    <div class="item-content h-100">
+    <div class="item-content h-100" :style="getStyle">
       <ElementList :column="column" :sectionId="sectionId" />
     </div>
   </div>
@@ -41,6 +41,13 @@ export default {
   props: {
     column: Object,
     sectionId: Number
+  },
+  computed: {
+    getStyle: function() {
+      return {
+        padding: this.column.style.padding + "px"
+      };
+    }
   },
   methods: {
     ...mapActions(["deleteColumnContent", "selectColumn", "toggleSidebarTab"]),
