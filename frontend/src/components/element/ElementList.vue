@@ -5,7 +5,7 @@
         <div v-for="element in myElements" :key="element.id" class="w-100">
           <ElementItem
             :element="element"
-            :columnId="columnId"
+            :column="column"
             :sectionId="sectionId"
           />
         </div>
@@ -46,20 +46,19 @@ export default {
     ElementItem
   },
   props: {
-    elements: Array,
-    columnId: Number,
+    column: Object,
     sectionId: Number
   },
   computed: {
     myElements: {
       get() {
-        return this.elements;
+        return this.column.elements;
       },
       set(value) {
         const element = {
           // we create new instance of the array from value
           elements: JSON.parse(JSON.stringify(value)),
-          columnId: this.columnId,
+          columnId: this.column.id,
           sectionId: this.sectionId
         };
         this.$store.dispatch("updateElements", element);

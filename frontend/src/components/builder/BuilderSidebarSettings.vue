@@ -9,10 +9,31 @@
         <img src="@/assets/icons/info-icons.svg" alt="" srcset="" />
       </div>
       <div class="widget-settings" v-if="getSettings.content">
-        <SettingsWidget
-          :widgets="getSettings.widget.content"
-          :key="getSettings.widget.id"
-        />
+        <b-card no-body>
+          <b-tabs v-model="tabIndex" card>
+            <b-tab title="Widget" v-if="getSettings.widget.id">
+              <b-card-text>
+                <SettingsWidget
+                  :widgets="getSettings.widget.content"
+                  :key="getSettings.widget.id"
+                  v-if="getSettings.widget.id"
+              /></b-card-text>
+            </b-tab>
+            <b-tab title="Column">
+              <b-card-text>
+                <div class="bg-danger">
+                  <h1>
+                    {{ getSettings.column.style }}
+                    {{ getSettings.column.grid }}
+                  </h1>
+                  <button @click="getSettings.column.style.fill = false">
+                    x
+                  </button>
+                </div></b-card-text
+              >
+            </b-tab>
+          </b-tabs>
+        </b-card>
       </div>
     </div>
   </div>
@@ -24,6 +45,11 @@ import { mapGetters } from "vuex";
 export default {
   components: {
     SettingsWidget
+  },
+  data() {
+    return {
+      tabIndex: 0
+    };
   },
   computed: {
     ...mapGetters(["getSettings"])

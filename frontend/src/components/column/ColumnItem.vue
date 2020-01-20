@@ -9,6 +9,14 @@
         <img src="@/assets/icons/handler-icon.svg" />
       </button>
       <button
+        class="btn text-light p-1 border d-flex justify-content-center align-items-center"
+        v-b-tooltip.hover
+        title="Settings"
+        @click="showSettings"
+      >
+        <img src="@/assets/icons/settings-icon.svg" />
+      </button>
+      <button
         class="btn text-light  p-1 border remove d-flex justify-content-center align-items-center"
         @click="removeColumn"
         v-b-tooltip.hover
@@ -18,11 +26,7 @@
       </button>
     </div>
     <div class="item-content h-100">
-      <ElementList
-        :elements="column.elements"
-        :columnId="column.id"
-        :sectionId="sectionId"
-      />
+      <ElementList :column="column" :sectionId="sectionId" />
     </div>
   </div>
 </template>
@@ -39,12 +43,16 @@ export default {
     sectionId: Number
   },
   methods: {
-    ...mapActions(["deleteColumnContent"]),
+    ...mapActions(["deleteColumnContent", "selectColumn", "toggleSidebarTab"]),
     removeColumn() {
       this.deleteColumnContent({
         columnId: this.column.id,
         sectionId: this.sectionId
       });
+    },
+    showSettings() {
+      this.selectColumn(this.column);
+      this.toggleSidebarTab("settings");
     }
   }
 };

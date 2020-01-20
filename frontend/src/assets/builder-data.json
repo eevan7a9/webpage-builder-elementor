@@ -131,11 +131,21 @@
                 {
                     "id": 1,
                     "grid": "col-md-6",
+                    "style": {
+                        "fill": true,
+                        "background": "none",
+                        "padding": "0"
+                    },
                     "elements": []
                 },
                 {
                     "id": 2,
                     "grid": "col-md-6",
+                    "style": {
+                        "fill": true,
+                        "background": "none",
+                        "padding": "0"
+                    },
                     "elements": []
                 }
             ]
@@ -147,11 +157,21 @@
                 {
                     "id": 1,
                     "grid": "col-md-4",
+                    "style": {
+                        "fill": true,
+                        "background": "none",
+                        "padding": "0"
+                    },
                     "elements": []
                 },
                 {
                     "id": 2,
                     "grid": "col-md-8",
+                    "style": {
+                        "fill": true,
+                        "background": "none",
+                        "padding": "0"
+                    },
                     "elements": []
                 }
             ]
@@ -163,11 +183,21 @@
                 {
                     "id": 1,
                     "grid": "col-md-3",
+                    "style": {
+                        "fill": true,
+                        "background": "none",
+                        "padding": "0"
+                    },
                     "elements": []
                 },
                 {
                     "id": 2,
                     "grid": "col-md-9",
+                    "style": {
+                        "fill": true,
+                        "background": "none",
+                        "padding": "0"
+                    },
                     "elements": []
                 }
             ]
@@ -179,16 +209,31 @@
                 {
                     "id": 1,
                     "grid": "col-md-3",
+                    "style": {
+                        "fill": true,
+                        "background": "none",
+                        "padding": "0"
+                    },
                     "elements": []
                 },
                 {
                     "id": 2,
                     "grid": "col-md-6",
+                    "style": {
+                        "fill": true,
+                        "background": "none",
+                        "padding": "0"
+                    },
                     "elements": []
                 },
                 {
                     "id": 3,
                     "grid": "col-md-3",
+                    "style": {
+                        "fill": true,
+                        "background": "none",
+                        "padding": "0"
+                    },
                     "elements": []
                 }
             ]
@@ -200,16 +245,31 @@
                 {
                     "id": 1,
                     "grid": "col-md-2",
+                    "style": {
+                        "fill": true,
+                        "background": "none",
+                        "padding": "0"
+                    },
                     "elements": []
                 },
                 {
                     "id": 2,
                     "grid": "col-md-4",
+                    "style": {
+                        "fill": true,
+                        "background": "none",
+                        "padding": "0"
+                    },
                     "elements": []
                 },
                 {
                     "id": 3,
                     "grid": "col-md-6",
+                    "style": {
+                        "fill": true,
+                        "background": "none",
+                        "padding": "0"
+                    },
                     "elements": []
                 }
             ]
@@ -221,16 +281,31 @@
                 {
                     "id": 1,
                     "grid": "col-md-2",
+                    "style": {
+                        "fill": true,
+                        "background": "none",
+                        "padding": "0"
+                    },
                     "elements": []
                 },
                 {
                     "id": 2,
                     "grid": "col-md-5",
+                    "style": {
+                        "fill": true,
+                        "background": "none",
+                        "padding": "0"
+                    },
                     "elements": []
                 },
                 {
                     "id": 3,
                     "grid": "col-md-5",
+                    "style": {
+                        "fill": true,
+                        "background": "none",
+                        "padding": "0"
+                    },
                     "elements": []
                 }
             ]
@@ -242,21 +317,41 @@
                 {
                     "id": 1,
                     "grid": "col-md-2",
+                    "style": {
+                        "fill": true,
+                        "background": "none",
+                        "padding": "0"
+                    },
                     "elements": []
                 },
                 {
                     "id": 2,
                     "grid": "col-md-2",
+                    "style": {
+                        "fill": true,
+                        "background": "none",
+                        "padding": "0"
+                    },
                     "elements": []
                 },
                 {
                     "id": 3,
                     "grid": "col-md-2",
+                    "style": {
+                        "fill": true,
+                        "background": "none",
+                        "padding": "0"
+                    },
                     "elements": []
                 },
                 {
                     "id": 4,
                     "grid": "col-md-6",
+                    "style": {
+                        "fill": true,
+                        "background": "none",
+                        "padding": "0"
+                    },
                     "elements": []
                 }
             ]

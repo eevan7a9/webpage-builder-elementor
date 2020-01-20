@@ -10,9 +10,8 @@
           class="p-0"
           v-for="column in myColumns"
           :key="column.id"
-          :class="
-            getStyleClass(column.grid, sectionLayout, column.elements.length)
-          "
+          :class="sectionLayout ? column.grid : ''"
+          :style="getStyle(column.style)"
         >
           <ColumnItem :column="column" :sectionId="sectionId" />
         </div>
@@ -56,16 +55,12 @@ export default {
     }
   },
   methods: {
-    getStyleClass(grid, layout, elements) {
-      if (layout) {
-        return grid;
-      } else {
-        if (elements) {
-          return "w-auto";
-        } else {
-          return "w-100";
-        }
-      }
+    getStyle(style) {
+      let width = style.fill ? "100%" : "auto";
+      return {
+        width: width,
+        background: style.background
+      };
     }
   }
 };

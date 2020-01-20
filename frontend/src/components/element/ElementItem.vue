@@ -39,7 +39,7 @@
         :is="selectedComponent"
         :content="element.content"
         :elementId="element.id"
-        :columnId="columnId"
+        :columnId="column.id"
         :sectionId="sectionId"
       />
     </div>
@@ -71,7 +71,7 @@ export default {
   },
   props: {
     element: Object,
-    columnId: Number,
+    column: Object,
     sectionId: Number
   },
   computed: {
@@ -82,13 +82,16 @@ export default {
     remove() {
       this.deleteElements({
         elementId: this.element.id,
-        columnId: this.columnId,
+        columnId: this.column.id,
         sectionId: this.sectionId
       });
     },
     selected() {
       event.stopPropagation();
-      this.selectWidget(this.element);
+      this.selectWidget({
+        widget: this.element,
+        column: this.column
+      });
       this.toggleSidebarTab("settings");
     }
   },
