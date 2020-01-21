@@ -1,6 +1,11 @@
 <template>
   <div class="element-wrapper h-100" @click="selectElList">
-    <draggable v-model="myElements" v-bind="dragOptions" class="h-100">
+    <draggable
+      v-model="myElements"
+      v-bind="dragOptions"
+      class="h-100 d-flex"
+      :class="`justify-content-${column.style.x} align-items-${column.style.y}`"
+    >
       <transition-group type="transition" name="flip-list">
         <div v-for="element in myElements" :key="element.id" class="w-100">
           <ElementItem

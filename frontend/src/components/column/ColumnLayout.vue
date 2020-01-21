@@ -56,6 +56,8 @@ export default {
             grid: null,
             style: {
               fill: true,
+              y: "start",
+              x: "center",
               background: "none",
               padding: "0"
             },

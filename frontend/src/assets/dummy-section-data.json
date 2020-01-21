@@ -9,8 +9,9 @@
                     "grid": "col-md-8",
                     "style": {
                         "fill": true,
-                        "vertical": false,
-                        "background": "#fff",
+                        "y": "center",
+                        "x": "center",
+                        "background": "transparent",
                         "padding": "0"
                     },
                     "elements": [
@@ -27,7 +28,7 @@
                                     "fontWeight": "400",
                                     "borderRadius": "0",
                                     "color": "#333",
-                                    "background": "#fff",
+                                    "background": "transparent",
                                     "padding": "10",
                                     "margin": "2"
                                 }
@@ -40,8 +41,9 @@
                     "grid": "col-md-2",
                     "style": {
                         "fill": true,
-                        "vertical": false,
-                        "background": "#fff",
+                        "y": "start",
+                        "x": "center",
+                        "background": "transparent",
                         "padding": "0"
                     },
                     "elements": [
@@ -58,7 +60,7 @@
                                     "fontWeight": "900",
                                     "borderRadius": "0",
                                     "color": "#333",
-                                    "background": "#fff",
+                                    "background": "transparent",
                                     "padding": "10",
                                     "margin": "2"
                                 }
@@ -71,8 +73,9 @@
                     "grid": "col-md-2",
                     "style": {
                         "fill": true,
-                        "vertical": false,
-                        "background": "#fff",
+                        "y": "start",
+                        "x": "center",
+                        "background": "transparent",
                         "padding": "0"
                     },
                     "elements": [
@@ -89,7 +92,7 @@
                                     "fontWeight": "900",
                                     "borderRadius": "0",
                                     "color": "#333",
-                                    "background": "#fff",
+                                    "background": "transparent",
                                     "padding": "10",
                                     "margin": "2"
                                 }
@@ -108,7 +111,7 @@
                                     "fontWeight": "400",
                                     "borderRadius": "0",
                                     "color": "#333",
-                                    "background": "#fff",
+                                    "background": "transparent",
                                     "padding": "10",
                                     "margin": "2"
                                 }
@@ -127,7 +130,8 @@
                     "grid": null,
                     "style": {
                         "fill": true,
-                        "vertical": false,
+                        "y": "start",
+                        "x": "center",
                         "background": "#f3d",
                         "padding": "0"
                     },
@@ -159,8 +163,9 @@
                     "grid": null,
                     "style": {
                         "fill": true,
-                        "vertical": false,
-                        "background": "#fff",
+                        "y": "start",
+                        "x": "center",
+                        "background": "transparent",
                         "padding": "0"
                     },
                     "elements": [
@@ -177,7 +182,7 @@
                                     "fontWeight": "900",
                                     "borderRadius": "0",
                                     "color": "#333",
-                                    "background": "#fff",
+                                    "background": "transparent",
                                     "padding": "10",
                                     "margin": "2"
                                 }
@@ -209,7 +214,7 @@
                                     "textAlign": "left",
                                     "borderRadius": "0",
                                     "color": "#333",
-                                    "background": "#fff",
+                                    "background": "transparent",
                                     "padding": "10",
                                     "margin": "2",
                                     "listStyle": "none"

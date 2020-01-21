@@ -14,7 +14,7 @@
                         "fontWeight": "900",
                         "borderRadius": "0",
                         "color": "#333",
-                        "background": "#fff",
+                        "background": "transparent",
                         "padding": "10",
                         "margin": "2"
                     }
@@ -33,7 +33,7 @@
                         "fontWeight": "400",
                         "borderRadius": "0",
                         "color": "#333",
-                        "background": "#fff",
+                        "background": "transparent",
                         "padding": "10",
                         "margin": "2"
                     }
@@ -65,7 +65,7 @@
                         "textAlign": "left",
                         "borderRadius": "0",
                         "color": "#333",
-                        "background": "#fff",
+                        "background": "transparent",
                         "padding": "10",
                         "margin": "2",
                         "listStyle": "none"
@@ -133,6 +133,8 @@
                     "grid": "col-md-6",
                     "style": {
                         "fill": true,
+                        "y": "start",
+                        "x": "center",
                         "background": "none",
                         "padding": "0"
                     },
@@ -143,6 +145,8 @@
                     "grid": "col-md-6",
                     "style": {
                         "fill": true,
+                        "y": "start",
+                        "x": "center",
                         "background": "none",
                         "padding": "0"
                     },
@@ -159,6 +163,8 @@
                     "grid": "col-md-4",
                     "style": {
                         "fill": true,
+                        "y": "start",
+                        "x": "center",
                         "background": "none",
                         "padding": "0"
                     },
@@ -169,6 +175,8 @@
                     "grid": "col-md-8",
                     "style": {
                         "fill": true,
+                        "y": "start",
+                        "x": "center",
                         "background": "none",
                         "padding": "0"
                     },
@@ -185,6 +193,8 @@
                     "grid": "col-md-3",
                     "style": {
                         "fill": true,
+                        "y": "start",
+                        "x": "center",
                         "background": "none",
                         "padding": "0"
                     },
@@ -195,6 +205,8 @@
                     "grid": "col-md-9",
                     "style": {
                         "fill": true,
+                        "y": "start",
+                        "x": "center",
                         "background": "none",
                         "padding": "0"
                     },
@@ -211,6 +223,8 @@
                     "grid": "col-md-3",
                     "style": {
                         "fill": true,
+                        "y": "start",
+                        "x": "center",
                         "background": "none",
                         "padding": "0"
                     },
@@ -221,6 +235,8 @@
                     "grid": "col-md-6",
                     "style": {
                         "fill": true,
+                        "y": "start",
+                        "x": "center",
                         "background": "none",
                         "padding": "0"
                     },
@@ -231,6 +247,8 @@
                     "grid": "col-md-3",
                     "style": {
                         "fill": true,
+                        "y": "start",
+                        "x": "center",
                         "background": "none",
                         "padding": "0"
                     },
@@ -247,6 +265,8 @@
                     "grid": "col-md-2",
                     "style": {
                         "fill": true,
+                        "y": "start",
+                        "x": "center",
                         "background": "none",
                         "padding": "0"
                     },
@@ -257,6 +277,8 @@
                     "grid": "col-md-4",
                     "style": {
                         "fill": true,
+                        "y": "start",
+                        "x": "center",
                         "background": "none",
                         "padding": "0"
                     },
@@ -267,6 +289,8 @@
                     "grid": "col-md-6",
                     "style": {
                         "fill": true,
+                        "y": "start",
+                        "x": "center",
                         "background": "none",
                         "padding": "0"
                     },
@@ -283,6 +307,8 @@
                     "grid": "col-md-2",
                     "style": {
                         "fill": true,
+                        "y": "start",
+                        "x": "center",
                         "background": "none",
                         "padding": "0"
                     },
@@ -293,6 +319,8 @@
                     "grid": "col-md-5",
                     "style": {
                         "fill": true,
+                        "y": "start",
+                        "x": "center",
                         "background": "none",
                         "padding": "0"
                     },
@@ -303,6 +331,8 @@
                     "grid": "col-md-5",
                     "style": {
                         "fill": true,
+                        "y": "start",
+                        "x": "center",
                         "background": "none",
                         "padding": "0"
                     },
@@ -319,6 +349,8 @@
                     "grid": "col-md-2",
                     "style": {
                         "fill": true,
+                        "y": "start",
+                        "x": "center",
                         "background": "none",
                         "padding": "0"
                     },
@@ -329,6 +361,8 @@
                     "grid": "col-md-2",
                     "style": {
                         "fill": true,
+                        "y": "start",
+                        "x": "center",
                         "background": "none",
                         "padding": "0"
                     },
@@ -339,6 +373,8 @@
                     "grid": "col-md-2",
                     "style": {
                         "fill": true,
+                        "y": "start",
+                        "x": "center",
                         "background": "none",
                         "padding": "0"
                     },
@@ -349,6 +385,8 @@
                     "grid": "col-md-6",
                     "style": {
                         "fill": true,
+                        "y": "start",
+                        "x": "center",
                         "background": "none",
                         "padding": "0"
                     },
