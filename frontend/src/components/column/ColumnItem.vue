@@ -50,6 +50,7 @@ export default {
     ...mapGetters(["getSettings"]),
     getStyle: function() {
       return {
+        background: this.column.style.background,
         padding: this.column.style.padding + "px"
       };
     }

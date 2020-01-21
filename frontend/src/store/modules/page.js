@@ -27,8 +27,12 @@ const actions = {
     commit("setSections", value);
   },
   addSectionColumns: ({ commit }, { layout, sectionId }) => {
+    let idCounter = 1;
+    layout.columns.forEach(col => {
+      col.id = toTimestamp(new Date()) + idCounter;
+      idCounter++;
+    });
     commit("setSectionColumns", { id: sectionId, sectionLayout: layout });
-    // commit("setRowColumns", { row: row, sectionId: sectionId });
   },
 
   //  Sections Columns *************************************

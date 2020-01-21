@@ -124,7 +124,7 @@ export default {
   .widget-wrapper {
     border: 1px dotted #b5b5b5;
     &.selected {
-      border: 3px solid #17a2b8;
+      border: 2px solid #17a2b8;
     }
   }
   &:hover {
@@ -160,7 +160,7 @@ export default {
     .widget-wrapper {
       border: 1px dotted #17a2b8;
       &.selected {
-        border: 3px solid #17a2b8;
+        border: 2px solid #17a2b8;
       }
     }
   }

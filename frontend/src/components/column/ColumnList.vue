@@ -58,8 +58,7 @@ export default {
     getStyle(style) {
       let width = style.fill ? "100%" : "auto";
       return {
-        width: width,
-        background: style.background
+        width: width
       };
     }
   }
