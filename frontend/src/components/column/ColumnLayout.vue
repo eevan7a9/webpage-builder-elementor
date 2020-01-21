@@ -37,6 +37,7 @@
 
 <script>
 import { mapActions, mapGetters } from "vuex";
+import { toTimestamp } from "@/assets/scripts/evan-custom.js";
 export default {
   props: {
     sectionId: Number
@@ -51,8 +52,13 @@ export default {
         layout: false,
         columns: [
           {
-            id: 1,
+            id: toTimestamp(new Date()),
             grid: null,
+            style: {
+              fill: true,
+              background: "none",
+              padding: "0"
+            },
             elements: []
           }
         ]
