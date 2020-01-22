@@ -37,7 +37,11 @@ export default {
       };
     }
   },
-
+  watch: {
+    text: function(val) {
+      this.myText = val;
+    }
+  },
   mounted() {
     this.$refs.textEdit.focus();
     this.$refs.textEdit.style.width = this.text.length + 2 + "ch";
