@@ -7,7 +7,18 @@
       :style="getStyle"
       @keyup.enter="submit"
       v-model="myText"
+      v-if="!textarea"
     />
+    <textarea
+      name="textEdit"
+      ref="textarea"
+      :style="getStyle"
+      @keyup.enter="submit"
+      @focus="autoGrow"
+      @input="autoGrow"
+      v-model="myText"
+      v-else
+    ></textarea>
   </div>
 </template>
 
@@ -16,7 +27,8 @@ import { mapActions } from "vuex";
 export default {
   props: {
     text: String,
-    styleWidget: Object
+    styleWidget: Object,
+    textarea: Boolean
   },
   computed: {
     myText: {
@@ -24,7 +36,9 @@ export default {
         return this.text;
       },
       set(val) {
-        this.$refs.textEdit.style.width = this.text.length + 2 + "ch";
+        if (!this.textarea) {
+          this.$refs.textEdit.style.width = this.text.length + 2 + "ch";
+        }
         this.$emit("changeText", val);
       }
     },
@@ -32,7 +46,10 @@ export default {
       return {
         fontSize: this.styleWidget.fontSize + "px",
         fontWeight: this.styleWidget.fontWeight,
-        color: this.styleWidget.color
+        color: this.styleWidget.color,
+        background: this.textarea
+          ? this.styleWidget.background
+          : "rgba(240, 248, 255, 0.507)"
         // padding: this.styleWidget.padding + "px"
       };
     }
@@ -40,17 +57,29 @@ export default {
   watch: {
     text: function(val) {
       this.myText = val;
+      if (this.textarea) {
+        this.autoGrow();
+      }
     }
   },
   mounted() {
-    this.$refs.textEdit.focus();
-    this.$refs.textEdit.style.width = this.text.length + 2 + "ch";
+    if (!this.textarea) {
+      this.$refs.textEdit.focus();
+      this.$refs.textEdit.style.width = this.text.length + 2 + "ch";
+    } else {
+      this.$refs.textarea.focus();
+    }
   },
   methods: {
     ...mapActions(["selectWidget", "toggleSidebarTab"]),
     submit() {
       this.selectWidget({});
       this.toggleSidebarTab("elements");
+    },
+    autoGrow() {
+      let textarea = this.$refs.textarea;
+      textarea.style.height = "5px";
+      textarea.style.height = textarea.scrollHeight + "px";
     }
   }
 };
@@ -58,8 +87,13 @@ export default {
 
 <style lang="scss" scoped>
 input {
-  background: rgba(240, 248, 255, 0.507);
   border: none;
   padding: 2px;
+}
+textarea {
+  resize: none;
+  overflow: hidden;
+
+  width: 100%;
 }
 </style>

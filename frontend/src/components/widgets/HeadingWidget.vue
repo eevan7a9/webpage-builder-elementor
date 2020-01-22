@@ -1,16 +1,28 @@
 <template>
-  <div class="Heading-wrapper">
+  <div class="Heading-wrapper h-100">
     <h1 :style="getStyle">{{ content.text }}</h1>
+    <WidgetEditText
+      :text="content.text"
+      :styleWidget="content.style"
+      :textarea="true"
+      @changeText="e => (content.text = e)"
+      v-if="onEdit"
+    />
   </div>
 </template>
 
 <script>
+import WidgetEditText from "@/components/widgets/WidgetEditText.vue";
 export default {
+  components: {
+    WidgetEditText
+  },
   props: {
     content: Object,
     elementId: Number,
     columnId: Number,
-    sectionId: Number
+    sectionId: Number,
+    onEdit: Boolean
   },
   computed: {
     getStyle: function() {
@@ -22,7 +34,9 @@ export default {
         color: this.content.style.color,
         background: this.content.style.background,
         padding: this.content.style.padding + "px",
-        margin: this.content.style.margin + "px"
+        margin: this.content.style.margin + "px",
+        visibility: this.onEdit ? "hidden" : "visible",
+        height: this.onEdit ? "1px" : "auto"
       };
     }
   }
