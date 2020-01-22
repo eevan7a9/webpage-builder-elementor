@@ -41,6 +41,7 @@
         :elementId="element.id"
         :columnId="column.id"
         :sectionId="sectionId"
+        :onEdit="getSettings.widget.id == element.id ? true : false"
       />
     </div>
   </div>

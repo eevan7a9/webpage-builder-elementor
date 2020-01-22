@@ -1,18 +1,40 @@
 <template>
   <div class="button-widget-wrapper">
     <button :style="getStyle">
-      {{ content.text }}
+      <div :style="!onEdit ? visible : notVisible">{{ content.text }}</div>
+      <WidgetEditText
+        :text="content.text"
+        :styleWidget="content.style"
+        @changeText="e => (content.text = e)"
+        v-if="onEdit"
+      />
     </button>
   </div>
 </template>
 
 <script>
+import WidgetEditText from "@/components/widgets/WidgetEditText.vue";
 export default {
+  components: {
+    WidgetEditText
+  },
   props: {
     content: Object,
     elementId: Number,
     columnId: Number,
-    sectionId: Number
+    sectionId: Number,
+    onEdit: Boolean
+  },
+  data() {
+    return {
+      visible: {
+        visibility: "visible"
+      },
+      notVisible: {
+        visibility: "hidden",
+        height: "1px"
+      }
+    };
   },
   computed: {
     getStyle: function() {
