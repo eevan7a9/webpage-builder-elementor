@@ -33,8 +33,8 @@ export default {
         borderRadius: this.content.style.borderRadius + "px",
         color: this.content.style.color,
         background: this.content.style.background,
-        padding: this.content.style.padding + "px",
         margin: this.content.style.margin + "px",
+        padding: this.onEdit ? "0" : this.content.style.padding + "px",
         visibility: this.onEdit ? "hidden" : "visible",
         height: this.onEdit ? "1px" : "auto"
       };
