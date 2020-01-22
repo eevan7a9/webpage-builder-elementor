@@ -66,6 +66,13 @@ export default {
         const newColumn = {
           id: toTimestamp(new Date()) + this.section.columns.length,
           grid: null,
+          style: {
+            fill: true,
+            y: "center",
+            x: "center",
+            background: "none",
+            padding: "0"
+          },
           elements: []
         };
         this.addColumn({
