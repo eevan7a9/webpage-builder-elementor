@@ -1,20 +1,49 @@
 <template>
   <div class="text-widget-wrapper">
     <ul :style="getUlStyle">
-      <li v-for="(list, index) in content.list" :key="index">
-        {{ list.text }}
+      <li
+        v-for="(list, index) in content.list"
+        :key="index"
+        @click="selectedList = list.id"
+      >
+        <div :style="selectedList == list.id ? notVisible : visible">
+          {{ list.text }}
+        </div>
+        <WidgetEditText
+          :text="list.text"
+          :styleWidget="content.style"
+          @changeText="e => (list.text = e)"
+          @editOff="selectedList = 0"
+          v-if="selectedList == list.id"
+        />
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import WidgetEditText from "@/components/widgets/WidgetEditText.vue";
 export default {
+  components: {
+    WidgetEditText
+  },
   props: {
     content: Object,
     elementId: Number,
     columnId: Number,
     sectionId: Number
+  },
+  data() {
+    return {
+      selectedList: 0,
+      visible: {
+        visibility: "visible"
+      },
+      notVisible: {
+        visibility: "hidden",
+        height: "1px"
+      }
+    };
   },
   computed: {
     getUlStyle: function() {

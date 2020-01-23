@@ -6,6 +6,7 @@
       ref="textEdit"
       :style="getStyle"
       @keyup.enter="submit"
+      @blur="$emit('editOff', false)"
       v-model="myText"
       v-if="!textarea"
     />
