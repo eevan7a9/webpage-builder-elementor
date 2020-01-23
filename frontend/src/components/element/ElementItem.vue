@@ -8,12 +8,17 @@
       class="widget-wrapper"
       :class="{ selected: getSettings.widget.id == element.id }"
     >
-      <div class="widget-options p-0 m-0 justify-content-end w-100">
+      <div
+        class="widget-options p-0 m-0 justify-content-end w-100"
+        v-if="!edit"
+        @mouseleave="showOptions = false"
+      >
         <button
           class="text-light p-1 border column-handle d-flex justify-content-center align-items-center"
           v-b-tooltip.hover
           title="Move Widget"
           v-if="showOptions"
+          @click.stop
         >
           <img src="@/assets/icons/handler-icon.svg" />
         </button>
@@ -22,7 +27,7 @@
           v-b-tooltip.hover
           title="Delete Widget"
           v-if="showOptions"
-          @click="remove"
+          @click.stop="remove"
         >
           <img src="@/assets/icons/trash-icon.svg" />
         </button>
@@ -30,7 +35,7 @@
           class="text-light  p-1 border more d-flex justify-content-center align-items-center mr-1"
           v-b-tooltip.hover
           title="Show Options"
-          @click="showOptions = !showOptions"
+          @mouseover="showOptions = true"
         >
           <img src="@/assets/icons/more-vertical-icon.svg" />
         </button>
