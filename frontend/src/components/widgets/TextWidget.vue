@@ -6,6 +6,7 @@
       :styleWidget="content.style"
       :textarea="true"
       @changeText="e => (content.text = e)"
+      @editOff="$emit('editOff', false)"
       v-if="onEdit"
     />
   </div>

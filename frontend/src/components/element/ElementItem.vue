@@ -41,7 +41,8 @@
         :elementId="element.id"
         :columnId="column.id"
         :sectionId="sectionId"
-        :onEdit="getSettings.widget.id == element.id ? true : false"
+        :onEdit="edit"
+        @editOff="e => (edit = e)"
       />
     </div>
   </div>
@@ -67,7 +68,8 @@ export default {
   data() {
     return {
       selectedComponent: "TextWidget",
-      showOptions: false
+      showOptions: false,
+      edit: false
     };
   },
   props: {
@@ -88,7 +90,9 @@ export default {
       });
     },
     selected() {
+      // to not affect the parent element
       event.stopPropagation();
+      this.edit = true;
       this.selectWidget({
         widget: this.element,
         column: this.column

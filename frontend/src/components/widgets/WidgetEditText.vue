@@ -16,6 +16,7 @@
       @keyup.enter="submit"
       @focus="autoGrow"
       @input="autoGrow"
+      @blur="$emit('editOff', false)"
       v-model="myText"
       v-else
     ></textarea>
@@ -58,6 +59,7 @@ export default {
     text: function(val) {
       this.myText = val;
       if (this.textarea) {
+        // if textarea then enable grow
         this.autoGrow();
       }
     }
@@ -75,6 +77,7 @@ export default {
     submit() {
       this.selectWidget({});
       this.toggleSidebarTab("elements");
+      this.$emit("editOff", false);
     },
     autoGrow() {
       let textarea = this.$refs.textarea;
@@ -93,7 +96,11 @@ input {
 textarea {
   resize: none;
   overflow: hidden;
-
   width: 100%;
+  border: none;
+  &:focus {
+    border: none;
+    outline-width: 0;
+  }
 }
 </style>
