@@ -6,6 +6,7 @@
         :text="content.text"
         :styleWidget="content.style"
         @changeText="e => (content.text = e)"
+        @editOff="$emit('editOff', false)"
         v-if="onEdit"
       />
     </button>
