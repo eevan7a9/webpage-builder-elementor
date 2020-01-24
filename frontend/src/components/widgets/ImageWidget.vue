@@ -1,5 +1,8 @@
 <template>
-  <div class="text-widget-wrapper">
+  <div
+    class="text-widget-wrapper"
+    :class="`d-flex justify-content-${content.style.horizontal}`"
+  >
     <b-img
       :style="getStyle"
       :src="content.src"

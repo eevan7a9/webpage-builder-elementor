@@ -1,10 +1,14 @@
 <template>
-  <div class="list-widget-wrapper">
+  <div
+    class="list-widget-wrapper"
+    :class="`d-flex justify-content-${content.style.horizontal}`"
+  >
     <ul :style="getUlStyle">
       <li
         v-for="(list, index) in content.list"
         :key="index"
         @click="selectedList = list.id"
+        :style="`text-align: ${content.style.textAlign}`"
       >
         <div :style="selectedList == list.id ? notVisible : visible">
           {{ list.text }}
@@ -54,8 +58,7 @@ export default {
         padding: this.content.style.padding + "px",
         margin: this.content.style.margin + "px",
         color: this.content.style.color,
-        background: this.content.style.background,
-        textAlign: this.content.style.textAlign
+        background: this.content.style.background
       };
     }
   }

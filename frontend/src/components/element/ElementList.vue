@@ -6,7 +6,7 @@
       class="h-100 d-flex"
       :class="`justify-content-${column.style.x} align-items-${column.style.y}`"
     >
-      <transition-group type="transition" name="flip-list">
+      <transition-group type="transition" name="flip-list" class="w-100">
         <div v-for="element in myElements" :key="element.id" class="w-100">
           <ElementItem
             :element="element"

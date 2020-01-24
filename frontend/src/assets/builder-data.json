@@ -70,7 +70,8 @@
                         "background": "transparent",
                         "padding": "10",
                         "margin": "2",
-                        "listStyle": "none"
+                        "listStyle": "none",
+                        "horizontal": "center"
                     }
                 }
             },
@@ -90,7 +91,8 @@
                         "color": "#333",
                         "background": "#007bff",
                         "padding": "10",
-                        "margin": "2"
+                        "margin": "2",
+                        "horizontal": "center"
                     }
                 }
             },
@@ -106,7 +108,8 @@
                         "width": "400px",
                         "borderRadius": "0",
                         "padding": "2",
-                        "margin": "2"
+                        "margin": "2",
+                        "horizontal": "center"
                     }
                 }
             },

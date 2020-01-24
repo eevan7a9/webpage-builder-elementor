@@ -1,5 +1,8 @@
 <template>
-  <div class="button-widget-wrapper">
+  <div
+    class="button-widget-wrapper"
+    :class="`d-flex justify-content-${content.style.horizontal}`"
+  >
     <button :style="getStyle">
       <div :style="!onEdit ? visible : notVisible">{{ content.text }}</div>
       <WidgetEditText

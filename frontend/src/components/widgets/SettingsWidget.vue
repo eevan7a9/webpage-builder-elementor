@@ -8,12 +8,17 @@
       @textChange="e => (widgets.text = e)"
       v-if="widgets.hasOwnProperty('text')"
     />
+    <ListText :lists="widgets.list" v-if="widgets.hasOwnProperty('list')" />
     <TextAlign
       :textAlign="widgets.style.textAlign"
       @changeTextAlign="e => (widgets.style.textAlign = e)"
       v-if="widgets.style.textAlign"
     />
-    <ListText :lists="widgets.list" v-if="widgets.hasOwnProperty('list')" />
+    <HorizontalContent
+      :horizontal="widgets.style.horizontal"
+      @changeHorizontal="e => (widgets.style.horizontal = e)"
+      v-if="widgets.style.horizontal"
+    />
     <UploadImage
       @fileUploaded="e => (widgets.src = e)"
       v-if="widgets.hasOwnProperty('src')"
@@ -106,6 +111,7 @@ import UploadImage from "@/components/utility/UploadImage.vue";
 import TextEdit from "@/components/utility/TextEdit.vue";
 import ListText from "@/components/utility/ListText.vue";
 import TextAlign from "@/components/utility/TextAlign.vue";
+import HorizontalContent from "@/components/utility/HorizontalContent.vue";
 export default {
   components: {
     ColorPicker,
@@ -113,7 +119,8 @@ export default {
     UploadImage,
     TextEdit,
     ListText,
-    TextAlign
+    TextAlign,
+    HorizontalContent
   },
   props: {
     widgets: Object
