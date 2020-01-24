@@ -2,189 +2,99 @@
     "sections": [
         {
             "id": 1,
-            "layout": true,
             "columns": [
                 {
-                    "id": 1214,
-                    "grid": "col-md-8",
-                    "style": {
-                        "fill": true,
-                        "y": "center",
-                        "x": "center",
-                        "background": "transparent",
-                        "padding": "0"
-                    },
-                    "elements": [
-                        {
-                            "id": 6232,
-                            "name": "Text Editor",
-                            "widget": "TextWidget",
-                            "new": false,
-                            "icon": "text-icon.svg",
-                            "content": {
-                                "text": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-                                "style": {
-                                    "fontSize": "16",
-                                    "fontWeight": "400",
-                                    "textAlign": "center",
-                                    "borderRadius": "0",
-                                    "color": "#333",
-                                    "background": "transparent",
-                                    "padding": "10",
-                                    "margin": "2"
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "id": 2314,
-                    "grid": "col-md-2",
-                    "style": {
-                        "fill": true,
-                        "y": "start",
-                        "x": "center",
-                        "background": "transparent",
-                        "padding": "0"
-                    },
-                    "elements": [
-                        {
-                            "id": 1321,
-                            "name": "Heading",
-                            "widget": "HeadingWidget",
-                            "new": false,
-                            "icon": "heading-icon.svg",
-                            "content": {
-                                "text": "Heading Text",
-                                "style": {
-                                    "fontSize": "40",
-                                    "fontWeight": "900",
-                                    "textAlign": "center",
-                                    "borderRadius": "0",
-                                    "color": "#333",
-                                    "background": "transparent",
-                                    "padding": "10",
-                                    "margin": "2"
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "id": 3243,
-                    "grid": "col-md-2",
-                    "style": {
-                        "fill": true,
-                        "y": "start",
-                        "x": "center",
-                        "background": "transparent",
-                        "padding": "0"
-                    },
-                    "elements": [
-                        {
-                            "id": 1142,
-                            "name": "Heading",
-                            "widget": "HeadingWidget",
-                            "new": false,
-                            "icon": "heading-icon.svg",
-                            "content": {
-                                "text": "Heading Text",
-                                "style": {
-                                    "fontSize": "40",
-                                    "fontWeight": "900",
-                                    "textAlign": "center",
-                                    "borderRadius": "0",
-                                    "color": "#333",
-                                    "background": "transparent",
-                                    "padding": "10",
-                                    "margin": "2"
-                                }
-                            }
-                        },
-                        {
-                            "id": 4232,
-                            "name": "Text Editor",
-                            "widget": "TextWidget",
-                            "new": false,
-                            "icon": "text-icon.svg",
-                            "content": {
-                                "text": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-                                "style": {
-                                    "fontSize": "16",
-                                    "fontWeight": "400",
-                                    "textAlign": "center",
-                                    "borderRadius": "0",
-                                    "color": "#333",
-                                    "background": "transparent",
-                                    "padding": "10",
-                                    "margin": "2"
-                                }
-                            }
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "layout": false,
-            "columns": [
-                {
-                    "id": 323,
+                    "id": 1579850578,
                     "grid": null,
                     "style": {
                         "fill": true,
                         "y": "start",
                         "x": "center",
-                        "background": "#f3d",
+                        "background": "#000000",
                         "padding": "0"
                     },
                     "elements": [
                         {
-                            "id": 4,
-                            "name": "Button",
-                            "widget": "ButtonWidget",
-                            "new": true,
-                            "icon": "button-icon.svg",
+                            "id": 1579850724,
+                            "name": "Image",
+                            "widget": "ImageWidget",
+                            "new": false,
+                            "icon": "image-icon.svg",
                             "content": {
-                                "text": "Button",
-                                "link": "https://github.com/eevan7a9/",
+                                "src": "https://i.picsum.photos/id/866/400/300.jpg",
                                 "style": {
-                                    "fontSize": "16",
-                                    "fontWeight": "600",
-                                    "borderRadius": "5",
-                                    "color": "#333",
-                                    "background": "#007bff",
-                                    "padding": "10",
+                                    "width": "400px",
+                                    "borderRadius": "0",
+                                    "padding": "2",
                                     "margin": "2",
                                     "horizontal": "center"
                                 }
                             }
+                        },
+                        {
+                            "id": 1579850728,
+                            "name": "Text Editor",
+                            "widget": "TextWidget",
+                            "new": false,
+                            "icon": "text-icon.svg",
+                            "content": {
+                                "text": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+                                "style": {
+                                    "fontSize": "16",
+                                    "fontWeight": "400",
+                                    "textAlign": "center",
+                                    "borderRadius": "0",
+                                    "color": "#FBFBFB",
+                                    "background": "transparent",
+                                    "padding": "10",
+                                    "margin": "2"
+                                }
+                            }
                         }
                     ]
                 },
                 {
-                    "id": 312,
+                    "id": 1579850579,
                     "grid": null,
                     "style": {
-                        "fill": true,
+                        "fill": false,
                         "y": "start",
                         "x": "center",
-                        "background": "transparent",
+                        "background": "none",
                         "padding": "0"
                     },
                     "elements": [
                         {
-                            "id": 14521,
+                            "id": 1579850583,
                             "name": "Heading",
                             "widget": "HeadingWidget",
                             "new": false,
                             "icon": "heading-icon.svg",
                             "content": {
-                                "text": "Heading Text",
+                                "text": "What is This?\n",
                                 "style": {
                                     "fontSize": "40",
                                     "fontWeight": "900",
+                                    "textAlign": "center",
+                                    "borderRadius": "0",
+                                    "color": "#FFFFFF",
+                                    "background": "#000000",
+                                    "padding": "10",
+                                    "margin": "2"
+                                }
+                            }
+                        },
+                        {
+                            "id": 1579850604,
+                            "name": "Text Editor",
+                            "widget": "TextWidget",
+                            "new": false,
+                            "icon": "text-icon.svg",
+                            "content": {
+                                "text": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+                                "style": {
+                                    "fontSize": "16",
+                                    "fontWeight": "400",
                                     "textAlign": "center",
                                     "borderRadius": "0",
                                     "color": "#333",
@@ -195,10 +105,10 @@
                             }
                         },
                         {
-                            "id": 3,
+                            "id": 1579850681,
                             "name": "List",
                             "widget": "ListWidget",
-                            "new": true,
+                            "new": false,
                             "icon": "lists-icon.svg",
                             "content": {
                                 "title": "Phasellus eu risus fringilla, sodales odio at, iaculis ex.",
@@ -227,10 +137,176 @@
                                     "horizontal": "center"
                                 }
                             }
+                        },
+                        {
+                            "id": 1579850685,
+                            "name": "Button",
+                            "widget": "ButtonWidget",
+                            "new": false,
+                            "icon": "button-icon.svg",
+                            "content": {
+                                "text": "Subscribe",
+                                "link": "https://github.com/eevan7a9/",
+                                "style": {
+                                    "fontSize": "16",
+                                    "fontWeight": "600",
+                                    "borderRadius": "24",
+                                    "color": "#FFFFFF",
+                                    "background": "#E60009",
+                                    "padding": "26",
+                                    "margin": "2",
+                                    "horizontal": "center"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": 1579850581,
+                    "grid": null,
+                    "style": {
+                        "fill": false,
+                        "y": "center",
+                        "x": "center",
+                        "background": "none",
+                        "padding": "0"
+                    },
+                    "elements": [
+                        {
+                            "id": 1579850630,
+                            "name": "Heading",
+                            "widget": "HeadingWidget",
+                            "new": false,
+                            "icon": "heading-icon.svg",
+                            "content": {
+                                "text": "I can do This:\n",
+                                "style": {
+                                    "fontSize": "40",
+                                    "fontWeight": "900",
+                                    "textAlign": "center",
+                                    "borderRadius": "0",
+                                    "color": "#333",
+                                    "background": "transparent",
+                                    "padding": "10",
+                                    "margin": "2"
+                                }
+                            }
+                        },
+                        {
+                            "id": 1579850625,
+                            "name": "List",
+                            "widget": "ListWidget",
+                            "new": false,
+                            "icon": "lists-icon.svg",
+                            "content": {
+                                "title": "Phasellus eu risus fringilla, sodales odio at, iaculis ex.",
+                                "list": [
+                                    {
+                                        "id": 1,
+                                        "text": "Lorem ipsum dolor sit amet",
+                                        "class": ""
+                                    },
+                                    {
+                                        "id": 2,
+                                        "text": "In ut nulla posuere, euismod sapien at",
+                                        "class": ""
+                                    }
+                                ],
+                                "style": {
+                                    "fontSize": "11",
+                                    "fontWeight": "300",
+                                    "textAlign": "left",
+                                    "borderRadius": "0",
+                                    "color": "#333",
+                                    "background": "transparent",
+                                    "padding": "27",
+                                    "margin": "2",
+                                    "listStyle": "none",
+                                    "horizontal": "center"
+                                }
+                            }
                         }
                     ]
                 }
-            ]
+            ],
+            "label": "1 to 12",
+            "layout": false
+        },
+        {
+            "id": 2,
+            "columns": [
+                {
+                    "id": 1579850768,
+                    "grid": null,
+                    "style": {
+                        "fill": true,
+                        "y": "start",
+                        "x": "center",
+                        "background": "none",
+                        "padding": "0"
+                    },
+                    "elements": []
+                },
+                {
+                    "id": 1579851136,
+                    "grid": null,
+                    "style": {
+                        "fill": true,
+                        "y": "center",
+                        "x": "center",
+                        "background": "none",
+                        "padding": "0"
+                    },
+                    "elements": [
+                        {
+                            "id": 1579851141,
+                            "name": "Heading",
+                            "widget": "HeadingWidget",
+                            "new": false,
+                            "icon": "heading-icon.svg",
+                            "content": {
+                                "text": "Heading Text",
+                                "style": {
+                                    "fontSize": "40",
+                                    "fontWeight": "900",
+                                    "textAlign": "center",
+                                    "borderRadius": "0",
+                                    "color": "#333",
+                                    "background": "transparent",
+                                    "padding": "10",
+                                    "margin": "2"
+                                }
+                            }
+                        },
+                        {
+                            "id": 1579851138,
+                            "name": "Text Editor",
+                            "widget": "TextWidget",
+                            "new": false,
+                            "icon": "text-icon.svg",
+                            "content": {
+                                "text": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+                                "style": {
+                                    "fontSize": "16",
+                                    "fontWeight": "400",
+                                    "textAlign": "center",
+                                    "borderRadius": "0",
+                                    "color": "#333",
+                                    "background": "transparent",
+                                    "padding": "10",
+                                    "margin": "2"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
+            "label": "1 to 12",
+            "layout": false
+        },
+        {
+            "id": 3,
+            "columns": []
         }
     ]
 }
