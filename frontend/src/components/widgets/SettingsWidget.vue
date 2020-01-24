@@ -8,6 +8,11 @@
       @textChange="e => (widgets.text = e)"
       v-if="widgets.hasOwnProperty('text')"
     />
+    <TextAlign
+      :textAlign="widgets.style.textAlign"
+      @changeTextAlign="e => (widgets.style.textAlign = e)"
+      v-if="widgets.style.textAlign"
+    />
     <ListText :lists="widgets.list" v-if="widgets.hasOwnProperty('list')" />
     <UploadImage
       @fileUploaded="e => (widgets.src = e)"
@@ -100,13 +105,15 @@ import ColorPicker from "@/components/utility/ColorPicker.vue";
 import UploadImage from "@/components/utility/UploadImage.vue";
 import TextEdit from "@/components/utility/TextEdit.vue";
 import ListText from "@/components/utility/ListText.vue";
+import TextAlign from "@/components/utility/TextAlign.vue";
 export default {
   components: {
     ColorPicker,
     RangeNumber,
     UploadImage,
     TextEdit,
-    ListText
+    ListText,
+    TextAlign
   },
   props: {
     widgets: Object

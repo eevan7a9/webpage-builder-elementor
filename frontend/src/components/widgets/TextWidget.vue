@@ -31,6 +31,7 @@ export default {
         width: this.content.style.width,
         fontSize: this.content.style.fontSize + "px",
         fontWeight: this.content.style.fontWeight,
+        textAlign: this.content.style.textAlign,
         borderRadius: this.content.style.borderRadius + "px",
         color: this.content.style.color,
         background: this.content.style.background,

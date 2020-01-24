@@ -5,7 +5,7 @@
     </div>
     <div class="choice-wrapper row">
       <div class="item-wrapper col-md-3" @click="selectSet(autoAdjust)">
-        <p class="m-0 p-0">Auto Adjust</p>
+        <p class="m-0 p-0">Dynamic Layout</p>
         <span>1 to 12</span>
         <div class="choice-item item-1">
           <div class="item question-mark font-weight-bold">

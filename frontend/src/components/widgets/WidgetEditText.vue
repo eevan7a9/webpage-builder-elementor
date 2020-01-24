@@ -49,6 +49,9 @@ export default {
         fontSize: this.styleWidget.fontSize + "px",
         fontWeight: this.styleWidget.fontWeight,
         color: this.styleWidget.color,
+        textAlign: this.styleWidget.textAlign
+          ? this.styleWidget.textAlign
+          : "left",
         background: this.textarea
           ? this.styleWidget.background
           : "rgba(240, 248, 255, 0.507)"

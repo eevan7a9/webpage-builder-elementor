@@ -1,5 +1,5 @@
 <template>
-  <div class="text-widget-wrapper">
+  <div class="list-widget-wrapper">
     <ul :style="getUlStyle">
       <li
         v-for="(list, index) in content.list"

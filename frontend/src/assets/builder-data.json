@@ -12,6 +12,7 @@
                     "style": {
                         "fontSize": "40",
                         "fontWeight": "900",
+                        "textAlign": "center",
                         "borderRadius": "0",
                         "color": "#333",
                         "background": "transparent",
@@ -31,6 +32,7 @@
                     "style": {
                         "fontSize": "16",
                         "fontWeight": "400",
+                        "textAlign": "center",
                         "borderRadius": "0",
                         "color": "#333",
                         "background": "transparent",
