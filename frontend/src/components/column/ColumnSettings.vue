@@ -2,6 +2,8 @@
   <div class="column-settings-wrapper">
     <WidthType
       :width="column.style.fill"
+      notice="Dynamic Layout Only"
+      :disable="column.grid ? true : false"
       @changeWidth="e => (column.style.fill = e)"
     />
     <hr />

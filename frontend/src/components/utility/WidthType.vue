@@ -6,7 +6,9 @@
         v-model="selected"
         :options="options"
         name="radio-inline"
+        :disabled="disable"
       ></b-form-radio-group>
+      <small class="p-0 m-0 text-danger" v-if="disable">*{{ notice }}</small>
     </b-form-group>
   </div>
 </template>
@@ -14,7 +16,9 @@
 <script>
 export default {
   props: {
-    width: Boolean
+    width: Boolean,
+    notice: String,
+    disable: Boolean
   },
   data() {
     return {
