@@ -126,6 +126,40 @@
                     }
                 }
             }
+        ],
+        "general": [
+            {
+                "id": 1,
+                "name": "Carousel",
+                "widget": "CarouselWidget",
+                "new": true,
+                "icon": "carousel-icon.svg",
+                "content": {}
+            },
+            {
+                "id": 2,
+                "name": "Social Icon",
+                "widget": "SocialIconWidget",
+                "new": true,
+                "icon": "social-icon.svg",
+                "content": {}
+            },
+            {
+                "id": 3,
+                "name": "Progress Bar",
+                "widget": "ProgressBarWidget",
+                "new": true,
+                "icon": "progressbar-icon.svg",
+                "content": {}
+            },
+            {
+                "id": 4,
+                "name": "Image Gallery",
+                "widget": "GalleryWidget",
+                "new": true,
+                "icon": "gallery-icon.svg",
+                "content": {}
+            }
         ]
     },
     "layouts": [
