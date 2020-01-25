@@ -20,7 +20,6 @@ const getters = {
 const actions = {
   toggleBuilderSidebar: ({ commit }) => {
     commit("setSidebar");
-    console.log("sidebar toggled");
   },
   toggleSidebarTab: ({ commit }, value) => {
     commit("setBuilderSidebar", value);
