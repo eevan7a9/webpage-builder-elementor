@@ -67,7 +67,7 @@ export default {
   },
   methods: {
     addItem() {
-      console.log(this.newItem);
+      // console.log(this.newItem);
       this.lists.push({
         id: toTimestamp(new Date()),
         text: this.newItem
