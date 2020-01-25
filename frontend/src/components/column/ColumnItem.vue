@@ -47,7 +47,7 @@ export default {
     sectionId: Number
   },
   computed: {
-    ...mapGetters(["getSettings"]),
+    ...mapGetters(["getSettings", "isSidebarOpen"]),
     getStyle: function() {
       return {
         background: this.column.style.background,
@@ -56,7 +56,12 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["deleteColumnContent", "selectColumn", "toggleSidebarTab"]),
+    ...mapActions([
+      "deleteColumnContent",
+      "selectColumn",
+      "toggleSidebarTab",
+      "toggleBuilderSidebar"
+    ]),
     removeColumn() {
       this.deleteColumnContent({
         columnId: this.column.id,
@@ -66,6 +71,9 @@ export default {
     showSettings() {
       this.selectColumn(this.column);
       this.toggleSidebarTab("settings");
+      if (!this.isSidebarOpen) {
+        this.toggleBuilderSidebar();
+      }
     }
   }
 };

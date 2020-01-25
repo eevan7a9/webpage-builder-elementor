@@ -41,7 +41,7 @@
         </button>
       </div>
       <component
-        :is="selectedComponent"
+        :is="assignedWidget"
         :content="element.content"
         :elementId="element.id"
         :columnId="column.id"
@@ -72,7 +72,7 @@ export default {
   },
   data() {
     return {
-      selectedComponent: "TextWidget",
+      assignedWidget: "TextWidget",
       showOptions: false,
       edit: false
     };
@@ -83,10 +83,15 @@ export default {
     sectionId: Number
   },
   computed: {
-    ...mapGetters(["getSettings"])
+    ...mapGetters(["getSettings", "isSidebarOpen"])
   },
   methods: {
-    ...mapActions(["deleteElements", "selectWidget", "toggleSidebarTab"]),
+    ...mapActions([
+      "deleteElements",
+      "selectWidget",
+      "toggleSidebarTab",
+      "toggleBuilderSidebar"
+    ]),
     remove() {
       this.deleteElements({
         elementId: this.element.id,
@@ -103,10 +108,13 @@ export default {
         column: this.column
       });
       this.toggleSidebarTab("settings");
+      if (!this.isSidebarOpen) {
+        this.toggleBuilderSidebar();
+      }
     }
   },
   created() {
-    this.selectedComponent = this.element.widget;
+    this.assignedWidget = this.element.widget;
   }
 };
 </script>
