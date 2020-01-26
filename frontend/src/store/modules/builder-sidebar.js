@@ -3,7 +3,7 @@ import builderData from "@/assets/builder-data.json";
 const state = {
   sidebarStatus: true,
   builderSidebarTab: "elements", // sidebar elements | styles
-  widgets: builderData.widgets,
+  widgets: JSON.parse(JSON.stringify(builderData.widgets)),
   settings: {
     content: false,
     tabOpen: 0,
@@ -26,12 +26,19 @@ const actions = {
   },
   fetchWidgets: ({ commit }, name) => {
     if (name) {
-      const widgets = builderData.widgets.common.filter(widget =>
+      const common = JSON.parse(
+        JSON.stringify(builderData.widgets.common)
+      ).filter(widget =>
         widget.name.toLowerCase().includes(name.toLowerCase())
       );
-      commit("setWidgets", widgets);
+      const general = JSON.parse(
+        JSON.stringify(builderData.widgets.general)
+      ).filter(widget =>
+        widget.name.toLowerCase().includes(name.toLowerCase())
+      );
+      commit("setWidgets", { common: common, general: general });
     } else {
-      commit("setWidgets", builderData.widgets.common);
+      commit("setWidgets", builderData.widgets);
     }
   },
   selectWidget: ({ commit }, { widget, column }) => {
@@ -44,7 +51,10 @@ const actions = {
 const mutations = {
   setSidebar: state => (state.sidebarStatus = !state.sidebarStatus),
   setBuilderSidebar: (state, tab) => (state.builderSidebarTab = tab),
-  setWidgets: (state, widgets) => (state.widgets = widgets),
+  setWidgets: (state, widgets) => {
+    state.widgets.common = widgets.common;
+    state.widgets.general = widgets.general;
+  },
   setSelectedWidget: (state, data) => {
     if (data.widget || data.column) {
       state.settings.widget = data.widget;
