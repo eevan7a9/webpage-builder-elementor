@@ -5,10 +5,7 @@
 <script>
 export default {
   props: {
-    content: Object,
-    elementId: Number,
-    columnId: Number,
-    sectionId: Number
+    content: Object
   },
   computed: {
     getStyle: function() {

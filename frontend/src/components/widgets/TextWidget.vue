@@ -20,9 +20,6 @@ export default {
   },
   props: {
     content: Object,
-    elementId: Number,
-    columnId: Number,
-    sectionId: Number,
     onEdit: Boolean
   },
   computed: {

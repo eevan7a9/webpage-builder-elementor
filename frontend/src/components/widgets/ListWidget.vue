@@ -32,10 +32,7 @@ export default {
     WidgetEditText
   },
   props: {
-    content: Object,
-    elementId: Number,
-    columnId: Number,
-    sectionId: Number
+    content: Object
   },
   data() {
     return {

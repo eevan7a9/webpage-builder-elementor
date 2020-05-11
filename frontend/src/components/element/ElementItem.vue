@@ -43,9 +43,6 @@
       <component
         :is="assignedWidget"
         :content="element.content"
-        :elementId="element.id"
-        :columnId="column.id"
-        :sectionId="sectionId"
         :onEdit="edit"
         @editOff="e => (edit = e)"
       />
