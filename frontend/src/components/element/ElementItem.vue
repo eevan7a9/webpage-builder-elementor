@@ -51,12 +51,12 @@
 </template>
 
 <script>
-import HeadingWidget from "@/components/widgets/HeadingWidget.vue";
-import TextWidget from "@/components/widgets/TextWidget.vue";
-import ListWidget from "@/components/widgets/ListWidget.vue";
-import ButtonWidget from "@/components/widgets/ButtonWidget.vue";
-import SpacerWidget from "@/components/widgets/SpacerWidget.vue";
-import ImageWidget from "@/components/widgets/ImageWidget.vue";
+import HeadingWidget from "@/components/widgets/common/HeadingWidget.vue";
+import TextWidget from "@/components/widgets/common/TextWidget.vue";
+import ListWidget from "@/components/widgets/common/ListWidget.vue";
+import ButtonWidget from "@/components/widgets/common/ButtonWidget.vue";
+import SpacerWidget from "@/components/widgets/common/SpacerWidget.vue";
+import ImageWidget from "@/components/widgets/common/ImageWidget.vue";
 import { mapActions, mapGetters } from "vuex";
 export default {
   components: {
