@@ -12,7 +12,7 @@
         :key="index"
       >
         <div class="card py-2 widgets">
-          <img :src="require(`@/assets/icons/${widget.icon}`)" class="p-3" />
+          <img :src="require(`@/assets/icons/${widget.icon}`)" class="p-5" />
           <small class="m-0 p-0 text-capitalize text-secondary">{{
             widget.name
           }}</small>
@@ -28,7 +28,7 @@
         :key="index"
       >
         <div class="card py-2 widgets">
-          <img :src="require(`@/assets/icons/${widget.icon}`)" class="p-3" />
+          <img :src="require(`@/assets/icons/${widget.icon}`)" class="p-5" />
           <small class="m-0 p-0 text-capitalize text-secondary">{{
             widget.name
           }}</small>

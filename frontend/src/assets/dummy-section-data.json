@@ -21,7 +21,7 @@
                             "new": false,
                             "icon": "image-icon.svg",
                             "content": {
-                                "src": "https://i.picsum.photos/id/866/400/300.jpg",
+                                "src": "https://via.placeholder.com/350x350",
                                 "style": {
                                     "width": "400px",
                                     "borderRadius": "0",
